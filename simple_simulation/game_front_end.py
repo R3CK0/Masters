@@ -1,14 +1,48 @@
+from dataclasses import dataclass
 import pygame
 import sys
 import json
+import os
 
 # Initialize Pygame
 pygame.init()
 
+@dataclass
+class Location:
+    name: str
+    coords: tuple
+    agent_start: bool
+
+@dataclass
+class Object:
+    name: str
+    location: str
+    coords: tuple
+    movable: bool
+    consumed: bool
+    effects: list
+
+@dataclass
+class State:
+    name: str
+    type: str
+    value: str
+    possible_states: list
+
+@dataclass   
+class Agent:
+    name = "BOB"
+    location = ""
+    coords = (0, 0)
+    inventory = []
+
 
 class PlanningSim:
 
-    def __init__(self):      
+    def __init__(self, config_path = "game_config.json"):
+        #config path
+        self.config_path = config_path
+              
         # Constants
         self.WIDTH, self.HEIGHT = 1000, 600
         self.GRID_SIZE = 20
@@ -32,13 +66,10 @@ class PlanningSim:
         # Grid and objects setup
         self.grid = [[False for _ in range(self.GRID_SIZE)] for _ in range(self.GRID_SIZE)]  # False initially, set to True for valid locations
         self.locations = {}
-        for x, y in list(self.locations.values()):
-            self.grid[x][y] = True
         self.objects = {}
-        self.object_locations = {}  # key: object name, value: (x, y)
         self.states = {}
-        self.agent_position = {"":(0, 0)}
-        self.inventory = []
+        self.agents = {"BOB": Agent()}
+        self.default_name = "BOB"
         self.start = False
         
 
@@ -51,23 +82,29 @@ class PlanningSim:
             self.start = config["start"]
 
             for name in locations.keys():
-                x, y = (locations[name]["coords"][0], locations[name]["coords"][1])
+                x, y = (int(locations[name]["coords"][0]), int(locations[name]["coords"][1]))
                 self.grid[x][y] = True
-                self.locations[name] = ((x, y))
-                if locations[name]["agent_start"]:
-                    self.agent_position = {name : (x, y)}
-
+                self.locations[name] = Location(name = name, coords = (x, y), agent_start = locations[name]["agent_start"])
+                if self.locations[name].agent_start:
+                    self.agents[self.default_name].location = name
+                    self.agents[self.default_name].coords = (x, y)
+                
             for state in states.keys():
                 if states[state]["type"] == "Boolean":
-                    self.states[states[state]["name"]] = {"state_type":states[state]["type"], "value":states[state]["value"]}
-                else:    
-                    self.states[states[state]["name"]] = {"state_type":states[state]["type"], "possible_states": states[state]["states"], "value":states[state]["value"]}
+                    new_state = State(name = state, type = states[state]["type"], value = states[state]["value"], possible_states = [True, False])
+                    self.states[new_state.name] = new_state
+                else:
+                    new_state = State(name = state, type = states[state]["type"], value = states[state]["value"], possible_states = states[state]["states"])    
+                    self.states[new_state.name] = new_state
 
             for obj in objects.keys():
-                self.objects[obj] = {"location": (locations[objects[obj]["location"]]["coords"][0], locations[objects[obj]["location"]]["coords"][1]), "movable": objects[obj]["movable"], "consumed": objects[obj]["consumed"], "effects": objects[obj]["effects"]}
-                self.object_locations[obj] = (locations[objects[obj]["location"]]["coords"][0], locations[objects[obj]["location"]]["coords"][1])
+                coord = (int(locations[objects[obj]["location"]]["coords"][0]), int(locations[objects[obj]["location"]]["coords"][1]))
+                new_object = Object(name = obj, location = objects[obj]["location"], coords = coord, movable = objects[obj]["movable"], 
+                                    consumed = objects[obj]["consumed"], effects = objects[obj]["effects"])
+                self.objects[obj] = new_object
+
         except:
-            print("Unable to load game_config.json file. Please check the file and try again.")
+            print(f"Unable to load game_config.json file. Please check the file and try again. current working directory: {os.getcwd()}")
 
     def draw_grid(self):
         for x in range(self.GRID_SIZE):
@@ -77,7 +114,7 @@ class PlanningSim:
                 pygame.draw.rect(self.screen, self.BLACK, rect, 1)  # Draw black border for each cell
 
     def draw_agent(self):
-        x, y = self.get_agent_position()
+        x, y = self.get_agent_coords()
         pygame.draw.circle(self.screen, self.BLUE, (x * self.CELL_SIZE + self.CELL_SIZE // 2, y * self.CELL_SIZE + self.CELL_SIZE // 2), self.CELL_SIZE // 3)
 
     def draw_sidebar(self):
@@ -90,7 +127,7 @@ class PlanningSim:
         line_height = 20  # Adjustable based on font size and desired spacing
 
         # Draw state info
-        state_text_lines = ["States:"] + [f"{state}: {value['value']}" for state, value in self.states.items()]
+        state_text_lines = ["States:"] + [f"{state}: {str(value.value)}" for state, value in self.states.items()]
         for line in state_text_lines:
             state_surface = self.font.render(line, True, self.WHITE)
             self.screen.blit(state_surface, (self.WIDTH - self.INFO_WIDTH + x_margin, y_position))
@@ -98,11 +135,10 @@ class PlanningSim:
 
 
         # Draw objects at the current location
-        if self.get_agent_position() in self.object_locations.values():
-            location_objects = [obj for obj in self.object_locations if self.object_locations[obj] == self.get_agent_position()]
-            usable_objects = [self.objects[obj] for obj in location_objects]
+        if self.get_agent_coords() in [obj.coords for obj in self.objects.values()]:
+            location_objects = [obj.name for obj in self.objects.values() if self.objects[obj.name].coords == self.get_agent_coords()]
             for obj in location_objects:
-                obj_text = f"{obj} - Available Objects"
+                obj_text = f"{obj} - Available"
                 obj_surface = self.font.render(obj_text, True, self.WHITE)
                 self.screen.blit(obj_surface, (self.WIDTH - self.INFO_WIDTH + x_margin, y_position))
                 y_position += line_height  # Increment for the next item or text line
@@ -119,38 +155,40 @@ class PlanningSim:
                 self.move_agent(location)
             else:
                 print("Invalid location")
-        else:
-            # Handle sidebar interactions if necessary
-            if y > self.STATE_AREA_HEIGHT:  # Assuming interactions are below the state area
-                obj_index = (y - self.STATE_AREA_HEIGHT) // 20
-                if 0 <= obj_index < len(self.object_locations.get(self.get_agent_position(), [])):
-                    # Add logic for object interaction
-                    print(f"Object {self.object_locations[self.get_agent_position()][obj_index]['name']} clicked")
+        # else:
+        #     # Handle sidebar interactions if necessary
+        #     if y > self.STATE_AREA_HEIGHT:  # Assuming interactions are below the state area
+        #         obj_index = (y - self.STATE_AREA_HEIGHT) // 20
+        #         if 0 <= obj_index < len(self.object_locations.get(self.get_agent_coords(), [])):
+        #             # Add logic for object interaction
+        #             print(f"Object {self.object_locations[self.get_agent_coords()][obj_index]['name']} clicked")
                     
     def get_location_from_position(self, position):
-        for location, coords in self.locations.items():
-            if coords == position:
-                return location
+        for location_name, loc in self.locations.items():
+            if loc.coords == position:
+                return location_name
         return None
     
-    def get_agent_position(self):
-        return list(self.agent_position.values())[0]
+    def get_agent_coords(self):
+        return self.agents[self.default_name].coords
     
     #Agent actions
     
-    def move_agent(self, location):
-        x, y = self.locations[location]
-        self.agent_position = {location : (x, y)}
+    def move_agent(self, location_name):
+        self.agents[self.default_name].coords = self.locations[location_name].coords
         
     def pickup_object(self, object_name):
-        if self.objects[object_name]["location"] == self.agent_position:
-            self.inventory.append(object_name)
-            self.object_locations[object_name] = None
+        if self.objects[object_name].location == self.agents[self.default_name].location:
+            self.agents[self.default_name].inventory.append(self.objects[object_name])
+            self.objects[object_name].location = "inventory"
+            self.objects[object_name].coords = None
             
     def drop_object(self, object_name):
-        if object_name in self.inventory:
-            self.inventory.remove(object_name)
-            self.object_locations[object_name] = self.get_agent_position()
+        if self.agents[self.default_name].inventory != []:
+            if object_name in [objects.name for objects in self.agents[self.default_name].inventory]:
+                self.agents[self.default_name].inventory = [objects for objects in self.agents[self.default_name].inventory if objects.name != object_name]
+                self.objects[object_name].location = self.agents[self.default_name].location
+                self.objects[object_name].coords = self.agents[self.default_name].coords
     
     
     # Potential object uses 
@@ -159,8 +197,8 @@ class PlanningSim:
     # - change_state
     # - destroy
     def use_object(self, object_name):
-        consumed = self.objects[object_name]["consumed"]
-        effects = self.objects[object_name]["effects"]
+        consumed = self.objects[object_name].consumed
+        effects = self.objects[object_name].effects
         
         for effect in effects:
             
@@ -193,15 +231,16 @@ class PlanningSim:
         tokens = effect.split(" ")
         object_name = " ".join(tokens[1:tokens.index("at")]) # captures all words between "Create" and "at"
         if agent_location:
-            location = list(self.agent_position.keys())[0]
+            location = self.agents[self.default_name].location
+            coords = self.agents[self.default_name].coords
         else:
             location = " ".join(tokens[tokens.index("location")+1: tokens.index("is")])
+            coords = self.locations[location].coords
         movable = True if tokens[tokens.index("movable")+2] == "True" else False
         consumed = True if tokens[tokens.index("consumed")+2] == "True" else False
         effects = " ".join(tokens[tokens.index("effects")+2:]).split(",")
         
-        self.objects[object_name] = {"location": self.locations[location], "movable": movable, "consumed": consumed, "effects": effects}
-        self.object_locations[object_name] = self.locations[location]
+        self.objects[object_name] = Object(name = object_name, location = location, coords = coords, movable = movable, consumed = consumed, effects = effects)
     
     #combine  
     def combine_objects(self, effect):
@@ -221,34 +260,34 @@ class PlanningSim:
         if change == "Increase":
             state = " ".join(tokens[1: tokens.index("by")])
             amount = tokens[tokens.index("by")+1]
-            self.states[state]["value"] = str(int(self.states[state]["value"]) + int(amount))
+            self.states[state].value = str(int(self.states[state]["value"]) + int(amount))
         
         elif change == "Decrease":
             state = " ".join(tokens[1: tokens.index("by")])
             amount = tokens[tokens.index("by")+1]
-            self.states[state]["value"] = str(int(self.states[state]["value"]) - int(amount))
+            self.states[state].value = str(int(self.states[state]["value"]) - int(amount))
             
         elif change == "Set":
             state = " ".join(tokens[1: tokens.index("to")])
             value = tokens[tokens.index("to")+1]
-            self.states[state]["value"] = value
+            self.states[state].value = value
         
         elif change == "Toggle":
             state = " ".join(tokens[1:])
-            if self.states[state]["value"] == "True":
-                self.states[state]["value"] = "False"
+            if self.states[state].value:
+                self.states[state].Value = False
             else:
-                self.states[state]["value"] = "True"
-        
+                self.states[state].value = True
+                
         elif change == "Rotate":
             state = " ".join(tokens[1:])
-            current_state = self.states[state]["value"]
-            states = self.states[state]["possible_states"]
+            current_state = self.states[state].value
+            states = self.states[state].possible_states
             index = states.index(current_state)
             if index == len(states)-1:
-                self.states[state]["value"] = states[0]
+                self.states[state].value = states[0]
             else:
-                self.states[state]["value"] = states[index+1]
+                self.states[state].value = states[index+1]
     
     def destroy_object(self, effect):
         tokens = effect.split(" ")
@@ -258,13 +297,9 @@ class PlanningSim:
     
     def consume_object(self, object_name):
         try:
-            self.inventory.remove(object_name)
+            self.agents[self.default_name].inventory = [objects for objects in self.agents[self.default_name].inventory if objects.name != object_name]
         except:
             print(f"Object {object_name} not found in inventory")
-        try:
-            self.object_locations.pop(object_name)
-        except:
-            print(f"Object {object_name} not found")
         try:
             self.objects.pop(object_name)
         except:
