@@ -5,7 +5,7 @@ import json
 import os
 
 # Initialize Pygame
-pygame.init()
+#pygame.init()
 
 @dataclass
 class Location:
@@ -55,6 +55,7 @@ class PlanningSim:
         self.BLUE = (0, 0, 255)
         self.WHITE = (255, 255, 255)
         self. BLACK = (0, 0, 0)
+        self.ORANGE = (255, 165, 0)
 
         # Screen setup
         self.screen = pygame.display.set_mode((self.WIDTH, self.HEIGHT))
@@ -71,6 +72,8 @@ class PlanningSim:
         self.agents = {"BOB": Agent()}
         self.default_name = "BOB"
         self.start = False
+        self.running = False
+        self.selected_cell = None
         
 
     def update_congiguration(self):
@@ -110,7 +113,10 @@ class PlanningSim:
         for x in range(self.GRID_SIZE):
             for y in range(self.GRID_SIZE):
                 rect = pygame.Rect(x * self.CELL_SIZE, y * self.CELL_SIZE, self.CELL_SIZE, self.CELL_SIZE)
-                pygame.draw.rect(self.screen, self.GREEN if self.grid[x][y] else self.WHITE, rect)
+                if self.selected_cell == (x, y):
+                    pygame.draw.rect(self.screen, self.ORANGE, rect)
+                else:
+                    pygame.draw.rect(self.screen, self.GREEN if self.grid[x][y] else self.WHITE, rect)
                 pygame.draw.rect(self.screen, self.BLACK, rect, 1)  # Draw black border for each cell
 
     def draw_agent(self):
@@ -138,12 +144,28 @@ class PlanningSim:
         if self.get_agent_coords() in [obj.coords for obj in self.objects.values()]:
             location_objects = [obj.name for obj in self.objects.values() if self.objects[obj.name].coords == self.get_agent_coords()]
             for obj in location_objects:
-                obj_text = f"{obj} - Available"
+                if self.objects[obj].movable:
+                    obj_text = f"{obj} - Available (Movable)"
+                else:
+                    obj_text = f"{obj} - Available"
                 obj_surface = self.font.render(obj_text, True, self.WHITE)
                 self.screen.blit(obj_surface, (self.WIDTH - self.INFO_WIDTH + x_margin, y_position))
                 y_position += line_height  # Increment for the next item or text line
-
-    def handle_mouse_click(self, pos):
+                
+        # Draw agent inventory
+        if self.agents[self.default_name].inventory != []:
+            inventory_objects = [obj.name for obj in self.agents[self.default_name].inventory]
+            for obj in inventory_objects:
+                obj_text = f"{obj} - Available (Inventory)"
+                obj_surface = self.font.render(obj_text, True, self.WHITE)
+                self.screen.blit(obj_surface, (self.WIDTH - self.INFO_WIDTH + x_margin, y_position))
+                y_position += line_height
+                
+    ######################################
+    #Handling of keyboard and mouse events
+    ######################################
+    
+    def get_clicked_location(self, pos):
         x, y = pos
         sidebar_start = self.WIDTH - self.INFO_WIDTH
         grid_click_x = x // self.CELL_SIZE
@@ -151,17 +173,13 @@ class PlanningSim:
 
         if x < sidebar_start:  # Ensure click is within the grid area
             if self.grid[grid_click_x][grid_click_y]:  # Check if the cell is a valid location
-                location = self.get_location_from_position((grid_click_x, grid_click_y))
-                self.move_agent(location)
+                self.selected_cell = (grid_click_x, grid_click_y)
+                return self.get_location_from_position((grid_click_x, grid_click_y))
             else:
-                print("Invalid location")
-        # else:
-        #     # Handle sidebar interactions if necessary
-        #     if y > self.STATE_AREA_HEIGHT:  # Assuming interactions are below the state area
-        #         obj_index = (y - self.STATE_AREA_HEIGHT) // 20
-        #         if 0 <= obj_index < len(self.object_locations.get(self.get_agent_coords(), [])):
-        #             # Add logic for object interaction
-        #             print(f"Object {self.object_locations[self.get_agent_coords()][obj_index]['name']} clicked")
+                return None
+    
+    def reset_selection(self):
+        self.selected_cell = None
                     
     def get_location_from_position(self, position):
         for location_name, loc in self.locations.items():
@@ -305,29 +323,27 @@ class PlanningSim:
         except:
             print(f"Object {object_name} not found")
             
+    
+    def get_events(self):
+        return pygame.event.get()
             
-
-    def main(self):
-        running = True
-        while running:
-            if self.start:
-                for event in pygame.event.get():
-                    if event.type == pygame.QUIT:
-                        running = False
-                    elif event.type == pygame.MOUSEBUTTONDOWN:
-                        if event.button == 1:  # Left click
-                            self.handle_mouse_click(event.pos)
-            else:
-                self.update_congiguration()
+    def init(self):
+        self.running = True
+        self.update_congiguration()
+        if self.start:
             self.screen.fill(self.WHITE)
             self.draw_grid()
             self.draw_agent()
             self.draw_sidebar()
             pygame.display.flip()
 
+    def update(self):
+        self.screen.fill(self.WHITE)
+        self.draw_grid()
+        self.draw_agent()
+        self.draw_sidebar()
+        pygame.display.flip()
+        
+    def exit(self):
         pygame.quit()
         sys.exit()
-
-if __name__ == "__main__":
-    game = PlanningSim()
-    game.main()
