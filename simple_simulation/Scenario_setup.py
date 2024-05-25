@@ -33,6 +33,7 @@ class GameStateEditor:
         self.location_combos = {}
         self.movable = {}
         self.consumed = {}
+        self.deletion = {}
         self.state_change = {"main": "None", "secondary": "None"}
         self.available_effects_1 = ["None", "Change State", "Create", "Combine", "Delete"]
         self.available_effects_2 = ["None", "Change State", "Create", "Combine", "Delete"]
@@ -136,9 +137,11 @@ class GameStateEditor:
 
         state_type.bind("<<ComboboxSelected>>", lambda event, e=state_type: self.state_combo_update(event, e))
 
-    def on_focus_out(self, event, entry, state_effect=None, pos=None):
+    def on_focus_out(self, event, entry, state_effect=None, pos=None, deletion=None):
         if state_effect is not None and pos is not None:
             self.state_change[pos] = f"{state_effect}{entry.get()}"
+        elif deletion is not None and pos is not None:
+            self.deletion[pos] = f"Delete {entry.get()}"
         else:
             self.name = entry.get()
 
@@ -160,12 +163,25 @@ class GameStateEditor:
                 except:
                     print("temporary window does not exist or caused somekind of error")
                 self.temporary_window = None
-            self.temporary_window = tk.Toplevel(self.root)
+            self.temporary_window = tk.Toplevel(self.root, padx=20, pady=20)
             self.temporary_window.title("Change State")
             ttk.Label(self.temporary_window, text="State to change:").grid(row=0, column=0)
             state_combo = ttk.Combobox(self.temporary_window, values=list(self.states.keys()))
             state_combo.grid(row=0, column=1)
             state_combo.bind("<<ComboboxSelected>>", lambda event: self.state_change_select(event, state_combo, allow_create))
+        elif combo_name == "Delete":
+            if self.temporary_window is not None:
+                try:
+                    self.temporary_window.destroy()
+                except:
+                    print("temporary window does not exist or caused somekind of error")
+                self.temporary_window = None
+            self.temporary_window = tk.Toplevel(self.root, padx=20, pady=20)
+            self.temporary_window.title("Delete Object")
+            ttk.Label(self.temporary_window, text="Object to delete:").grid(row=0, column=0)
+            object_combo = ttk.Combobox(self.temporary_window, values=list(self.objects.keys()))
+            object_combo.grid(row=0, column=1)
+            ttk.Button(self.temporary_window, text="Delete Object", command=lambda: self.delete_object(object_combo.get(), allow_create)).grid(row=1, column=1)
         if self.effects["effect1"].get() != "Combine" and self.effects["effect2"].get() != "Combine":
             try:
                 for widget in self.input_area_3.winfo_children():
@@ -246,6 +262,14 @@ class GameStateEditor:
     def close_window(self, combo=None):
         if combo is not None:
             self.states[self.name]["value"] = combo.get()
+        self.temporary_window.destroy()
+        
+    def delete_object(self, object_name, allow_create):
+        if allow_create:
+            pos = "main"
+        else:
+            pos = "secondary"
+        self.deletion[pos] = f"Delete {object_name}"
         self.temporary_window.destroy()
 
 
@@ -353,27 +377,36 @@ class GameStateEditor:
                         self.effects["effect1_create"] = self.state_change["secondary"]
                     elif self.effects["effect2_create"].get() == "Change State":
                         self.effects["effect2_create"] = self.state_change["secondary"]
+                    elif self.effects["effect1_create"].get() == "Delete":
+                        self.effects["effect1_create"] = self.deletion["secondary"]
+                    elif self.effects["effect2_create"].get() == "Delete":
+                        self.effects["effect2_create"] = self.deletion["secondary"]
                     effects.append(f"Create {self.entries['name_create'].get()} at location {self.location_combos['location_create'].get()} is movable = {self.movable['movable_create'].get()} is consumed = {self.consumed['consumed_create'].get()}, effects = {self.effects['effect1_create']}, {self.effects['effect2_create']}")
                 elif effect == "Combine":
                     if self.effects["effect1_create"].get() == "Change State":
                         self.effects["effect1_create"] = self.state_change["secondary"]
+                    elif self.effects["effect2_create"].get() == "delete":
+                        self.effects["effect2_create"] = self.deletion["secondary"]
                     else:
                         self.effects["effect1_create"] = self.effects["effect1_create"].get()
                     if self.effects["effect2_create"].get() == "Change State":
                         self.effects["effect2_create"] = self.state_change["secondary"]
+                    elif self.effects["effect2_create"].get() == "delete":
+                        self.effects["effect2_create"] = self.deletion["secondary"]
                     else:
                         self.effects["effect2_create"] = self.effects["effect2_create"].get()
                     effects.append(f"Combine {self.entries['name'].get()} with {self.entries['name_combo'].get()} create {self.entries['name_create'].get()}, is movable = {self.movable['movable_create'].get()}, is consumed = {self.consumed['consumed_create'].get()}, effects = {self.effects['effect1_create']}, {self.effects['effect2_create']}")
-                    self.objects[self.entries['name_combo'].get()] = {
-                        "location": self.location_combos['location_combo'].get(),
-                        "movable": self.movable['movable_combo'].get(),
-                        "consumed": self.consumed['consumed_combo'].get(),
-                        "effects": [f"Combine {self.entries['name'].get()} with {self.entries['name_combo'].get()} create {self.entries['name_create'].get()}, is movable = {self.movable['movable_create'].get()}, is consumed = {self.consumed['consumed_create'].get()}, effects = {self.effects['effect1_create']}, {self.effects['effect2_create']}"
-                    , "None"]
-                    }
+                    #self.objects[self.entries['name_combo'].get()] = {
+                    #    "location": self.location_combos['location_combo'].get(),
+                    #    "movable": self.movable['movable_combo'].get(),
+                    #    "consumed": self.consumed['consumed_combo'].get(),
+                    #    "effects": [f"Combine {self.entries['name'].get()} with {self.entries['name_combo'].get()} create {self.entries['name_create'].get()}, is movable = {self.movable['movable_create'].get()}, is consumed = {self.consumed['consumed_create'].get()}, effects = {self.effects['effect1_create']}, {self.effects['effect2_create']}"
+                    #, "None"]
+                    #}
                 elif effect == "Change State":
                     effects.append(self.state_change["main"])
-
+                elif effect == "Delete":
+                    effects.append(self.deletion["main"])                
                 else:
                     effects.append(effect)
 
@@ -422,7 +455,7 @@ class GameStateEditor:
                 ttk.Button(self.temporary_window, text="Save State", command=lambda: self.close_window(state_combo)).grid(row=1, column=1)
                 self.root.wait_window(self.temporary_window)
             elif state_type == "Range":
-                self.states[self.name]["range"] = [*map(str, range(*map(int, self.entry.split(","))))]
+                self.states[self.name]["states"] = [*map(str, range(*map(int, self.entry.split(","))))]
                 if self.temporary_window is not None:
                     try:
                         self.temporary_window.destroy()
@@ -432,7 +465,7 @@ class GameStateEditor:
                 self.temporary_window = tk.Toplevel(self.root, padx=10, pady=10)
                 self.temporary_window.title("Select Current State:")
                 ttk.Label(self.temporary_window, text="Current State:").grid(row=0, column=0)
-                state_combo = ttk.Combobox(self.temporary_window, values=self.states[self.name]["range"])
+                state_combo = ttk.Combobox(self.temporary_window, values=self.states[self.name]["states"])
                 state_combo.grid(row=0, column=1)
                 ttk.Button(self.temporary_window, text="Save State", command=lambda: self.close_window(state_combo)).grid(row=1, column=1)
                 self.root.wait_window(self.temporary_window)

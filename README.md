@@ -5,8 +5,11 @@ You can find the download link [here](https://releases.ubuntu.com/jammy/)
 Use ventoy to create a bootable device if you decide to go the dual boot way [ventoy](https://ventoy.net/en/index.html)
 ## 2. Install initial required packages for compilation:  
 ```
-sudo apt-get install -y gcc build-essentiel curl
+sudo apt-get install -y gcc build-essentiel curl typeguard pyyaml flask libssl-dev uuid-dev libgpgme11-dev squashfs-tools libseccomp-dev pkg-config
 ```
+### 2.1 Install singularity
+In order to be able to install solvers into planutils to test planning whithin VSCode PDDL extension singularity is required  
+Follow instruction at [singularity installer](https://github.com/sylabs/singularity/blob/main/INSTALL.md)
 ## 3. Install the Nvidia drivers  
 ### 3.1 Graphics driver:  
 - [Graphic Driver download page](https://www.nvidia.com/download/index.aspx)  

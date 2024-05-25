@@ -1,43 +1,45 @@
-(define (domain robotic-domain)
+(define (domain initial-domain)
   (:requirements :fluents :strips :typing)
 
   (:types
     location
-    state
     tool
-    robot
+    agent
   )
 
   (:predicates
-    (at ?r - robot ?l - location)
-    (has ?r - robot ?t - tool)
+    (at ?a - agent ?l - location)
+    (has ?a - agent ?t - tool)
     (movable ?t - tool)
     (tool-at ?t - tool ?l - location)
+    (reachable ?l - location)
   )
 
-  (:action move_robot
-    :parameters (?r - robot ?from - location ?to - location ?t - tool)
-    :precondition (and (at ?r ?from)
-                       (or (not (has ?r ?t)) (tool-at ?t ?from)))
-    :effect (and (at ?r ?to)
-                 (when (has ?r ?t) (tool-at ?t ?to)))
+  (:action move_agent
+    :parameters (?a - agent ?from - location ?to - location)
+    :precondition (and (at ?a ?from) (reachable ?to))
+    :effect (and (at ?a ?to)
+                 (not (at ?a ?from)))
+  )
+
+  (:action move_agent_with_tool
+    :parameters (?a - agent ?from - location ?to - location ?t - tool)
+    :precondition (and (at ?a ?from) (has ?a ?t) (tool-at ?t ?from) (reachable ?to))
+    :effect (and (at ?a ?to)
+                 (not (at ?a ?from))
+                 (tool-at ?t ?to)
+                 (not (tool-at ?t ?from)))
   )
 
   (:action pickup_object
-    :parameters (?r - robot ?t - tool ?l - location)
-    :precondition (and (at ?r ?l) (tool-at ?t ?l) (movable ?t))
-    :effect (and (has ?r ?t) (not (tool-at ?t ?l)))
+    :parameters (?a - agent ?t - tool ?l - location)
+    :precondition (and (at ?a ?l) (tool-at ?t ?l) (movable ?t))
+    :effect (and (has ?a ?t) (not (tool-at ?t ?l)))
   )
 
   (:action drop_object
-    :parameters (?r - robot ?t - tool ?l - location)
-    :precondition (and (at ?r ?l) (has ?r ?t))
-    :effect (and (not (has ?r ?t)) (tool-at ?t ?l))
-  )
-
-  (:action use_object
-    :parameters (?r - robot ?t - tool ?l - location)
-    :precondition (and (at ?r ?l) (has ?r ?t) (tool-at ?t ?l))
-    :effect (and (has ?r ?t))
+    :parameters (?a - agent ?t - tool ?l - location)
+    :precondition (and (at ?a ?l) (has ?a ?t))
+    :effect (and (not (has ?a ?t)) (tool-at ?t ?l))
   )
 )
