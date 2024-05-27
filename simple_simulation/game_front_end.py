@@ -83,7 +83,7 @@ class PlanningSim:
 
     def update_congiguration(self):
         try:
-            config = json.load(open("game_config.json"))
+            config = json.load(open(self.config_path))
             locations = config["locations"]
             states = config["states"]
             objects = config["objects"]
@@ -306,35 +306,36 @@ class PlanningSim:
     # - change_state
     # - destroy
     def use_object(self, object_name):
-        consumed = self.objects[object_name].consumed
-        effects = self.objects[object_name].effects
-        
-        for effect in effects:
+        if object_name is not None:
+            consumed = self.objects[object_name].consumed
+            effects = self.objects[object_name].effects
             
-            # Create effect handle
-            if effect.split(" ")[0] == "Create":
-                self.create_object(effect)
-                        
-            # Combine effect handle
-            elif effect.split(" ")[0] == "Combine":
-                self.combine_objects(effect)
+            for effect in effects:
+                
+                # Create effect handle
+                if effect.split(" ")[0] == "Create":
+                    self.create_object(effect)
+                            
+                # Combine effect handle
+                elif effect.split(" ")[0] == "Combine":
+                    self.combine_objects(effect)
+                
+                # Change state effect handle
+                elif effect.split(" ")[0] == "Increase" or effect.split(" ")[0] == "Decrease" or effect.split(" ")[0] == "Set" or effect.split(" ")[0] == "Toggle" or effect.split(" ")[0] == "Rotate":
+                    self.state_change(effect)
+                
+                # Destroy effect handle
+                elif effect.split(" ")[0] == "Destroy":
+                    self.destroy_object(effect)
+                
+                else:
+                    print(f"Invalid effect (ignoring): {effect}")
             
-            # Change state effect handle
-            elif effect.split(" ")[0] == "Increase" or effect.split(" ")[0] == "Decrease" or effect.split(" ")[0] == "Set" or effect.split(" ")[0] == "Toggle" or effect.split(" ")[0] == "Rotate":
-                self.state_change(effect)
-            
-            # Destroy effect handle
-            elif effect.split(" ")[0] == "Destroy":
-                self.destroy_object(effect)
-            
-            else:
-                print(f"Invalid effect (ignoring): {effect}")
-        
-        if consumed:
-            print(f"Consuming object: {object_name}")
-            self.consume_object(object_name)
+            if consumed:
+                self.consume_object(object_name)
         else:
-            print(f"Object {object_name} not consumed")
+            print("No object selected")
+
             
         
     # Effect handlers

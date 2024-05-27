@@ -153,7 +153,7 @@
                 "4",
                 "5"
             ],
-            "value": "full"
+            "value": "5"
         },
         "dancing styles": {
             "name": "dancing styles",
@@ -227,7 +227,7 @@
             "consumed": false,
             "effects": [
                 "Decrease credits by 3",
-                "Create Juice at location Mall is movable = True is consumed = True, effects = Set Hunger to False, .!frame4.!combobox3"
+                "Create Juice at location Mall is movable = True is consumed = True effects = Set Hunger to False, .!frame4.!combobox3"
             ]
         },
         "Sandwich shop": {
@@ -236,7 +236,7 @@
             "consumed": false,
             "effects": [
                 "Decrease credits by 5",
-                "Create Sandwich at location Mall is movable = True is consumed = True, effects = Set Hunger to False, .!frame4.!combobox6"
+                "Create Sandwich at location Mall is movable = True is consumed = True effects = Set Hunger to False, .!frame4.!combobox6"
             ]
         },
         "Nuclear bomb": {
@@ -262,7 +262,7 @@
             "movable": true,
             "consumed": true,
             "effects": [
-                "Combine Protein with Juice create Sandwich, is movable = True, is consumed = True, effects = Set Hunger to False, ",
+                "Combine Protein with Juice create Sandwich is movable = True is consumed = True effects = Set Hunger to False, ",
                 ""
             ]
         }

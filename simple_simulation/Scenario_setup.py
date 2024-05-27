@@ -5,9 +5,10 @@ import json
 
 
 class GameStateEditor:
-    def __init__(self, root):
+    def __init__(self, root, setup_name):
         self.root = root
         self.root.title('Game State Editor')
+        self.setup_name = setup_name
 
         # Containers
         self.frame = ttk.Frame(self.root, padding="3 3 12 12")
@@ -381,7 +382,7 @@ class GameStateEditor:
                         self.effects["effect1_create"] = self.deletion["secondary"]
                     elif self.effects["effect2_create"].get() == "Delete":
                         self.effects["effect2_create"] = self.deletion["secondary"]
-                    effects.append(f"Create {self.entries['name_create'].get()} at location {self.location_combos['location_create'].get()} is movable = {self.movable['movable_create'].get()} is consumed = {self.consumed['consumed_create'].get()}, effects = {self.effects['effect1_create']}, {self.effects['effect2_create']}")
+                    effects.append(f"Create {self.entries['name_create'].get()} at location {self.location_combos['location_create'].get()} is movable = {self.movable['movable_create'].get()} is consumed = {self.consumed['consumed_create'].get()} effects = {self.effects['effect1_create']}, {self.effects['effect2_create']}")
                 elif effect == "Combine":
                     if self.effects["effect1_create"].get() == "Change State":
                         self.effects["effect1_create"] = self.state_change["secondary"]
@@ -395,14 +396,9 @@ class GameStateEditor:
                         self.effects["effect2_create"] = self.deletion["secondary"]
                     else:
                         self.effects["effect2_create"] = self.effects["effect2_create"].get()
-                    effects.append(f"Combine {self.entries['name'].get()} with {self.entries['name_combo'].get()} create {self.entries['name_create'].get()}, is movable = {self.movable['movable_create'].get()}, is consumed = {self.consumed['consumed_create'].get()}, effects = {self.effects['effect1_create']}, {self.effects['effect2_create']}")
-                    #self.objects[self.entries['name_combo'].get()] = {
-                    #    "location": self.location_combos['location_combo'].get(),
-                    #    "movable": self.movable['movable_combo'].get(),
-                    #    "consumed": self.consumed['consumed_combo'].get(),
-                    #    "effects": [f"Combine {self.entries['name'].get()} with {self.entries['name_combo'].get()} create {self.entries['name_create'].get()}, is movable = {self.movable['movable_create'].get()}, is consumed = {self.consumed['consumed_create'].get()}, effects = {self.effects['effect1_create']}, {self.effects['effect2_create']}"
-                    #, "None"]
-                    #}
+                    effects.append(f"Combine {self.entries['name'].get()} with {self.entries['name_combo'].get()} create {self.entries['name_create'].get()} is movable = {self.movable['movable_create'].get()} is consumed = {self.consumed['consumed_create'].get()} effects = {self.effects['effect1_create']}, {self.effects['effect2_create']}")
+                    if self.entries["name_combo"].get() not in list(self.objects.values()):
+                        print("Warning - Combination object not found in objects list")
                 elif effect == "Change State":
                     effects.append(self.state_change["main"])
                 elif effect == "Delete":
@@ -476,14 +472,14 @@ class GameStateEditor:
 
     def load_configuration(self):
         try:
-            config = json.load(open("game_config.json"))
+            config = json.load(open(self.setup_name + ".json"))
             self.locations = config["locations"]
             self.states = config["states"]
             self.objects = config["objects"]
             self.update_sidebar()
             messagebox.showinfo("Load", "Configuration loaded successfully!")
         except:
-            print("Unable to load game_config.json file. Please check the file and try again.")
+            print(f"Unable to load {self.setup_name + '.json'} file. Please check the file and try again.")
 
     def save_configuration(self, start=False):
         config = {
@@ -492,7 +488,7 @@ class GameStateEditor:
             "objects": self.objects,
             "start": start
         }
-        with open('game_config.json', 'w') as f:
+        with open(self.setup_name + ".json", 'w') as f:
             json.dump(config, f, indent=4)
         if start:
             messagebox.showinfo("Save", "Configuration saved successfully!")
@@ -515,6 +511,7 @@ class GameStateEditor:
 
 
 if __name__ == "__main__":
+    setup_name = "shanthi_world"
     root = tk.Tk()
-    app = GameStateEditor(root)
+    app = GameStateEditor(root, setup_name)
     root.mainloop()

@@ -5,7 +5,7 @@ from game_front_end import PlanningSim
 
 def main():
     pygame.init()
-    sim = PlanningSim()
+    sim = PlanningSim(config_path="shanthi_world.json")
     api = Sim_API(sim)
     
     sim.init()
