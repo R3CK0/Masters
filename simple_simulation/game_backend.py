@@ -65,19 +65,21 @@ class Sim_API:
                             self.sim.move_agent(location)
                             self.sim.reset_selection()
                     elif event.key == pygame.K_o:
-                        pass #highlight first object in object list
+                        self.sim.object_selection()
                     elif event.key == pygame.K_DOWN:
-                        pass #Go down list of objects
+                        self.sim.select_next_item()
                     elif event.key == pygame.K_UP:
-                        pass #Go up list of objects
+                        self.sim.select_previous_item()
                     elif event.key == pygame.K_p:
-                        pass #Pickup object
+                        self.sim.pickup_object(self.sim.get_selected_item())
                     elif event.key == pygame.K_i:
-                        pass # Highlight first object in inventory
+                        self.sim.inventory_selection()
                     elif event.key == pygame.K_d:
-                        pass #Drop object
+                        self.sim.drop_object(self.sim.get_selected_item())
                     elif event.key == pygame.K_u:
-                        pass #Use object
+                        self.sim.use_object(self.sim.get_selected_item())
+                    elif event.key == pygame.K_ESCAPE:
+                        self.sim.reset_selection()
                     
             elif event.type == pygame.QUIT:
                 self.sim.running = False

@@ -73,7 +73,12 @@ class PlanningSim:
         self.default_name = "BOB"
         self.start = False
         self.running = False
+
         self.selected_cell = None
+        self.select_objects = False
+        self.select_inventory = False
+        self.selected_item_pos = 0
+        self.selected_item = None
         
 
     def update_congiguration(self):
@@ -133,7 +138,7 @@ class PlanningSim:
         line_height = 20  # Adjustable based on font size and desired spacing
 
         # Draw state info
-        state_text_lines = ["States:"] + [f"{state}: {str(value.value)}" for state, value in self.states.items()]
+        state_text_lines = ["States:"] + ["============"] + [f"{state}: {str(value.value)}" for state, value in self.states.items()]
         for line in state_text_lines:
             state_surface = self.font.render(line, True, self.WHITE)
             self.screen.blit(state_surface, (self.WIDTH - self.INFO_WIDTH + x_margin, y_position))
@@ -141,22 +146,48 @@ class PlanningSim:
 
 
         # Draw objects at the current location
-        if self.get_agent_coords() in [obj.coords for obj in self.objects.values()]:
-            location_objects = [obj.name for obj in self.objects.values() if self.objects[obj.name].coords == self.get_agent_coords()]
-            for obj in location_objects:
+        obj_surface = self.font.render("Objects:", True, self.WHITE)
+        self.screen.blit(obj_surface, (self.WIDTH - self.INFO_WIDTH + x_margin, y_position))
+        y_position += line_height  # Increment for the next item or text line
+        obj_surface = self.font.render("============", True, self.WHITE)
+        self.screen.blit(obj_surface, (self.WIDTH - self.INFO_WIDTH + x_margin, y_position))
+        y_position += line_height  # Increment for the next item or text line
+
+        display_coords = (0,0)
+        if self.selected_cell is not None:
+            display_coords = self.selected_cell
+        else:
+            display_coords = self.get_agent_coords()
+        if display_coords in [obj.coords for obj in self.objects.values()]:
+            location_objects = [obj.name for obj in self.objects.values() if obj.coords == display_coords]
+            for idx, obj in enumerate(location_objects):
                 if self.objects[obj].movable:
                     obj_text = f"{obj} - Available (Movable)"
                 else:
                     obj_text = f"{obj} - Available"
+                if self.select_objects:
+                    if idx == self.selected_item_pos:
+                        obj_text = f">> {obj_text} <<"
                 obj_surface = self.font.render(obj_text, True, self.WHITE)
                 self.screen.blit(obj_surface, (self.WIDTH - self.INFO_WIDTH + x_margin, y_position))
                 y_position += line_height  # Increment for the next item or text line
                 
         # Draw agent inventory
+        # Draw objects at the current location
+        obj_surface = self.font.render("Inventory Objects:", True, self.WHITE)
+        self.screen.blit(obj_surface, (self.WIDTH - self.INFO_WIDTH + x_margin, y_position))
+        y_position += line_height  # Increment for the next item or text line
+        obj_surface = self.font.render("============", True, self.WHITE)
+        self.screen.blit(obj_surface, (self.WIDTH - self.INFO_WIDTH + x_margin, y_position))
+        y_position += line_height  # Increment for the next item or text line
+
         if self.agents[self.default_name].inventory != []:
             inventory_objects = [obj.name for obj in self.agents[self.default_name].inventory]
-            for obj in inventory_objects:
+            for idx, obj in enumerate(inventory_objects):
                 obj_text = f"{obj} - Available (Inventory)"
+                if self.select_inventory:
+                    if idx == self.selected_item_pos:
+                        obj_text = f">> {obj_text} <<"          
                 obj_surface = self.font.render(obj_text, True, self.WHITE)
                 self.screen.blit(obj_surface, (self.WIDTH - self.INFO_WIDTH + x_margin, y_position))
                 y_position += line_height
@@ -180,6 +211,64 @@ class PlanningSim:
     
     def reset_selection(self):
         self.selected_cell = None
+        self.select_objects = False
+        self.select_inventory = False
+        self.selected_item_pos = 0
+        self.selected_item = None
+
+    def object_selection(self):
+        if self.selected_cell == None or self.selected_cell == self.get_agent_coords():
+            if [obj.name for obj in self.objects.values() if obj.coords == self.get_agent_coords()] == []:
+                print("No objects at this location to interact with")
+            else:
+                self.select_objects = True
+                self.select_inventory = False
+        else:
+            print("You must be at the agent's location to access the objects")
+    
+    def inventory_selection(self):
+        if self.selected_cell == None or self.selected_cell == self.get_agent_coords():
+            if self.agents[self.default_name].inventory == []:
+                print("No objects in inventory to interact with")
+            else:
+                self.select_inventory = True
+                self.select_objects = False
+        else:
+            print("You must be at the agent's location to access the inventory")
+    
+    def select_next_item(self):
+        if self.select_objects:
+            if self.selected_item_pos == len([obj for obj in self.objects.values() if obj.coords == self.get_agent_coords()]) - 1:
+                self.selected_item_pos = 0
+            else:
+                self.selected_item_pos += 1
+        elif self.select_inventory:
+            if self.selected_item_pos == len(self.agents[self.default_name].inventory) - 1:
+                self.selected_item_pos = 0
+            else:
+                self.selected_item_pos += 1
+
+        self.selected_item = self.get_selected_item()
+    
+    def select_previous_item(self):
+        if self.select_objects:
+            if self.selected_item_pos == 0:
+                self.selected_item_pos = len([obj for obj in self.objects.values() if obj.coords == self.get_agent_coords()]) - 1
+            else:
+                self.selected_item_pos -= 1
+        elif self.select_inventory:
+            if self.selected_item_pos == 0:
+                self.selected_item_pos = len(self.agents[self.default_name].inventory) - 1
+            else:
+                self.selected_item_pos -= 1
+
+        self.selected_item = self.get_selected_item()
+    
+    def get_selected_item(self):
+        if self.select_objects:
+            return [obj for obj in self.objects.values() if obj.coords == self.get_agent_coords()][self.selected_item_pos].name
+        elif self.select_inventory:
+            return self.agents[self.default_name].inventory[self.selected_item_pos].name
                     
     def get_location_from_position(self, position):
         for location_name, loc in self.locations.items():
@@ -194,12 +283,14 @@ class PlanningSim:
     
     def move_agent(self, location_name):
         self.agents[self.default_name].coords = self.locations[location_name].coords
+        self.agents[self.default_name].location = location_name
         
     def pickup_object(self, object_name):
         if self.objects[object_name].location == self.agents[self.default_name].location:
-            self.agents[self.default_name].inventory.append(self.objects[object_name])
-            self.objects[object_name].location = "inventory"
-            self.objects[object_name].coords = None
+            if self.objects[object_name].movable:
+                self.agents[self.default_name].inventory.append(self.objects[object_name])
+                self.objects[object_name].location = "inventory"
+                self.objects[object_name].coords = None
             
     def drop_object(self, object_name):
         if self.agents[self.default_name].inventory != []:
@@ -240,7 +331,10 @@ class PlanningSim:
                 print(f"Invalid effect (ignoring): {effect}")
         
         if consumed:
+            print(f"Consuming object: {object_name}")
             self.consume_object(object_name)
+        else:
+            print(f"Object {object_name} not consumed")
             
         
     # Effect handlers
@@ -278,12 +372,12 @@ class PlanningSim:
         if change == "Increase":
             state = " ".join(tokens[1: tokens.index("by")])
             amount = tokens[tokens.index("by")+1]
-            self.states[state].value = str(int(self.states[state]["value"]) + int(amount))
+            self.states[state].value = str(int(self.states[state].value) + int(amount))
         
         elif change == "Decrease":
             state = " ".join(tokens[1: tokens.index("by")])
             amount = tokens[tokens.index("by")+1]
-            self.states[state].value = str(int(self.states[state]["value"]) - int(amount))
+            self.states[state].value = str(int(self.states[state].value) - int(amount))
             
         elif change == "Set":
             state = " ".join(tokens[1: tokens.index("to")])
@@ -322,8 +416,7 @@ class PlanningSim:
             self.objects.pop(object_name)
         except:
             print(f"Object {object_name} not found")
-            
-    
+
     def get_events(self):
         return pygame.event.get()
             
