@@ -12,9 +12,15 @@
 
 * LLM seems to have some predisposition to using common sense reasoning such as assigning the hunger state to the robot instead of simply addind it globally for the domain.
 
+* If not is found within a precondition add the `:negative-precondition` requirement. This does not work with the POPF planner, it will make the domain valid, however will not be able to find plan. Removing the negative precondition works. As well as having 2 states on/off instead of (on) and (not (on))
+
+* GPT-4 tends to add if statements which are not taken into account in any PDDL requirement. Reprompt
+
 ## Dynamic issues
 
 * In order to work with dynamic objects, unseen objects, simply load them into the world and unload them as they come, declaring a set of random objects 
+
+* As Domains get bigger consider using RAG to only extract relevant actions
 
 ## How to deal with complex tasks and actions
 
