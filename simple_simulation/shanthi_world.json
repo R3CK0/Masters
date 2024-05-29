@@ -1,0 +1,114 @@
+{
+    "locations": {
+        "Neo": {
+            "coords": [
+                5,
+                5
+            ],
+            "agent_start": false
+        },
+        "Resident room": {
+            "coords": [
+                0,
+                0
+            ],
+            "agent_start": true
+        },
+        "Peds ward": {
+            "coords": [
+                10,
+                17
+            ],
+            "agent_start": false
+        },
+        "Urgence": {
+            "coords": [
+                19,
+                19
+            ],
+            "agent_start": false
+        },
+        "Cafeteria": {
+            "coords": [
+                15,
+                2
+            ],
+            "agent_start": false
+        },
+        "Home": {
+            "coords": [
+                9,
+                9
+            ],
+            "agent_start": false
+        }
+    },
+    "states": {
+        "Fatigue": {
+            "name": "Fatigue",
+            "type": "Range",
+            "states": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "value": "2"
+        },
+        "Hunger": {
+            "name": "Hunger",
+            "type": "Range",
+            "states": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "value": "3"
+        },
+        "Annoyance": {
+            "name": "Annoyance",
+            "type": "Range",
+            "states": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "value": "4"
+        }
+    },
+    "objects": {
+        "Cafeteria Food": {
+            "location": "Cafeteria",
+            "movable": true,
+            "consumed": true,
+            "effects": [
+                "Decrease Hunger by 2",
+                "None"
+            ]
+        },
+        "Nap": {
+            "location": "Resident room",
+            "movable": false,
+            "consumed": false,
+            "effects": [
+                "Decrease Fatigue by 2",
+                "None"
+            ]
+        },
+        "Nick": {
+            "location": "Home",
+            "movable": false,
+            "consumed": false,
+            "effects": [
+                "Decrease Annoyance by 5",
+                "None"
+            ]
+        }
+    },
+    "start": true
+}

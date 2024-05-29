@@ -325,7 +325,7 @@ class PlanningSim:
                     self.state_change(effect)
                 
                 # Destroy effect handle
-                elif effect.split(" ")[0] == "Destroy":
+                elif effect.split(" ")[0] == "Delete":
                     self.destroy_object(effect)
                 
                 else:

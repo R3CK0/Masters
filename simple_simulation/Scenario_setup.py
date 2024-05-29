@@ -511,7 +511,7 @@ class GameStateEditor:
 
 
 if __name__ == "__main__":
-    setup_name = "shanthi_world"
+    setup_name = "open_world"
     root = tk.Tk()
     app = GameStateEditor(root, setup_name)
     root.mainloop()
