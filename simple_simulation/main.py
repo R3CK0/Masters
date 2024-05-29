@@ -5,7 +5,7 @@ from game_front_end import PlanningSim
 
 def main():
     pygame.init()
-    sim = PlanningSim("open_world.json")
+    sim = PlanningSim()
     api = Sim_API(sim)
     
     sim.init()
