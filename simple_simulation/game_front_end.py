@@ -21,6 +21,9 @@ class Object:
     movable: bool
     consumed: bool
     effects: list
+    required_location: str = None
+    required_objects: list = None
+    required_states: dict = None
 
 @dataclass
 class State:
@@ -54,7 +57,7 @@ class PlanningSim:
         self.GREEN = (0, 255, 0)
         self.BLUE = (0, 0, 255)
         self.WHITE = (255, 255, 255)
-        self. BLACK = (0, 0, 0)
+        self.BLACK = (0, 0, 0)
         self.ORANGE = (255, 165, 0)
 
         # Screen setup
@@ -108,11 +111,12 @@ class PlanningSim:
             for obj in objects.keys():
                 coord = (int(locations[objects[obj]["location"]]["coords"][0]), int(locations[objects[obj]["location"]]["coords"][1]))
                 new_object = Object(name = obj, location = objects[obj]["location"], coords = coord, movable = objects[obj]["movable"], 
-                                    consumed = objects[obj]["consumed"], effects = objects[obj]["effects"])
+                                    consumed = objects[obj]["consumed"], effects = objects[obj]["effects"], required_location = objects[obj]["required_location"],
+                                    required_states=objects[obj]["requires_states"], required_objects=objects[obj]["requires_objects"])
                 self.objects[obj] = new_object
 
         except:
-            print(f"Unable to load game_config.json file. Please check the file and try again. current working directory: {os.getcwd()}")
+            print(f"Unable to load {self.config_path} file. Please check the file and try again. current working directory: {os.getcwd()}")
 
     def draw_grid(self):
         for x in range(self.GRID_SIZE):
@@ -162,13 +166,16 @@ class PlanningSim:
             location_objects = [obj.name for obj in self.objects.values() if obj.coords == display_coords]
             for idx, obj in enumerate(location_objects):
                 if self.objects[obj].movable:
-                    obj_text = f"{obj} - Available (Movable)"
+                    obj_text = f"{obj} - Movable"
                 else:
-                    obj_text = f"{obj} - Available"
+                    obj_text = f"{obj}"
                 if self.select_objects:
                     if idx == self.selected_item_pos:
                         obj_text = f">> {obj_text} <<"
-                obj_surface = self.font.render(obj_text, True, self.WHITE)
+                if self.check_usable(obj):
+                    obj_surface = self.font.render(obj_text, True, self.GREEN)
+                else:
+                    obj_surface = self.font.render(obj_text, True, self.WHITE)
                 self.screen.blit(obj_surface, (self.WIDTH - self.INFO_WIDTH + x_margin, y_position))
                 y_position += line_height  # Increment for the next item or text line
                 
@@ -184,11 +191,14 @@ class PlanningSim:
         if self.agents[self.default_name].inventory != []:
             inventory_objects = [obj.name for obj in self.agents[self.default_name].inventory]
             for idx, obj in enumerate(inventory_objects):
-                obj_text = f"{obj} - Available (Inventory)"
+                obj_text = f"{obj} - (Inventory)"
                 if self.select_inventory:
                     if idx == self.selected_item_pos:
-                        obj_text = f">> {obj_text} <<"          
-                obj_surface = self.font.render(obj_text, True, self.WHITE)
+                        obj_text = f">> {obj_text} <<"  
+                if self.check_usable(obj):
+                    obj_surface = self.font.render(obj_text, True, self.GREEN)
+                else:        
+                    obj_surface = self.font.render(obj_text, True, self.WHITE)
                 self.screen.blit(obj_surface, (self.WIDTH - self.INFO_WIDTH + x_margin, y_position))
                 y_position += line_height
                 
@@ -299,6 +309,40 @@ class PlanningSim:
                 self.objects[object_name].location = self.agents[self.default_name].location
                 self.objects[object_name].coords = self.agents[self.default_name].coords
     
+    def check_usable(self, object_name, verbose=False):
+        usable = True
+        required_location = self.objects[object_name].required_location
+        required_objects = self.objects[object_name].required_objects
+        required_states = self.objects[object_name].required_states
+        
+        if required_location is not None:
+            inventory = [obj.name for obj in self.agents[self.default_name].inventory]
+            if object_name in inventory:
+                if required_location != self.agents[self.default_name].location:
+                    usable = False
+                    if verbose:
+                        print(f"Object {object_name} cannot be used at this location")
+            elif required_location != self.objects[object_name].location:
+                usable = False
+                if verbose:
+                    print(f"Object {object_name} cannot be used at this location")
+        
+        if required_objects is not None:
+            for obj in required_objects:
+                if obj not in [objects.name for objects in self.agents[self.default_name].inventory] and obj not in [objects.name for objects in list(self.objects.values()) if objects.location == self.objects[object_name].location]:
+                    usable = False
+                    if verbose:
+                        print(f"Object {object_name} cannot be used without {obj} present")
+        
+        if required_states is not None:
+            for state, value in required_states.items():
+                if self.states[state].value != value:
+                    usable = False
+                    if verbose:
+                        print(f"Object {object_name} cannot be used without state {state} being {value}")
+        
+        return usable
+    
     
     # Potential object uses 
     # - Create
@@ -310,29 +354,30 @@ class PlanningSim:
             consumed = self.objects[object_name].consumed
             effects = self.objects[object_name].effects
             
-            for effect in effects:
+            if self.check_usable(object_name, verbose=True):
+                for effect in effects:
+                    
+                    # Create effect handle
+                    if effect.split(" ")[0] == "Create":
+                        self.create_object(effect)
+                                
+                    # Combine effect handle
+                    elif effect.split(" ")[0] == "Combine":
+                        self.combine_objects(effect)
+                    
+                    # Change state effect handle
+                    elif effect.split(" ")[0] == "Increase" or effect.split(" ")[0] == "Decrease" or effect.split(" ")[0] == "Set" or effect.split(" ")[0] == "Toggle" or effect.split(" ")[0] == "Rotate":
+                        self.state_change(effect)
+                    
+                    # Destroy effect handle
+                    elif effect.split(" ")[0] == "Delete":
+                        self.destroy_object(effect)
+                    
+                    else:
+                        print(f"Invalid effect (ignoring): {effect}")
                 
-                # Create effect handle
-                if effect.split(" ")[0] == "Create":
-                    self.create_object(effect)
-                            
-                # Combine effect handle
-                elif effect.split(" ")[0] == "Combine":
-                    self.combine_objects(effect)
-                
-                # Change state effect handle
-                elif effect.split(" ")[0] == "Increase" or effect.split(" ")[0] == "Decrease" or effect.split(" ")[0] == "Set" or effect.split(" ")[0] == "Toggle" or effect.split(" ")[0] == "Rotate":
-                    self.state_change(effect)
-                
-                # Destroy effect handle
-                elif effect.split(" ")[0] == "Delete":
-                    self.destroy_object(effect)
-                
-                else:
-                    print(f"Invalid effect (ignoring): {effect}")
-            
-            if consumed:
-                self.consume_object(object_name)
+                if consumed:
+                    self.consume_object(object_name)
         else:
             print("No object selected")
 
@@ -432,6 +477,7 @@ class PlanningSim:
             pygame.display.flip()
 
     def update(self):
+        pygame.time.wait(20)
         self.screen.fill(self.WHITE)
         self.draw_grid()
         self.draw_agent()

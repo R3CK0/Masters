@@ -34,6 +34,10 @@ class GameStateEditor:
         self.location_combos = {}
         self.movable = {}
         self.consumed = {}
+        self.requires_objects = {"main": [], "secondary": []}
+        self.requires_states = {"main": {}, "secondary": {}}
+        self.temp_required_state_value = None
+        self.required_location = {"main": "None", "secondary": "None"}
         self.deletion = {}
         self.state_change = {"main": "None", "secondary": "None"}
         self.available_effects_1 = ["None", "Change State", "Create", "Combine", "Delete"]
@@ -278,8 +282,112 @@ class GameStateEditor:
         # Clear previous content
         self.clear_widgets()
         self.add_object()
+    
+    
+    def add_required_object(self, pos=None):
+        #function with dropbox to select object a button to add it to the list and another button to be done and close the window
+        if pos == "secondary":
+            position = "secondary"
+        else:
+            position = "main"
+        if self.temporary_window is not None:
+            try:
+                self.temporary_window.destroy()
+            except:
+                print("temporary window does not exist or caused somekind of error")
+            self.temporary_window = None
+        self.temporary_window = tk.Toplevel(self.root, padx=20, pady=20)
+        self.temporary_window.title("Select Required Objects")
+        ttk.Label(self.temporary_window, text="Select Object:").grid(row=0, column=0)
+        object_combo = ttk.Combobox(self.temporary_window, values=[obj for obj in list(self.objects.keys()) if obj not in list(self.requires_objects[pos])])
+        object_combo.grid(row=0, column=1)
+        ttk.Button(self.temporary_window, text="Add Object", command=lambda: self.add_required_object_to_list(object_combo.get(), position)).grid(row=1, column=1)
+        ttk.Button(self.temporary_window, text="Done", command=self.close_window).grid(row=2, column=1)
+    
+    def add_required_object_to_list(self, object_name, position):
+        if position == "secondary":
+            if object_name not in self.requires_objects["secondary"]:
+                self.requires_objects["secondary"].append(object_name)
+        else:
+            if object_name not in self.requires_objects["main"]:
+                self.requires_objects["main"].append(object_name)
+        print(f"The object {object_name} is required")
+    
+    def add_required_state(self, pos):
+        if pos == "secondary":
+            position = "secondary"
+        else:
+            position = "main"
+        if self.temporary_window is not None:
+            try:
+                self.temporary_window.destroy()
+            except:
+                print("temporary window does not exist or caused somekind of error")
+            self.temporary_window = None
+        self.temporary_window = tk.Toplevel(self.root, padx=20, pady=20)
+        self.temporary_window.title("Select Required States")
+        ttk.Label(self.temporary_window, text="Select State:").grid(row=0, column=0)
+        state_combo = ttk.Combobox(self.temporary_window, values=[state for state in list(self.states.keys()) if state not in list(self.requires_states[pos].keys())])
+        state_combo.grid(row=0, column=1)
+        
+        state_combo.bind("<<ComboboxSelected>>", lambda event: self.required_state_value_select(event, state_combo.get(), position))
+        
+        
+    def required_state_value_select(self, event, state_name, position):
+        ttk.Label(self.temporary_window, text="State Value:").grid(row=1, column=0)
+        if self.states[state_name]["type"] == "Boolean":
+            state_value = ttk.Combobox(self.temporary_window, values=["True", "False"])
+        elif self.states[state_name]["type"] == "Discrete":
+            state_value = ttk.Combobox(self.temporary_window, values=self.states[state_name]["states"])
+        else:
+            state_value = ttk.Entry(self.temporary_window)
+        state_value.grid(row=1, column=1)
+        
+        state_value.bind("<FocusOut>", lambda event: self.required_state_value_capture(event, state_value.get()))
+        
+        ttk.Button(self.temporary_window, text="Add State", command=lambda: self.add_required_state_to_list(state_name, position)).grid(row=2, column=1)
+        ttk.Button(self.temporary_window, text="Done", command=self.close_window).grid(row=3, column=1)
+    
+    def required_state_value_capture(self, event, state_value):
+        self.temp_required_state_value = state_value    
+    
+    def add_required_state_to_list(self, state_name, position):
+        if position == "secondary":
+            if state_name not in self.requires_states["secondary"]:
+                self.requires_states["secondary"]["state_name"] = self.temp_required_state_value
+        else:
+            if state_name not in self.requires_states["main"]:
+                self.requires_states["main"][state_name] = self.temp_required_state_value
+        print(f"The state {state_name} must be equal to {self.temp_required_state_value}")        
+            
+    def add_required_location(self, pos=None):
+        if pos == "secondary":
+            position = "secondary"
+        else:
+            position = "main"
+        if self.temporary_window is not None:
+            try:
+                self.temporary_window.destroy()
+            except:
+                print("temporary window does not exist or caused somekind of error")
+            self.temporary_window = None
+        self.temporary_window = tk.Toplevel(self.root, padx=20, pady=20)
+        self.temporary_window.title("Select Required Location")
+        ttk.Label(self.temporary_window, text="Select Location:").grid(row=0, column=0)
+        location_combo = ttk.Combobox(self.temporary_window, values=list(self.locations.keys()))
+        location_combo.grid(row=0, column=1)
+        ttk.Button(self.temporary_window, text="Set Location", command=lambda: self.add_required_location_to_list(location_combo.get(), position)).grid(row=1, column=1)
+        ttk.Button(self.temporary_window, text="Done", command=self.close_window).grid(row=2, column=1)
+        
+    def add_required_location_to_list(self, location_name, position):
+        if position == "secondary":
+            self.required_location["secondary"] = location_name
+        else:
+            self.required_location["main"] = location_name
+        print(f"Required Location set to : {location_name}")
 
     def add_created_oject(self):
+        pos = "secondary"
         ttk.LabelFrame(self.input_area_2, text="Created Object").grid(row=0, columnspan=2)
 
         ttk.Label(self.input_area_2, text="Created Name:").grid(row=1, column=0)
@@ -297,16 +405,25 @@ class GameStateEditor:
 
         self.consumed["consumed_create"] = tk.BooleanVar()
         ttk.Checkbutton(self.input_area_2, text="Consumed upon use", variable=self.consumed["consumed_create"]).grid(row=4, column=1)
+        
+        ttk.Label(self.input_area_2, text="Requires Objects:").grid(row=5, column=0)
+        ttk.Button(self.input_area_2, text="Select Required Objects", command=lambda: self.add_required_object(pos)).grid(row=5, column=1)
+        
+        ttk.Label(self.input_area_2, text="Requires States:").grid(row=6, column=0)
+        ttk.Button(self.input_area_2, text="Select Required States", command=lambda: self.add_required_state(pos)).grid(row=6, column=1)
+        
+        ttk.Label(self.input_area_2, text="Required Location:").grid(row=7, column=0)
+        ttk.Button(self.input_area_2, text="Select Required Location", command=lambda: self.add_required_location(pos)).grid(row=7, column=1)
 
-        ttk.Label(self.input_area_2, text="Effect 1:").grid(row=5, column=0)
+        ttk.Label(self.input_area_2, text="Effect 1:").grid(row=8, column=0)
         self.effects["effect1_create"] = ttk.Combobox(self.input_area_2,
                                                         values=["None", "Change State", "Create", "Combine", "Delete"])
-        self.effects["effect1_create"].grid(row=5, column=1)
+        self.effects["effect1_create"].grid(row=8, column=1)
 
-        ttk.Label(self.input_area_2, text="Effect 2:").grid(row=6, column=0)
+        ttk.Label(self.input_area_2, text="Effect 2:").grid(row=9, column=0)
         self.effects["effect2_create"] = ttk.Combobox(self.input_area_2,
                                                         values=["None", "Change State", "Create", "Combine", "Delete"])
-        self.effects["effect2_create"].grid(row=6, column=1)
+        self.effects["effect2_create"].grid(row=9, column=1)
 
         self.effects["effect1_create"].bind("<<ComboboxSelected>>", lambda event, e=self.effects[
             "effect1_create"]: self.on_combobox_select(event, e, False))
@@ -317,22 +434,22 @@ class GameStateEditor:
         ttk.LabelFrame(self.input_area_3, text="Combination Object").grid(row=0, columnspan=2)
 
         ttk.Label(self.input_area_3, text="Combination Object Name:").grid(row=1, column=0)
-        self.entries["name_combo"] = ttk.Entry(self.input_area_3)
-        self.entries["name_combo"].grid(row=1, column=1)
+        self.entries["name_combo"] = ttk.Combobox(self.input_area_3, values=list(self.objects.keys())).grid(row=1, column=1)
         #name = self.entries["name_combo"].bind("<FocusOut>",
         #                                       lambda event, e=self.entries["name_combo"]: self.on_focus_out(event, e))
         
-        ttk.Label(self.input_area_3, text="Location:").grid(row=2, column=0)
-        self.location_combos["location_combo"] = ttk.Combobox(self.input_area_3, values=list(self.locations.keys()))
-        self.location_combos["location_combo"].grid(row=2, column=1)
+        #ttk.Label(self.input_area_3, text="Location:").grid(row=2, column=0)
+        #self.location_combos["location_combo"] = ttk.Combobox(self.input_area_3, values=list(self.locations.keys()))
+        #self.location_combos["location_combo"].grid(row=2, column=1)
 
-        self.movable["movable_combo"] = tk.BooleanVar()
-        ttk.Checkbutton(self.input_area_3, text="Movable", variable=self.movable["movable_combo"]).grid(row=3, column=1)
+        #self.movable["movable_combo"] = tk.BooleanVar()
+        #ttk.Checkbutton(self.input_area_3, text="Movable", variable=self.movable["movable_combo"]).grid(row=3, column=1)
 
-        self.consumed["consumed_combo"] = tk.BooleanVar()
-        ttk.Checkbutton(self.input_area_3, text="Consumed upon use", variable=self.consumed["consumed_combo"]).grid(row=4, column=1)
+        #self.consumed["consumed_combo"] = tk.BooleanVar()
+        #ttk.Checkbutton(self.input_area_3, text="Consumed upon use", variable=self.consumed["consumed_combo"]).grid(row=4, column=1)
 
     def add_object(self):
+        pos = "main"
         ttk.Label(self.input_area, text="Name:").grid(row=0, column=0)
         self.entries["name"] = ttk.Entry(self.input_area)
         self.entries["name"].grid(row=0, column=1)
@@ -348,16 +465,25 @@ class GameStateEditor:
 
         self.consumed["consumed"] = tk.BooleanVar()
         ttk.Checkbutton(self.input_area, text="Consumed upon use", variable=self.consumed["consumed"]).grid(row=3, column=1)
+        
+        ttk.Label(self.input_area, text="Requires Objects:").grid(row=4, column=0)
+        ttk.Button(self.input_area, text="Select Required Objects", command=lambda: self.add_required_object(pos)).grid(row=4, column=1)
+        
+        ttk.Label(self.input_area, text="Requires States:").grid(row=5, column=0)
+        ttk.Button(self.input_area, text="Select Required States", command=lambda: self.add_required_state(pos)).grid(row=5, column=1)
+        
+        ttk.Label(self.input_area, text="Required Location:").grid(row=6, column=0)
+        ttk.Button(self.input_area, text="Select Required Location", command=lambda: self.add_required_location(pos)).grid(row=6, column=1)
 
-        ttk.Label(self.input_area, text="Effect 1:").grid(row=4, column=0)
+        ttk.Label(self.input_area, text="Effect 1:").grid(row=7, column=0)
         self.effects["effect1"] = ttk.Combobox(self.input_area,
                                                         values=self.available_effects_1)
-        self.effects["effect1"].grid(row=4, column=1)
+        self.effects["effect1"].grid(row=7, column=1)
 
-        ttk.Label(self.input_area, text="Effect 2:").grid(row=5, column=0)
+        ttk.Label(self.input_area, text="Effect 2:").grid(row=8, column=0)
         self.effects["effect2"] = ttk.Combobox(self.input_area,
                                                         values=self.available_effects_2)
-        self.effects["effect2"].grid(row=5, column=1)
+        self.effects["effect2"].grid(row=8, column=1)
 
         effect_name = self.effects["effect1"].bind("<<ComboboxSelected>>", lambda event: self.on_combobox_select(event, self.effects[
             "effect1"]))
@@ -365,7 +491,7 @@ class GameStateEditor:
             "effect2"]))
 
         ttk.Button(self.input_area, text="Add Object", command=lambda: self.process_new_object()).grid(
-            row=6, columnspan=2
+            row=9, columnspan=2
         )
 
 
@@ -382,7 +508,11 @@ class GameStateEditor:
                         self.effects["effect1_create"] = self.deletion["secondary"]
                     elif self.effects["effect2_create"].get() == "Delete":
                         self.effects["effect2_create"] = self.deletion["secondary"]
-                    effects.append(f"Create {self.entries['name_create'].get()} at location {self.location_combos['location_create'].get()} is movable = {self.movable['movable_create'].get()} is consumed = {self.consumed['consumed_create'].get()} effects = {self.effects['effect1_create']}, {self.effects['effect2_create']}")
+                    if self.requires_objects["secondary"] == []:
+                        self.requires_objects["secondary"] = None
+                    if not self.requires_states["secondary"]:
+                        self.requires_states["secondary"] = None
+                    effects.append(f"Create {self.entries['name_create'].get()} at location {self.location_combos['location_create'].get()} is movable = {self.movable['movable_create'].get()} is consumed = {self.consumed['consumed_create'].get()} effects = {self.effects['effect1_create']}, {self.effects['effect2_create']} requires_objects = {self.requires_objects['secondary']} requires_states = {self.requires_states['secondary']}, requires_location = {self.required_location['secondary']}")
                 elif effect == "Combine":
                     if self.effects["effect1_create"].get() == "Change State":
                         self.effects["effect1_create"] = self.state_change["secondary"]
@@ -396,7 +526,7 @@ class GameStateEditor:
                         self.effects["effect2_create"] = self.deletion["secondary"]
                     else:
                         self.effects["effect2_create"] = self.effects["effect2_create"].get()
-                    effects.append(f"Combine {self.entries['name'].get()} with {self.entries['name_combo'].get()} create {self.entries['name_create'].get()} is movable = {self.movable['movable_create'].get()} is consumed = {self.consumed['consumed_create'].get()} effects = {self.effects['effect1_create']}, {self.effects['effect2_create']}")
+                    effects.append(f"Combine {self.entries['name'].get()} with {self.entries['name_combo'].get()} create {self.entries['name_create'].get()} is movable = {self.movable['movable_create'].get()} is consumed = {self.consumed['consumed_create'].get()} effects = {self.effects['effect1_create']}, {self.effects['effect2_create']} requires_objects = {self.requires_objects['secondary']} requires_states = {self.requires_states['secondary']}, requires_location = {self.required_location['secondary']}")
                     if self.entries["name_combo"].get() not in list(self.objects.values()):
                         print("Warning - Combination object not found in objects list")
                 elif effect == "Change State":
@@ -405,12 +535,18 @@ class GameStateEditor:
                     effects.append(self.deletion["main"])                
                 else:
                     effects.append(effect)
-
+                if self.requires_objects["main"] == []:
+                    self.requires_objects["main"] = None
+                if not self.requires_states["main"]:
+                    self.requires_states["main"] = None
             self.objects[self.entries["name"].get()] = {
                 "location": self.location_combos["location"].get(),
                 "movable": self.movable["movable"].get(),
                 "consumed": self.consumed["consumed"].get(),
-                "effects": effects
+                "effects": effects,
+                "requires_objects": self.requires_objects["main"],
+                "requires_states": self.requires_states["main"],
+                "required_location": self.required_location["main"]
             }
             try:
                 self.temporary_window.destroy()
@@ -424,6 +560,8 @@ class GameStateEditor:
             self.movable = {}
             self.consumed = {}
             self.state_change = {"main": "None", "secondary": "None"}
+            self.requires_objects = {"main": [], "secondary": []}
+            self.requires_states = {"main": {}, "secondary": {}}
 
         # Add new form fields similar to the original 'add_object' method
 
