@@ -17,15 +17,19 @@
     (valid-location ?t - tool ?l - location)
   )
 
+  (:functions
+    (steamer) (john) (kitchen) (living-room ?a - agent) (bedroom) (hallway)
+  )
+
   (:action move_agent
-    :parameters (?a - agent ?from - location ?to - location)
+    :parameters (?a - agent ?from ?to - location)
     :precondition (and (at ?a ?from) (reachable ?to))
     :effect (and (at ?a ?to)
                  (not (at ?a ?from)))
   )
 
   (:action move_agent_with_tool
-    :parameters (?a - agent ?from - location ?to - location ?t - tool)
+    :parameters (?a - agent ?from ?to - location ?t - tool)
     :precondition (and (at ?a ?from) (has ?a ?t) (tool-at ?t ?from) (reachable ?to))
     :effect (and (at ?a ?to)
                  (not (at ?a ?from))
