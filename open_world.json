@@ -1,0 +1,114 @@
+{
+    "locations": {
+        "Work": {
+            "coords": [
+                0,
+                0
+            ],
+            "agent_start": true
+        },
+        "Home": {
+            "coords": [
+                12,
+                8
+            ],
+            "agent_start": false
+        }
+    },
+    "states": {
+        "weekday": {
+            "name": "weekday",
+            "type": "Discrete",
+            "states": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+            ],
+            "value": "Wednesday"
+        },
+        "Happy": {
+            "name": "Happy",
+            "type": "Boolean",
+            "value": "True"
+        },
+        "Power": {
+            "name": "Power",
+            "type": "Range",
+            "states": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10"
+            ],
+            "value": "7"
+        }
+    },
+    "objects": {
+        "Horse": {
+            "location": "Home",
+            "movable": true,
+            "consumed": true,
+            "effects": [
+                "Set Power to 11",
+                ""
+            ],
+            "requires_objects": null,
+            "requires_states": {
+                "Power": "8",
+                "weekday": "Wednesday",
+                "Happy": "True"
+            },
+            "required_location": null
+        },
+        "Crank": {
+            "location": "Home",
+            "movable": true,
+            "consumed": false,
+            "effects": [
+                "Increase Power by 1",
+                ""
+            ],
+            "requires_objects": null,
+            "requires_states": null,
+            "required_location": "Work"
+        },
+        "Glass": {
+            "location": "Home",
+            "movable": true,
+            "consumed": false,
+            "effects": [
+                "None",
+                ""
+            ],
+            "requires_objects": null,
+            "requires_states": null,
+            "required_location": "None"
+        },
+        "Water Fountain": {
+            "location": "Work",
+            "movable": false,
+            "consumed": false,
+            "effects": [
+                "Create Glass of water at location Work is movable = True is consumed = True effects = Delete Glass, .!frame4.!combobox6 requires_objects = None requires_states = None requires_location = None",
+                ""
+            ],
+            "requires_objects": [
+                "Glass"
+            ],
+            "requires_states": null,
+            "required_location": "None"
+        }
+    },
+    "start": true
+}

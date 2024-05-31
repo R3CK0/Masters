@@ -13,6 +13,8 @@
     (movable ?t - tool)
     (tool-at ?t - tool ?l - location)
     (reachable ?l - location)
+    (tool-reachable ?t - tool)
+    (valid-location ?t - tool ?l - location)
   )
 
   (:action move_agent
@@ -33,7 +35,7 @@
 
   (:action pickup_object
     :parameters (?a - agent ?t - tool ?l - location)
-    :precondition (and (at ?a ?l) (tool-at ?t ?l) (movable ?t))
+    :precondition (and (at ?a ?l) (tool-at ?t ?l) (movable ?t) (tool-reachable ?t))
     :effect (and (has ?a ?t) (not (tool-at ?t ?l)))
   )
 

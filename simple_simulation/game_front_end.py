@@ -397,8 +397,12 @@ class PlanningSim:
         movable = True if tokens[tokens.index("movable")+2] == "True" else False
         consumed = True if tokens[tokens.index("consumed")+2] == "True" else False
         effects = " ".join(tokens[tokens.index("effects")+2:]).split(",")
+        required_objects = " ".join(tokens[tokens.index("requires_objects")+2: tokens.index("requires_states")])
+        required_states = " ".join(tokens[tokens.index("requires_states")+2: tokens.index("requires_location")])
+        required_location = " ".join(tokens[tokens.index("requires_location")+2:])
         
-        self.objects[object_name] = Object(name = object_name, location = location, coords = coords, movable = movable, consumed = consumed, effects = effects)
+        
+        self.objects[object_name] = Object(name = object_name, location = location, coords = coords, movable = movable, consumed = consumed, effects = effects, required_location = required_location, required_objects = required_objects, required_states = required_states)
     
     #combine  
     def combine_objects(self, effect):

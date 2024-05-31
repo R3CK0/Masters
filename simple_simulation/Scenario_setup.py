@@ -512,7 +512,7 @@ class GameStateEditor:
                         self.requires_objects["secondary"] = None
                     if not self.requires_states["secondary"]:
                         self.requires_states["secondary"] = None
-                    effects.append(f"Create {self.entries['name_create'].get()} at location {self.location_combos['location_create'].get()} is movable = {self.movable['movable_create'].get()} is consumed = {self.consumed['consumed_create'].get()} effects = {self.effects['effect1_create']}, {self.effects['effect2_create']} requires_objects = {self.requires_objects['secondary']} requires_states = {self.requires_states['secondary']}, requires_location = {self.required_location['secondary']}")
+                    effects.append(f"Create {self.entries['name_create'].get()} at location {self.location_combos['location_create'].get()} is movable = {self.movable['movable_create'].get()} is consumed = {self.consumed['consumed_create'].get()} effects = {self.effects['effect1_create']}, {self.effects['effect2_create']} requires_objects = {self.requires_objects['secondary']} requires_states = {self.requires_states['secondary']} requires_location = {self.required_location['secondary']}")
                 elif effect == "Combine":
                     if self.effects["effect1_create"].get() == "Change State":
                         self.effects["effect1_create"] = self.state_change["secondary"]
@@ -526,7 +526,7 @@ class GameStateEditor:
                         self.effects["effect2_create"] = self.deletion["secondary"]
                     else:
                         self.effects["effect2_create"] = self.effects["effect2_create"].get()
-                    effects.append(f"Combine {self.entries['name'].get()} with {self.entries['name_combo'].get()} create {self.entries['name_create'].get()} is movable = {self.movable['movable_create'].get()} is consumed = {self.consumed['consumed_create'].get()} effects = {self.effects['effect1_create']}, {self.effects['effect2_create']} requires_objects = {self.requires_objects['secondary']} requires_states = {self.requires_states['secondary']}, requires_location = {self.required_location['secondary']}")
+                    effects.append(f"Combine {self.entries['name'].get()} with {self.entries['name_combo'].get()} create {self.entries['name_create'].get()} is movable = {self.movable['movable_create'].get()} is consumed = {self.consumed['consumed_create'].get()} effects = {self.effects['effect1_create']}, {self.effects['effect2_create']} requires_objects = {self.requires_objects['secondary']} requires_states = {self.requires_states['secondary']} requires_location = {self.required_location['secondary']}")
                     if self.entries["name_combo"].get() not in list(self.objects.values()):
                         print("Warning - Combination object not found in objects list")
                 elif effect == "Change State":
