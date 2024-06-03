@@ -2,7 +2,9 @@ import tkinter as tk
 from tkinter import ttk, messagebox, simpledialog
 import json
 
-
+#TODO Add a way to add preexisting objects
+#TODO Add a way to add predicates
+#TODO add a way to add actions that dont require objects (or that use the agent as an object)
 
 class GameStateEditor:
     def __init__(self, root, setup_name):
@@ -29,6 +31,7 @@ class GameStateEditor:
         # Variables for storing short term data
         self.name = None
         self.entry = None
+        self.combo_selection = None
         self.entries = {}
         self.effects = {}
         self.location_combos = {}
@@ -55,6 +58,8 @@ class GameStateEditor:
         ttk.Button(self.frame, text="Object", command=self.add_object_form).grid(column=2, row=0)
         ttk.Button(self.frame, text="Save", command=lambda: self.save_configuration(True)).grid(column=3, row=0)
         ttk.Button(self.frame, text="Load", command=lambda: self.load_configuration()).grid(column=4, row=0)
+        ttk.Button(self.frame, text="Generate PDDL", command=lambda: self.load_configuration()).grid(column=5, row=0)  # TODO implement
+        ttk.Button(self.frame, text="Generate Prompt", command=lambda: self.load_configuration()).grid(column=6, row=0)  # TODO implement
 
         # Sidebar list
         self.sidebar_label = ttk.Label(self.sidebar, text="Current Configurations", font=('Arial', 12))
@@ -106,7 +111,43 @@ class GameStateEditor:
 
         ttk.Button(self.input_area, text="Add Location", command=lambda: self.add_location(
             name_entry.get(), int(x_entry.get()), int(y_entry.get()), agent_start_var.get())).grid(row=4, column=1)
+        
+    def add_state_form(self):
+        # Clear previous content
+        self.clear_widgets()
 
+        ttk.Label(self.input_area, text="State Name:").grid(row=0, column=0)
+        name_entry = ttk.Entry(self.input_area)
+        name_entry.grid(row=0, column=1)
+        name = name_entry.bind("<FocusOut>", lambda event, e=name_entry: self.on_focus_out(event, e))
+
+        ttk.Label(self.input_area, text="State Type:").grid(row=1, column=0)
+        state_type = ttk.Combobox(self.input_area, values=["Boolean", "Discrete", "Range"])
+        state_type.grid(row=1, column=1)
+
+        state_type.bind("<<ComboboxSelected>>", lambda event, e=state_type: self.state_combo_update(event, e))
+        
+    
+    def add_object_form(self):
+        self.clear_widgets()
+        
+        ttk.Button(self.input_area, text="Add New Object", command=self.add_new_object).grid(row=0, column=0)
+        ttk.Button(self.input_area, text="Add Existing Object", command=self.add_existing_object_form).grid(row=1, column=0)
+        
+    def add_existing_object_form(self):
+        self.clear_widgets()
+        
+        ttk.Label(self.input_area, text="Object Name:").grid(row=0, column=0)
+        name_entry = ttk.Entry(self.input_area).grid(row=0, column=1)
+        name = name_entry.bind("<FocusOut>", lambda event, e=name_entry: self.on_focus_out(event, e))
+        
+        ttk.Label(self.input_area, text="Object_type").grid(row=1, column=0)
+        self.combo_selection = ttk.Combobox(self.input_area, values=["Agent"]+list(self.objects.keys()))
+        ttk.Button(self.input_area, text="Add Object", command=lambda: self.process_new_object()).grid(row=2, column=1)
+        
+    def add_new_object(self):
+        self.clear_widgets()
+        self.add_object()
 
     def state_combo_update(self, event, combo):
         combo_type = combo.get()
@@ -127,20 +168,6 @@ class GameStateEditor:
             range_entry.bind("<FocusOut>", lambda event, e=range_entry: self.on_focus_out_entry(event, e))
         ttk.Button(self.input_area, text="Add State", command=lambda: self.add_state(combo_type)).grid(row=3, column=1)
 
-    def add_state_form(self):
-        # Clear previous content
-        self.clear_widgets()
-
-        ttk.Label(self.input_area, text="State Name:").grid(row=0, column=0)
-        name_entry = ttk.Entry(self.input_area)
-        name_entry.grid(row=0, column=1)
-        name = name_entry.bind("<FocusOut>", lambda event, e=name_entry: self.on_focus_out(event, e))
-
-        ttk.Label(self.input_area, text="State Type:").grid(row=1, column=0)
-        state_type = ttk.Combobox(self.input_area, values=["Boolean", "Discrete", "Range"])
-        state_type.grid(row=1, column=1)
-
-        state_type.bind("<<ComboboxSelected>>", lambda event, e=state_type: self.state_combo_update(event, e))
 
     def on_focus_out(self, event, entry, state_effect=None, pos=None, deletion=None):
         if state_effect is not None and pos is not None:
@@ -278,12 +305,6 @@ class GameStateEditor:
         self.temporary_window.destroy()
 
 
-    def add_object_form(self):
-        # Clear previous content
-        self.clear_widgets()
-        self.add_object()
-    
-    
     def add_required_object(self, pos=None):
         #function with dropbox to select object a button to add it to the list and another button to be done and close the window
         if pos == "secondary":
@@ -385,6 +406,9 @@ class GameStateEditor:
         else:
             self.required_location["main"] = location_name
         print(f"Required Location set to : {location_name}")
+        
+    def add_existing_object(self):
+        pass
 
     def add_created_oject(self):
         pos = "secondary"
