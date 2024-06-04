@@ -70,6 +70,7 @@ class PlanningSim:
         # Grid and objects setup
         self.grid = [[False for _ in range(self.GRID_SIZE)] for _ in range(self.GRID_SIZE)]  # False initially, set to True for valid locations
         self.locations = {}
+        self.object_types = {}
         self.objects = {}
         self.states = {}
         self.agents = {"BOB": Agent()}
@@ -90,6 +91,7 @@ class PlanningSim:
             locations = config["locations"]
             states = config["states"]
             objects = config["objects"]
+            elements = config["elements"]
             self.start = config["start"]
 
             for name in locations.keys():
@@ -122,7 +124,17 @@ class PlanningSim:
                 new_object = Object(name = obj, location = objects[obj]["location"], coords = coord, movable = objects[obj]["movable"], 
                                     consumed = objects[obj]["consumed"], effects = objects[obj]["effects"], required_location = objects[obj]["required_location"],
                                     required_states=objects[obj]["requires_states"], required_objects=objects[obj]["requires_objects"])
-                self.objects[obj] = new_object
+                self.object_types[obj] = new_object
+                
+            for element in elements.keys():
+                coord = (int(locations[elements[element]["location"]]["coords"][0]), int(locations[elements[element]["location"]]["coords"][1]))
+                new_object = Object(name = element, location = elements[element]["location"], coords = coord, movable = self.object_types[elements[element]["type"]].movable, 
+                                    consumed = self.object_types[elements[element]["type"]].consumed, effects = self.object_types[elements[element]["type"]].effects, 
+                                    required_location = self.object_types[elements[element]["type"]].required_location,
+                                    required_states=self.object_types[elements[element]["type"]].required_states, required_objects=self.object_types[elements[element]["type"]].required_objects)
+                self.objects[element] = new_object
+
+                    
 
         except Exception as e:
             print(e)

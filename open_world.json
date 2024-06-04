@@ -1,28 +1,43 @@
 {
     "locations": {
+        "Unreachable": {
+            "coords": [
+                -1,
+                -1
+            ],
+            "agent_start": false
+        },
         "Home": {
             "coords": [
                 0,
                 0
             ],
-            "agent_start": false
-        },
-        "work": {
-            "coords": [
-                5,
-                5
-            ],
             "agent_start": true
         },
-        "mall": {
+        "Garage": {
             "coords": [
-                8,
+                9,
+                7
+            ],
+            "agent_start": false
+        },
+        "Work": {
+            "coords": [
+                18,
                 9
             ],
             "agent_start": false
         }
     },
     "states": {
+        "in-car": {
+            "name": "in-car",
+            "type": "Predicate",
+            "states": [
+                "agent"
+            ],
+            "value": []
+        },
         "gas": {
             "name": "gas",
             "type": "Range",
@@ -31,65 +46,68 @@
                 "1",
                 "2",
                 "3",
-                "4"
+                "4",
+                "5"
             ],
-            "value": "3"
+            "value": "4"
         },
-        "empty": {
-            "name": "empty",
+        "flat-tire": {
+            "name": "flat-tire",
             "type": "Predicate",
             "states": [
-                "car"
-            ],
-            "value": [
-                [
-                    "car"
-                ]
-            ]
-        },
-        "have money": {
-            "name": "have money",
-            "type": "Predicate",
-            "states": [
-                "agent"
+                "Car"
             ],
             "value": []
         }
     },
     "objects": {
-        "car": {
-            "location": "work",
+        "Car": {
+            "location": "Home",
             "movable": true,
             "consumed": false,
             "effects": [
                 "Decrease gas by 1",
-                ""
+                "None"
             ],
             "requires_objects": null,
             "requires_states": {
-                "gas": ">1"
+                "gas": ">0"
             },
             "required_location": "None"
         },
-        "Towing": {
-            "location": "work",
+        "Spare-Tire": {
+            "location": "Unreachable",
             "movable": true,
-            "consumed": false,
+            "consumed": true,
             "effects": [
-                "Set gas to 5",
+                "Unset flat-tire Predicate to Car",
                 ""
             ],
             "requires_objects": [
-                "car"
+                "Car"
             ],
             "requires_states": {
-                "empty": [
+                "flat-tire": [
                     [
-                        "car"
+                        "Car"
                     ]
                 ]
             },
             "required_location": "None"
+        }
+    },
+    "elements": {
+        "John car": {
+            "location": "Home",
+            "type": "Car"
+        },
+        "Smith car": {
+            "location": "Home",
+            "type": "Car"
+        },
+        "Spare": {
+            "location": "Garage",
+            "type": "Spare-Tire"
         }
     },
     "start": true

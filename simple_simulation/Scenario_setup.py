@@ -3,7 +3,6 @@ from tkinter import ttk, messagebox, simpledialog
 import json
 
 #TODO Add a way to add preexisting objects
-#TODO Add a way to add predicates
 #TODO add a way to add actions that dont require objects (or that use the agent as an object)
 
 class GameStateEditor:
@@ -49,9 +48,10 @@ class GameStateEditor:
         self.temporary_window = None
 
         # Data storage
-        self.locations = {}
+        self.locations = {"Unreachable": {"coords":[-1,-1], "agent_start": False}}
         self.states = {}
         self.objects = {}
+        self.elements = {}
 
         # Buttons
         ttk.Button(self.frame, text="Location", command=self.add_location_form).grid(column=0, row=0)
@@ -136,7 +136,7 @@ class GameStateEditor:
         name = name_entry.bind("<FocusOut>", lambda event, e=name_entry: self.on_focus_out(event, e))
 
         ttk.Label(self.input_area, text="State Type:").grid(row=1, column=0)
-        state_type = ttk.Combobox(self.input_area, values=["Boolean", "Discrete", "Range", "Predicate"])
+        state_type = ttk.Combobox(self.input_area, values=["Boolean", "Range", "Predicate"])
         state_type.grid(row=1, column=1)
 
         state_type.bind("<<ComboboxSelected>>", lambda event, e=state_type: self.state_combo_update(event, e))
@@ -151,12 +151,18 @@ class GameStateEditor:
         self.clear_widgets()
         
         ttk.Label(self.input_area, text="Object Name:").grid(row=0, column=0)
-        name_entry = ttk.Entry(self.input_area).grid(row=0, column=1)
-        name = name_entry.bind("<FocusOut>", lambda event, e=name_entry: self.on_focus_out(event, e))
+        name_entry = ttk.Entry(self.input_area)
+        name_entry.grid(row=0, column=1)
+        name_entry.bind("<FocusOut>", lambda event, e=name_entry: self.on_focus_out(event, e))
         
-        ttk.Label(self.input_area, text="Object_type").grid(row=1, column=0)
+        ttk.Label(self.input_area, text="Location:").grid(row=1, column=0)
+        self.location_combos["element"] = ttk.Combobox(self.input_area, values=list(self.locations.keys()))
+        self.location_combos["element"].grid(row=1, column=1)
+        
+        ttk.Label(self.input_area, text="Object type").grid(row=2, column=0)
         self.combo_selection = ttk.Combobox(self.input_area, values=["Agent"]+list(self.objects.keys()))
-        ttk.Button(self.input_area, text="Add Object", command=lambda: self.process_new_object()).grid(row=2, column=1)
+        self.combo_selection.grid(row=2, column=1)
+        ttk.Button(self.input_area, text="Add Object", command=lambda: self.process_extra_object()).grid(row=3, column=1)
         
     def add_new_object(self):
         self.clear_widgets()
@@ -172,10 +178,18 @@ class GameStateEditor:
         self.temporary_window = tk.Toplevel(self.root, padx=20, pady=20)
         self.temporary_window.title("Set Predicate")
         ttk.Label(self.temporary_window, text=f"Set {state_name} Predicate").grid(row=0, column=0)
-        objects = []
-        for idx, _ in enumerate(list(self.states[state_name]["states"])): 
-            objects.append(ttk.Combobox(self.temporary_window, values=list(self.states[state_name]["states"]))) #TODO change to get all object of valid type
-            objects[idx].grid(row=1+idx, column=0)
+        objects = [] 
+        for idx, parameter in enumerate(list(self.states[state_name]["states"])):
+            element_list = []
+            if parameter == "agent":
+                element_list.append("agent")
+            if parameter == "location":
+                element_list += [name for name, value in self.locations.items()]
+            else:    
+                element_list += [name for name, value in self.elements.items() if value["type"] == parameter]
+            ttk.Label(self.temporary_window, text=f"Select {parameter}").grid(row=1+idx, column=0)
+            objects.append(ttk.Combobox(self.temporary_window, values=element_list))
+            objects[idx].grid(row=1+idx, column=1)
             
         ttk.Button(self.temporary_window, text="Confirm selection", command=lambda: self.set_predicate_2(objects, state_name)).grid(row=len(list(self.states[state_name]["states"]))+1, column=1)
 
@@ -216,7 +230,7 @@ class GameStateEditor:
             ttk.Button(self.input_area, text="Add State", command=lambda: self.add_state(combo_type)).grid(row=3, column=1)
         elif combo_type == "Predicate":
             ttk.Label(self.input_area, text="Object in predicate").grid(row=2, column=0)
-            object_combo = ttk.Combobox(self.input_area, values=["agent"]+list(self.objects.keys()))
+            object_combo = ttk.Combobox(self.input_area, values=["agent", "location"]+list(self.objects.keys()))
             object_combo.grid(row=2, column=1)
             ttk.Button(self.input_area, text="Add object to predicate", command=lambda: self.add_required_object_to_list(object_combo.get(), "main")).grid(row=3, column=1)
             ttk.Button(self.input_area, text="Add State", command=lambda: self.add_state(combo_type)).grid(row=4, column=1)
@@ -336,8 +350,16 @@ class GameStateEditor:
             if change_option == "Set":
                 ttk.Label(self.temporary_window, text=f"Set {state_name} Predicate").grid(row=2, column=0)
                 objects = []
-                for idx, _ in enumerate(list(self.states[state_name]["states"])):
-                    objects.append(ttk.Combobox(self.temporary_window, values=list(self.states[state_name]["states"]))) # TODO change to get all object of valid type
+                for idx, parameter in enumerate(list(self.states[state_name]["states"])):
+                    element_list = []
+                    if parameter == "agent":
+                        element_list.append("agent")
+                    if parameter == "location":
+                        element_list += [name for name, value in self.locations.items()]
+                    else:    
+                        element_list += [name for name, value in self.objects.items() if name == parameter]
+                    ttk.Label(self.temporary_window, text=f"Select {parameter}").grid(row=3+idx, column=0)
+                    objects.append(ttk.Combobox(self.temporary_window, values=element_list))
                     objects[idx].grid(row=3+idx, column=0)
                     
                 ttk.Button(self.temporary_window, text="Confirm selection", command=lambda: self.save_predicate(objects, state_name, True, position)).grid(row=len(list(self.states[state_name]["states"]))+3, column=1)
@@ -345,8 +367,16 @@ class GameStateEditor:
             else:
                 self.state_change[position] = f"Unset {state_name} Predicate"
                 objects = []
-                for idx, _ in enumerate(list(self.states[state_name]["states"])):
-                    objects.append(ttk.Combobox(self.temporary_window, values=list(self.states[state_name]["states"]))) # TODO change to get all object of valid type
+                for idx, parameter in enumerate(list(self.states[state_name]["states"])):
+                    element_list = []
+                    if parameter == "agent":
+                        element_list.append("agent")
+                    if parameter == "location":
+                        element_list += [name for name, value in self.locations.items()]
+                    else:    
+                        element_list += [name for name, value in self.objects.items() if name == parameter]
+                    ttk.Label(self.temporary_window, text=f"Select {parameter}").grid(row=3+idx, column=0)
+                    objects.append(ttk.Combobox(self.temporary_window, values=element_list))
                     objects[idx].grid(row=3+idx, column=0)
                     
                 ttk.Button(self.temporary_window, text="Confirm selection", command=lambda: self.save_predicate(objects, state_name, False, position)).grid(row=len(list(self.states[state_name]["states"]))+3, column=1)
@@ -448,8 +478,16 @@ class GameStateEditor:
             state_value = ttk.Combobox(self.temporary_window, values=self.states[state_name]["states"])
         elif self.states[state_name]["type"] == "Predicate":
             objects = []
-            for idx, _ in enumerate(list(self.states[state_name]["states"])): 
-                objects.append(ttk.Combobox(self.temporary_window, values=list(self.states[state_name]["states"]))) #TODO change to get all object of valid type
+            for idx, parameter in enumerate(list(self.states[state_name]["states"])):
+                element_list = []
+                if parameter == "agent":
+                    element_list.append("agent")
+                if parameter == "location":
+                    element_list += [name for name, value in self.locations.items()]
+                else:    
+                    element_list += [name for name, value in self.objects.items() if name == parameter]
+                ttk.Label(self.temporary_window, text=f"Select {parameter}").grid(row=2+idx, column=0)
+                objects.append(ttk.Combobox(self.temporary_window, values=element_list))
                 objects[idx].grid(row=2+idx, column=1)
         else:
             state_value = ttk.Entry(self.temporary_window)
@@ -639,7 +677,7 @@ class GameStateEditor:
                 ttk.Button(self.temporary_window, text="Save State", command=lambda: self.close_window(state_combo)).grid(row=1, column=1)
                 self.root.wait_window(self.temporary_window)
             elif state_type == "Range":
-                range_values = map(int, self.entry.split(","))
+                range_values = [*map(int, self.entry.split(","))]
                 range_values[-1] += 1 
                 self.states[self.name]["states"] = [*map(str, range(*range_values))]
                 if self.temporary_window is not None:
@@ -731,6 +769,18 @@ class GameStateEditor:
             self.state_change = {"main": "None", "secondary": "None"}
             self.requires_objects = {"main": [], "secondary": []}
             self.requires_states = {"main": {}, "secondary": {}}
+            
+    def process_extra_object(self):
+        name = self.name
+        obj_type = self.combo_selection.get()
+        location = self.location_combos["element"].get()
+        
+        self.elements[name] = {"location": location, "type": obj_type}
+        
+        self.update_sidebar()
+        self.location_combos = {}
+        self.name = None
+        self.combo_selection = None
 
 
     def load_configuration(self):
@@ -739,6 +789,7 @@ class GameStateEditor:
             self.locations = config["locations"]
             self.states = config["states"]
             self.objects = config["objects"]
+            self.elements = config["elements"]
             self.update_sidebar()
             messagebox.showinfo("Load", "Configuration loaded successfully!")
         except:
@@ -749,6 +800,7 @@ class GameStateEditor:
             "locations": self.locations,
             "states": self.states,
             "objects": self.objects,
+            "elements": self.elements,
             "start": start
         }
         with open(self.setup_name + ".json", 'w') as f:
@@ -766,9 +818,12 @@ class GameStateEditor:
         self.listbox.insert(tk.END, "States:")
         for state, details in self.states.items():
             self.listbox.insert(tk.END, f"{state}: {details}")
-        self.listbox.insert(tk.END, "Objects:")
+        self.listbox.insert(tk.END, "Object Types:")
         for obj, details in self.objects.items():
             self.listbox.insert(tk.END, f"{obj}: {details}")
+        self.listbox.insert(tk.END, "Objects:")
+        for element, details in self.elements.items():
+            self.listbox.insert(tk.END, f"{element}: {details}")
         self.clear_widgets()
         self.save_configuration()
 
