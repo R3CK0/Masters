@@ -503,6 +503,9 @@ class PlanningSim:
                 self.states[state].value = states[0]
             else:
                 self.states[state].value = states[index+1]
+                
+        elif change == "Predicate": #TODO deal with predicate change
+            pass
     
     def destroy_object(self, effect):
         tokens = effect.split(" ")

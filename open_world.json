@@ -14,30 +14,22 @@
             ],
             "agent_start": true
         },
-        "Garage": {
+        "Work": {
             "coords": [
-                9,
-                7
+                5,
+                5
             ],
             "agent_start": false
         },
-        "Work": {
+        "Gas station": {
             "coords": [
-                18,
+                8,
                 9
             ],
             "agent_start": false
         }
     },
     "states": {
-        "in-car": {
-            "name": "in-car",
-            "type": "Predicate",
-            "states": [
-                "agent"
-            ],
-            "value": []
-        },
         "gas": {
             "name": "gas",
             "type": "Range",
@@ -49,66 +41,104 @@
                 "4",
                 "5"
             ],
-            "value": "4"
+            "value": "5"
         },
-        "flat-tire": {
-            "name": "flat-tire",
+        "Reachable": {
+            "name": "Reachable",
             "type": "Predicate",
             "states": [
-                "Car"
+                "location"
             ],
             "value": []
+        },
+        "Money": {
+            "name": "Money",
+            "type": "Range",
+            "states": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20"
+            ],
+            "value": "4"
+        },
+        "has-account": {
+            "name": "has-account",
+            "type": "Predicate",
+            "states": [
+                "agent"
+            ],
+            "value": []
+        },
+        "weather": {
+            "name": "weather",
+            "type": "Predicate",
+            "states": [
+                "weater"
+            ],
+            "value": [
+                [
+                    "Nice"
+                ]
+            ]
         }
     },
     "objects": {
-        "Car": {
-            "location": "Home",
-            "movable": true,
+        "weater": {
+            "location": "Unreachable",
+            "movable": false,
             "consumed": false,
-            "effects": [
-                "Decrease gas by 1",
-                "None"
-            ],
+            "effects": [],
             "requires_objects": null,
-            "requires_states": {
-                "gas": ">0"
-            },
+            "requires_states": null,
             "required_location": "None"
         },
-        "Spare-Tire": {
-            "location": "Unreachable",
+        "bob": {
+            "location": "Home",
             "movable": true,
             "consumed": true,
             "effects": [
-                "Unset flat-tire Predicate to Car",
-                ""
-            ],
-            "requires_objects": [
-                "Car"
-            ],
-            "requires_states": {
-                "flat-tire": [
-                    [
-                        "Car"
-                    ]
+                [
+                    "Change State"
+                ],
+                [
+                    "Create"
+                ],
+                [
+                    "Delete"
                 ]
-            },
+            ],
+            "requires_objects": null,
+            "requires_states": null,
             "required_location": "None"
         }
     },
     "elements": {
-        "John car": {
-            "location": "Home",
-            "type": "Car"
+        "Nice": {
+            "location": "Unreachable",
+            "type": "weater"
         },
-        "Smith car": {
-            "location": "Home",
-            "type": "Car"
-        },
-        "Spare": {
-            "location": "Garage",
-            "type": "Spare-Tire"
+        "Cloudy": {
+            "location": "Unreachable",
+            "type": "weater"
         }
     },
-    "start": true
+    "start": false
 }
