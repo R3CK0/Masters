@@ -1,112 +1,94 @@
 {
     "locations": {
-        "Work": {
+        "Home": {
             "coords": [
                 0,
                 0
             ],
+            "agent_start": false
+        },
+        "work": {
+            "coords": [
+                5,
+                5
+            ],
             "agent_start": true
         },
-        "Home": {
+        "mall": {
             "coords": [
-                12,
-                8
+                8,
+                9
             ],
             "agent_start": false
         }
     },
     "states": {
-        "weekday": {
-            "name": "weekday",
-            "type": "Discrete",
-            "states": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-                "Sunday"
-            ],
-            "value": "Wednesday"
-        },
-        "Happy": {
-            "name": "Happy",
-            "type": "Boolean",
-            "value": "True"
-        },
-        "Power": {
-            "name": "Power",
+        "gas": {
+            "name": "gas",
             "type": "Range",
             "states": [
                 "0",
                 "1",
                 "2",
                 "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10"
+                "4"
             ],
-            "value": "7"
+            "value": "3"
+        },
+        "empty": {
+            "name": "empty",
+            "type": "Predicate",
+            "states": [
+                "car"
+            ],
+            "value": [
+                [
+                    "car"
+                ]
+            ]
+        },
+        "have money": {
+            "name": "have money",
+            "type": "Predicate",
+            "states": [
+                "agent"
+            ],
+            "value": []
         }
     },
     "objects": {
-        "Horse": {
-            "location": "Home",
+        "car": {
+            "location": "work",
             "movable": true,
-            "consumed": true,
+            "consumed": false,
             "effects": [
-                "Set Power to 11",
+                "Decrease gas by 1",
                 ""
             ],
             "requires_objects": null,
             "requires_states": {
-                "Power": "8",
-                "weekday": "Wednesday",
-                "Happy": "True"
+                "gas": ">1"
             },
-            "required_location": null
-        },
-        "Crank": {
-            "location": "Home",
-            "movable": true,
-            "consumed": false,
-            "effects": [
-                "Increase Power by 1",
-                ""
-            ],
-            "requires_objects": null,
-            "requires_states": null,
-            "required_location": "Work"
-        },
-        "Glass": {
-            "location": "Home",
-            "movable": true,
-            "consumed": false,
-            "effects": [
-                "None",
-                ""
-            ],
-            "requires_objects": null,
-            "requires_states": null,
             "required_location": "None"
         },
-        "Water Fountain": {
-            "location": "Work",
-            "movable": false,
+        "Towing": {
+            "location": "work",
+            "movable": true,
             "consumed": false,
             "effects": [
-                "Create Glass of water at location Work is movable = True is consumed = True effects = Delete Glass, .!frame4.!combobox6 requires_objects = None requires_states = None requires_location = None",
+                "Set gas to 5",
                 ""
             ],
             "requires_objects": [
-                "Glass"
+                "car"
             ],
-            "requires_states": null,
+            "requires_states": {
+                "empty": [
+                    [
+                        "car"
+                    ]
+                ]
+            },
             "required_location": "None"
         }
     },

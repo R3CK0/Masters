@@ -29,6 +29,7 @@ class State:
     value_type: str
     max_value: str = None
     min_value: str = None
+    values: list = None
     
 @dataclass
 class Environment:
@@ -91,6 +92,10 @@ class PromptFormatter:
                 max_value = max(values)
                 min_value = min(values)
                 new_state = State(state_name, state_value, state_type, str(max_value), str(min_value))
+            elif state_type == "Predicate":
+                state_value = None
+                values = state["states"]
+                new_state = State(state_name, state_value, state_type, values)
             env_states[state_name] = new_state
         
         env_objects = {}

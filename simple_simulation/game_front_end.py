@@ -104,18 +104,28 @@ class PlanningSim:
                 if states[state]["type"] == "Boolean":
                     new_state = State(name = state, type = states[state]["type"], value = states[state]["value"], possible_states = [True, False])
                     self.states[new_state.name] = new_state
+                elif states[state]["type"] == "Predicate":
+                    new_state = State(name = state, type = states[state]["type"], value = states[state]["value"], possible_states = states[state]["states"])
+                    self.states[new_state.name] = new_state
                 else:
                     new_state = State(name = state, type = states[state]["type"], value = states[state]["value"], possible_states = states[state]["states"])    
                     self.states[new_state.name] = new_state
 
             for obj in objects.keys():
                 coord = (int(locations[objects[obj]["location"]]["coords"][0]), int(locations[objects[obj]["location"]]["coords"][1]))
+                if objects[obj]["required_location"] == "None":
+                    objects[obj]["required_location"] = None
+                if objects[obj]["requires_objects"] == "None":
+                    objects[obj]["requires_objects"] = None
+                if objects[obj]["requires_states"] == "None":
+                    objects[obj]["requires_states"] = None
                 new_object = Object(name = obj, location = objects[obj]["location"], coords = coord, movable = objects[obj]["movable"], 
                                     consumed = objects[obj]["consumed"], effects = objects[obj]["effects"], required_location = objects[obj]["required_location"],
                                     required_states=objects[obj]["requires_states"], required_objects=objects[obj]["requires_objects"])
                 self.objects[obj] = new_object
 
-        except:
+        except Exception as e:
+            print(e)
             print(f"Unable to load {self.config_path} file. Please check the file and try again. current working directory: {os.getcwd()}")
 
     def draw_grid(self):
@@ -142,7 +152,7 @@ class PlanningSim:
         line_height = 20  # Adjustable based on font size and desired spacing
 
         # Draw state info
-        state_text_lines = ["States:"] + ["============"] + [f"{state}: {str(value.value)}" for state, value in self.states.items()]
+        state_text_lines = ["States:"] + ["============"] + [f"{state}: {str(value.value)}" for state, value in self.states.items() if value.type != "Predicate"]
         for line in state_text_lines:
             state_surface = self.font.render(line, True, self.WHITE)
             self.screen.blit(state_surface, (self.WIDTH - self.INFO_WIDTH + x_margin, y_position))
@@ -336,10 +346,41 @@ class PlanningSim:
         
         if required_states is not None:
             for state, value in required_states.items():
-                if self.states[state].value != value:
-                    usable = False
-                    if verbose:
-                        print(f"Object {object_name} cannot be used without state {state} being {value}")
+                if self.states[state].type == "Predicate":
+                    if len(value) > 1:
+                        for val in value:
+                            if val not in self.states[state].value:
+                                usable = False
+                                if verbose:
+                                    print(f"Object {object_name} does not meet the required predicate {state} value {val}")
+                    elif value[0] not in self.states[state].value:
+                        usable = False
+                        if verbose:
+                            print(f"Object {object_name} does not meet the required predicate {state} value {value}")
+                elif value.startswith(">="):
+                    if int(self.states[state].value) < int(value.replace(">=", "")):
+                        usable = False
+                        if verbose:
+                            print(f"Object {object_name} cannot be used without state {state} being greater than {value[1:]}")
+                elif value.startswith("<="):
+                    if int(self.states[state].value) > int(value.replace("<=", "")):
+                        usable = False
+                        if verbose:
+                            print(f"Object {object_name} cannot be used without state {state} being less than {value[1:]}")
+                elif value.startswith(">"):
+                    if int(self.states[state].value) <= int(value.replace(">", "")):
+                        usable = False
+                        if verbose:
+                            print(f"Object {object_name} cannot be used without state {state} being greater than {value}")
+                elif value.startswith("<"):
+                    if int(self.states[state].value) >= int(value.replace("<", "")):
+                        usable = False
+                        if verbose:
+                            print(f"Object {object_name} cannot be used without state {state} being less than {value}")
+                elif self.states[state].value != value:
+                        usable = False
+                        if verbose:
+                            print(f"Object {object_name} cannot be used without state {state} being {value}")
         
         return usable
     
