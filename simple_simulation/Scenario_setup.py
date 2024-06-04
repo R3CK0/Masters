@@ -2,14 +2,17 @@ import tkinter as tk
 from tkinter import ttk, messagebox, simpledialog
 import json
 
+from prompt_formatter import PromptFormatter
+
 #TODO Add a way to add preexisting objects
 #TODO add a way to add actions that dont require objects (or that use the agent as an object)
 
 class GameStateEditor:
-    def __init__(self, root, setup_name):
+    def __init__(self, root, setup_name, initial_domain=None):
         self.root = root
         self.root.title('Game State Editor')
         self.setup_name = setup_name
+        self.prompter = PromptFormatter(self.setup_name+".json", initial_domain)
 
         # Containers
         self.frame = ttk.Frame(self.root, padding="3 3 12 12")
@@ -58,7 +61,7 @@ class GameStateEditor:
         ttk.Button(self.frame, text="Save", command=lambda: self.save_configuration(True)).grid(column=3, row=0)
         ttk.Button(self.frame, text="Load", command=lambda: self.load_configuration()).grid(column=4, row=0)
         ttk.Button(self.frame, text="Generate PDDL", command=lambda: self.load_configuration()).grid(column=5, row=0)  # TODO implement
-        ttk.Button(self.frame, text="Generate Prompt", command=lambda: self.load_configuration()).grid(column=6, row=0)  # TODO implement
+        ttk.Button(self.frame, text="Generate Prompt", command=lambda: self.generate_prompt()).grid(column=6, row=0)  # TODO implement
 
         # Sidebar list
         self.sidebar_label = ttk.Label(self.sidebar, text="Current Configurations", font=('Arial', 12))
@@ -83,10 +86,10 @@ class GameStateEditor:
         except:
             print("error detected while closing input area 3")
 
-    def reset_available_effects(self):
-        self.available_effects_1 = ["None", "Change State", "Create", "Combine", "Delete"]
-        self.available_effects_2 = ["None", "Change State", "Create", "Combine", "Delete"]
-
+    def generate_prompt(self):
+        self.prompter.load_files()
+        self.prompter.process_environement()
+        print(self.prompter.get_prompt())
 
     def add_location_form(self):
         # Clear previous content
@@ -349,7 +352,7 @@ class GameStateEditor:
                 ttk.Button(self.temporary_window, text="Confirm selection", command=lambda: self.save_predicate(objects, state_name, True, position)).grid(row=len(list(self.states[state_name]["states"]))+3, column=1)
                 
             else:
-                self.state_change[position].append([f"Unset {state_name} Predicate"])
+                ttk.Label(self.temporary_window, text=f"Unset {state_name} Predicate").grid(row=2, column=0)
                 objects = []
                 for idx, parameter in enumerate(list(self.states[state_name]["states"])):
                     element_list = []
@@ -429,11 +432,9 @@ class GameStateEditor:
     
     def add_required_object_to_list(self, object_name, position):
         if position == "secondary":
-            if object_name not in self.requires_objects["secondary"]:
-                self.requires_objects["secondary"].append(object_name)
+            self.requires_objects["secondary"].append(object_name)
         else:
-            if object_name not in self.requires_objects["main"]:
-                self.requires_objects["main"].append(object_name)
+            self.requires_objects["main"].append(object_name)
         print(f"The object {object_name} is required")
     
     def add_required_state(self, pos):
@@ -594,7 +595,8 @@ class GameStateEditor:
         ttk.LabelFrame(self.input_area_3, text="Combination Object").grid(row=0, columnspan=2)
 
         ttk.Label(self.input_area_3, text="Combination Object Name:").grid(row=1, column=0)
-        self.entries["name_combo"] = ttk.Combobox(self.input_area_3, values=list(self.objects.keys())).grid(row=1, column=1)
+        self.entries["name_combo"] = ttk.Combobox(self.input_area_3, values=list(self.objects.keys()))
+        self.entries["name_combo"].grid(row=1, column=1)
 
 
     def add_object(self):
@@ -637,7 +639,7 @@ class GameStateEditor:
             self.locations[name] = {"coords": (x, y), "agent_start": is_start}
             self.update_sidebar()
 
-    def  add_state(self, state_type):
+    def add_state(self, state_type):
         if self.name:
             self.states[self.name] = {"name": self.name, "type": state_type}
             if state_type == "Discrete":
@@ -760,7 +762,6 @@ class GameStateEditor:
             except:
                 print("temporary window does not exist or caused somekind of error")
             self.update_sidebar()
-            self.reset_available_effects()
             self.entries = {}
             self.effects = {"effect": [], "effect_create": []}
             self.location_combos = {}
@@ -830,6 +831,7 @@ class GameStateEditor:
 
 if __name__ == "__main__":
     setup_name = "open_world"
+    initial_domain = "initial.pddl"
     root = tk.Tk()
-    app = GameStateEditor(root, setup_name)
+    app = GameStateEditor(root, setup_name, initial_domain)
     root.mainloop()
