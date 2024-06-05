@@ -16,22 +16,64 @@
         },
         "Work": {
             "coords": [
-                5,
-                5
+                2,
+                6
             ],
             "agent_start": false
         },
-        "Gas station": {
+        "Garage": {
             "coords": [
-                8,
-                9
+                9,
+                8
+            ],
+            "agent_start": false
+        },
+        "Costco": {
+            "coords": [
+                3,
+                3
             ],
             "agent_start": false
         }
     },
     "states": {
-        "gas": {
-            "name": "gas",
+        "open": {
+            "name": "open",
+            "type": "Predicate",
+            "states": [
+                "location"
+            ],
+            "value": [
+                [
+                    "Home"
+                ],
+                [
+                    "Work"
+                ],
+                [
+                    "Garage"
+                ],
+                [
+                    "Costco"
+                ]
+            ]
+        },
+        "path-available": {
+            "name": "path-available",
+            "type": "Predicate",
+            "states": [
+                "location",
+                "location"
+            ],
+            "value": [
+                [
+                    "Home",
+                    "Garage"
+                ]
+            ]
+        },
+        "Energy": {
+            "name": "Energy",
             "type": "Range",
             "states": [
                 "0",
@@ -41,88 +83,65 @@
                 "4",
                 "5"
             ],
-            "value": "5"
-        },
-        "Reachable": {
-            "name": "Reachable",
-            "type": "Predicate",
-            "states": [
-                "location"
-            ],
-            "value": []
-        },
-        "Money": {
-            "name": "Money",
-            "type": "Range",
-            "states": [
-                "0",
-                "1",
-                "2",
-                "3",
-                "4",
-                "5",
-                "6",
-                "7",
-                "8",
-                "9",
-                "10",
-                "11",
-                "12",
-                "13",
-                "14",
-                "15",
-                "16",
-                "17",
-                "18",
-                "19",
-                "20"
-            ],
-            "value": "4"
-        },
-        "has-account": {
-            "name": "has-account",
-            "type": "Predicate",
-            "states": [
-                "agent"
-            ],
-            "value": []
-        },
-        "weather": {
-            "name": "weather",
-            "type": "Predicate",
-            "states": [
-                "weater"
-            ],
-            "value": [
-                [
-                    "Nice"
-                ]
-            ]
+            "value": "1"
         }
     },
     "objects": {
-        "weater": {
-            "location": "Unreachable",
+        "Road-closure": {
+            "location": "Home",
             "movable": false,
             "consumed": false,
-            "effects": [],
+            "effects": [
+                [
+                    "Unset path-available Predicate to Home Garage"
+                ]
+            ],
             "requires_objects": null,
             "requires_states": null,
             "required_location": "None"
         },
-        "bob": {
+        "bread": {
             "location": "Home",
             "movable": true,
             "consumed": true,
             "effects": [
                 [
-                    "Change State"
-                ],
+                    "None"
+                ]
+            ],
+            "requires_objects": null,
+            "requires_states": null,
+            "required_location": "None"
+        },
+        "cucumber": {
+            "location": "Home",
+            "movable": true,
+            "consumed": true,
+            "effects": [
+                "Combine cucumber with bread create sandwich is movable = True is consumed = True effects = ['None'], requires_objects = None requires_states = None requires_location = None"
+            ],
+            "requires_objects": null,
+            "requires_states": null,
+            "required_location": "None"
+        },
+        "coffee_machine": {
+            "location": "Work",
+            "movable": false,
+            "consumed": false,
+            "effects": [
+                "Create Coffee at location Work is movable = True is consumed = True effects = ['Change State'], requires_objects = None requires_states = None requires_location = None"
+            ],
+            "requires_objects": null,
+            "requires_states": null,
+            "required_location": "None"
+        },
+        "bed": {
+            "location": "Home",
+            "movable": false,
+            "consumed": false,
+            "effects": [
                 [
-                    "Create"
-                ],
-                [
-                    "Delete"
+                    "Set Energy to 5"
                 ]
             ],
             "requires_objects": null,
@@ -131,14 +150,26 @@
         }
     },
     "elements": {
-        "Nice": {
-            "location": "Unreachable",
-            "type": "weater"
+        "home-bed": {
+            "location": "Home",
+            "type": "bed"
         },
-        "Cloudy": {
-            "location": "Unreachable",
-            "type": "weater"
+        "new-loaf": {
+            "location": "Home",
+            "type": "bread"
+        },
+        "old-loaf": {
+            "location": "Home",
+            "type": "bread"
+        },
+        "new-cucumber": {
+            "location": "Costco",
+            "type": "cucumber"
+        },
+        "savior": {
+            "location": "Home",
+            "type": "coffee_machine"
         }
     },
-    "start": false
+    "start": true
 }

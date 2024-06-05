@@ -1,4 +1,4 @@
-from prompt_formatter import PromptFormatter
+from simple_simulation.prompt_formatter import PromptFormatter
 
 domain_path = "initial.pddl"
 config_path = "open_world.json"
