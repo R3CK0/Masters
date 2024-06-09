@@ -1,0 +1,10 @@
+Modify the following PDDL domain by 
+adding a load_limit to the truck. 
+
+This will require adding 3 functions: 
+load_limit per truck, current_load per truck and the weight per crate
+
+The load action will have an extra predicate where the load_limit for the truck must be lower then the current_load + the weight of the crate
+The effect will have the current_weight increased by the crate weight
+
+The Unload action will add the effect to decrease the current_load by the weight

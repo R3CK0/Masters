@@ -1,0 +1,4 @@
+Modify the following PDDL domain
+Remove the day condition
+
+Remove the day predicate and condition from the domain

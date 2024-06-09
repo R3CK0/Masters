@@ -1,0 +1,8 @@
+Modify the following PDDL
+Remove the fuel consumption concept
+
+This modification will require removing 3 functions: fuel-tank, current-fuel and distance
+
+Remove the Refuel action
+Remove current-fuel check and decrease from the Drive function
+Remove distance from the drive function

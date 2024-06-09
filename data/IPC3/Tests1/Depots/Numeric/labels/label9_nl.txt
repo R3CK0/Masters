@@ -1,0 +1,9 @@
+Modify the following PDDL domain
+Add the clear check to make sure a surface of an object is clear before trying to lift it or putting something on it
+
+This will require adding 1 predicate and modifying 2 actions
+predicate: clear surface, a surface can be a pallet or crate
+
+Using common sense
+Modify the lift and drop actions to include this condition
+Think step by step

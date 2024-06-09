@@ -1,0 +1,6 @@
+Modify the following PDDL domain
+Add fuel-cost tracking
+
+This will require adding 1 function fuel-cost 
+
+Driving will cost 10 fuel while using the Lift costs 1 fuel

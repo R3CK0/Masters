@@ -1,0 +1,4 @@
+Modify the following PDDL domain
+Remove the need for inspection
+
+Remove the inspected predicate and condition from the actions. Remove the inspect action

@@ -1,0 +1,7 @@
+Modify the following PDDL domain by 
+adding a load_limit to the truck. 
+
+This will require adding 3 functions: 
+load_limit per truck, current_load per truck and the weight per crate
+
+Modify the load and unload actions accordingly

@@ -1,0 +1,5 @@
+Modify the following PDDL domain
+Remove the concept of inspection
+
+Remove the inspected predicate
+Remove the the inspect and bride actions

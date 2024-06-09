@@ -1,0 +1,8 @@
+Modify the following PDDL domain
+Add lift and drop actions
+
+This will require adding the lifting predicate to indicate the hoist lifting the crate as well as a Lift and Drop action
+
+The Lift action will increase the fuel-cost by 1.
+
+Review and understand the logic of the domain and create the actions accordingly

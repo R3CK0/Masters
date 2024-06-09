@@ -1,0 +1,7 @@
+Modify the following PDDL domain
+Add fuel-cost tracking
+
+This will require adding 1 function fuel-cost 
+
+The Drive action effect increases the fuel-cost by 10
+The Lift action increases the fuel-cost by 1

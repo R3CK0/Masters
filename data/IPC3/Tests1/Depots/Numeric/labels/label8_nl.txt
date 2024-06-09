@@ -1,0 +1,11 @@
+Modify the following PDDL
+Add the ability to Lift and Drop crates using the hoist, and to Load and Unload the truck with crates using the hoist
+
+This will require adding 3 functions, 4 actions and 1 predicates
+functions: load_limit per truck, current_load per truck and weight per crate
+predicate: lifting hoist lifts crate
+
+The drive action costs 10 fuel and moves the truck from start to finnish
+The Load action loads the crate currently on the hoist into the truck, The unload does the opposite
+The Lift action uses the hoist to lift a crate that is clear of a surface and costs 1 fuel, Drop liberates the Hoist and places the crate on a clear surface
+Using commonsense and the domain add the required elements think step by step
