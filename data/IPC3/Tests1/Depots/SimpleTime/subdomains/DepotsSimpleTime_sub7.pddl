@@ -1,4 +1,4 @@
-; Removed all actions
+;Removed all actions except drive
 
 (define (domain Depot)
 (:requirements :typing :durative-actions)

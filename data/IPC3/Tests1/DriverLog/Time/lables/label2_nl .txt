@@ -1,0 +1,17 @@
+Modify the following PDDL domain
+Add UNLOAD-TRUCK action and UNLOAD-TRUCK action which allows the obj to be loaded and unloaded from truck
+
+This requires adding 2 actions
+actions: LOAD-TRUCK, UNLOAD-TRUCK
+
+actions:
+LOAD-TRUCK:
+Moves an obj into the truck
+
+UNLOAD-TRUCK
+Moves an obj out of the truck
+
+context: the in predicate represents if an obj is in a truck
+Both actions require a duration of 2
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

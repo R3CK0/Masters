@@ -1,0 +1,5 @@
+Modify the following PDDL domain 
+Modify the durations of the actions
+
+Lift duration = 1
+Drop duration = 1

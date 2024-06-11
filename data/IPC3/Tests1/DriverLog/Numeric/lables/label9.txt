@@ -1,0 +1,15 @@
+Modify the following PDDL domain
+Add the driving predicate that tracks driver driving a truck
+
+This requires adding 1 predicate and modifying 3 actions
+predicate: driving indicates a driver driving a driving
+actions: DRIVE-TRUCK, BOARD-TRUCK, DISEMBARK-TRUCK
+
+DRIVE-TRUCK:
+driver must be driving the truck
+
+BOARD-TRUCK:
+Once boarded the driver is driving the truck
+
+DISEMBARK-TRUCK:
+The driver is no longer driving truck once disembarked

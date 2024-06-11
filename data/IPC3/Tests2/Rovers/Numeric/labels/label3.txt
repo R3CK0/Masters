@@ -1,0 +1,22 @@
+Modify the following PDDL domain
+add sample-soil, sample-rock and calibrate actions and equipped_for_soil_analysis, equipped_for_rock_analysis, calibrated predicates
+
+This requires adding 3 action and 3 predicate
+predicate: equipped_for_soil_analysis per rover, equipped_for_rock_analysis per rover, calibrated per camera per rover
+action: sample-soil, sample-rock, calibrate
+
+sample-soil:
+parameters: rover store waypoint
+conditions: rover is at waypoint with greater or equal 3 energy, the soil sample is at waypoint, the rover is equipped for soil analysis and has a store that is empty
+effect: store is no longer empty, it's full. Energy reserves decrease by 3, the rover has the soil analysis and the soil sample is no longer at the waypoint
+
+sample-rock:
+parameters: rover store waypoint
+conditions: rover is at waypoint with greater or equal 5 energy, the rock sample is at waypoint, the rover is equipped for rock analysis and has a store that is empty
+effect: store is no longer empty, it's full. Energy reserves decrease by 5, the rover has the rock analysis and the rock sample is no longer at the waypoint
+
+calibrate:
+parameters: rover camera objective waypoint
+conditions: rover must be equipped for imaging, the objective must be a calibration target for the camera, the rover must be at the waypoint and the objective
+ must be visible from the waypoint, the camera must be on board the rover, energy must be greater or equal to 2
+effect: camera on the rover is calibrated, energy is decreased by 2

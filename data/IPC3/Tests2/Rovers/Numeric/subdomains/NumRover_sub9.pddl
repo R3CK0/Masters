@@ -1,4 +1,4 @@
-; Removd channel-free
+; Removed channel-free
 
 (define (domain Rover)
 (:requirements :typing :fluents)

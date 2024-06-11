@@ -1,4 +1,4 @@
-; Remove recharge and in_sun
+; Remove recharges and in_sun
 
 (define (domain Rover)
 (:requirements :typing :fluents)

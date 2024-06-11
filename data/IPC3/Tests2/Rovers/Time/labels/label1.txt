@@ -1,0 +1,12 @@
+Modify the following PDDL domain
+add sample-soil action and equipped_for_soil_analysis predicate
+
+This requires adding 1 action and 1 predicate
+predicate: equipped_for_soil_analysis per rover
+action: sample-soil
+
+sample-soil:
+parameters: rover store waypoint
+duration: 10
+conditions: rover is at waypoint, the soil sample is at waypoint, the rover is equipped for soil analysis and has a store that is empty, the rover has a minimum of 3 energy
+effect: store is no longer empty, it's full, the rover has the soil analysis and the soil sample is no longer at the waypoint, the rover energy decreases by 3

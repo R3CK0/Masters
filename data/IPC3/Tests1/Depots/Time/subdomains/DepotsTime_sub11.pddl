@@ -1,4 +1,4 @@
-; added bribe and inspect
+; added inspect
 
 (define (domain Depot)
 (:requirements :typing :durative-actions :fluents)
@@ -54,14 +54,8 @@
 
 (:durative-action Inspect  ;; New action for inspecting crates
 :parameters (?x - hoist ?y - crate ?p - place)
-:duration (= ?duration 3)
+:duration (= ?duration 1)
 :condition (and (over all (at ?x ?p)) (at start (available ?x)) (at start (at ?y ?p)) (at start (clear ?y)))
 :effect (and (at end (inspected ?y))))
-
-(:durative-action Bribe  ;; New action for bribing to get the inspected attribute
-:parameters (?x - crate ?p - place)
-:duration (= ?duration 1)
-:condition (at start (at ?x ?p))
-:effect (at end (inspected ?x)))
 
 )

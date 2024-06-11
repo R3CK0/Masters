@@ -1,3 +1,5 @@
+; Added tires-ok and inflate
+
 (define (domain driverlog)
   (:requirements :typing :durative-actions :fluents) 
   (:types 
@@ -96,4 +98,5 @@
  :duration (= ?duration 5)
  :condition (and (at start (at ?driver ?loc) (at start (at ?truck ?loc))))
  :effect (and (at end (tires-ok ?truck)))
+)
 )

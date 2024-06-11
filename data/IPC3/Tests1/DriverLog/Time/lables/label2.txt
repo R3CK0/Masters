@@ -1,0 +1,18 @@
+Modify the following PDDL domain
+Add LOAD-TRUCK action and UNLOAD-TRUCK action which allows to load and unload obj from truck
+
+This requires adding 2 actions
+actions: LOAD-TRUCK, UNLOAD-TRUCK
+
+actions:
+LOAD-TRUCK:
+parameters: obj, truck, location
+duration: 2
+conditions: truck and obj are at the same place
+effect: obj is no longer at location, obj is in truck
+
+UNLOAD-TRUCK:
+parameters: obj, truck, location
+duration: 2
+conditions: truck is at location and obj is in truck
+effect: obj is no longer in truck and is at location

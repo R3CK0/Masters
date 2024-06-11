@@ -1,0 +1,8 @@
+Modify the Following PDDL domain
+Remove the speed function as well as the increase and decrease speed functions
+
+This requires removing 2 actions, removing 1 function and modifying 1 action
+
+Remove INCREASE-SPEED and DECREASE-SPEED
+Remove speed
+change duration of DRIVE-TRUCK to time-to-drive alone

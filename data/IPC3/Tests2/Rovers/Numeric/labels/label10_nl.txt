@@ -1,0 +1,8 @@
+Modify the following PDDL domain
+remove the long_range_communicate_*_data actions adn the orbital_satellite_channel
+
+Remove the long_range_communicate_*_data actions and the orbital satellite_channel
+
+context: the orbital_satellite_channel predicate indicates if satellite is in range for communication using long range communcation
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

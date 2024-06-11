@@ -1,0 +1,8 @@
+Modify the following PDDL domain
+Add walked and time-to-walk functions to track the total walked time
+
+This requires to add 2 functions and modify 1 action
+functions: walked and time-to-walk from location to location
+action: WALK
+
+modify the walk action to track walked time

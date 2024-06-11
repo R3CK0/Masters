@@ -1,0 +1,8 @@
+Modify the following PDDL domain 
+Add durative-actions to the requirements and convert all actions into durative actions
+
+Drive has a duration of 10
+Lift has a duration of 1
+Drop has a duration of 1
+Load has a duration of 3
+Unload has a duration of 4

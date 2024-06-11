@@ -1,0 +1,23 @@
+Modify the following PDDL
+Add the ability to Lift and Drop crates using the hoist, and to Load and Unload the truck with crates using the hoist
+
+This will require adding 4 actions
+
+actions:
+
+Load:
+conditions: the hoist and the truck must be at the same place, the hoist must be lifting the crate
+effect: the hoist will no longer be lifting the crate and will be available again, the crate will be in the truck and the current_load of the truck will increase by the weight of the crate
+
+Unload
+conditions: the hoist and the truck must be at the same place, the hoist must be available and the crate must be in the truck
+effect: the crate will no longer be in the truck, the hoist will be lifting the crate and thus no longer be available
+
+Lift
+Condition: The Hoist, if available lifts a crate if both are at the same place, for the hoist to lift the crate, the crate must be clear and on a surface
+Effect: Lifting the crate off the surface will leave it clear, the crate will no longer be clear since it's in the air, 
+the hoist lifting the crate with no longer be available, the crate is no longer at the same place as the hoist
+
+Drop 
+Condition: the hoist drops the crate at the same place as the surface, the surface and the hoist must be at the same place, the hoist can only drop a crate on a clear surface
+Effect : The surface will no longer be clear after dropping the crate on it, the hoist becomes available again, the crate will be clear in case other crates need to be stacked on top

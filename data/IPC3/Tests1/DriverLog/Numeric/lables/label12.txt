@@ -1,0 +1,8 @@
+Modify the following PDDL domain
+Remove the tires-ok predicate, INFLATE-TIRES action and sober predicate
+
+This requires removing 2 predicate, 1 actions and modifying 2 action
+
+Remove INFLATE-TIRES
+Remove the precondition to have tires-ok and sober in DRIVE-TRUCK action
+Removes the effect to become sober when doing WALK action

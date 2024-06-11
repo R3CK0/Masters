@@ -1,0 +1,7 @@
+Modify the following PDDL domain
+Remove the tires-ok predicate and the INFLATE-TIRES action
+
+This requires removing 1 predicate, 1 actions and modifying 1 action
+
+Remove INFLATE-TIRES
+Remove the precondition to have tires-ok in DRIVE-TRUCK action

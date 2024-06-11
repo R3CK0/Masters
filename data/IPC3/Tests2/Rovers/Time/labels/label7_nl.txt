@@ -1,0 +1,19 @@
+Modify the following PDDL domain
+add recharge-rate and energy functions and recharge durative-action
+
+context:the energy function represents the current energy level of the rover, the recharge-rate function is specific per rover and is 
+the amount of energy gained per unit of time when recharging in the sun, in_sun indicates if a waypoint is in the sun
+and thus a valid waypoint for the rover to recharge at, the rover can only recharge if it's energy supply is less or equal to 80, the duration of recharge of the rover depends on 
+it's current energy level and is given by (80-(energy of robot))/(robot's recharge-rate), certain actions require a minimum of energy to perform and consume that amount once completed
+
+these following actions must be modified to require a minimum of energy and consume that amount on execution
+navigate: 8
+sample_soil: 3
+sample_rock: 5
+calibrate: 2
+take_image: 1
+communicate_soil_data: 4
+communicate_rock_data: 4
+communicate_image_data: 6
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

@@ -1,0 +1,7 @@
+Modify the following PDDL domain
+Add lift and drop actions
+
+This will require adding the lifting predicate to indicate the hoist lifting the crate as well as a Lift and Drop action
+Both actions have a duration of 1
+
+Using commonsense reasoning and thinking step by step

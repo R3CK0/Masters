@@ -1,0 +1,2 @@
+Modify the following PDDL domain
+Remove the need for it to be day to perform actions

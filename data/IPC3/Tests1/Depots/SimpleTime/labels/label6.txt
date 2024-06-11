@@ -1,0 +1,17 @@
+Modify the following PDDL domain
+add the ability to load and unload creates into the truck and for the truck to drive from one location to another
+
+This will require adding 3 actions
+
+actions:
+
+Load:
+conditions: the hoist and the truck must be at the same place, the hoist must be lifting the crate
+effect: the hoist will no longer be lifting the crate and will be available again, the crate will be in the truck and the duration of the action is 3
+
+Unload
+conditions: the hoist and the truck must be at the same place, the hoist must be available and the crate must be in the truck
+effect: the crate will no longer be in the truck, the hoist will be lifting the crate and thus no longer be available, the duration of unloading is 4
+
+Drive:
+The drive action has a duration of 10 and moves the truck from one place to another

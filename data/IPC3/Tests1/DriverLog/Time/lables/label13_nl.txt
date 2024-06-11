@@ -1,0 +1,10 @@
+Modify the following PDDL domain
+add the path predicate that defines an existing path to walk between 2 locations
+
+This requires adding 1 predicate and modifying 1 action
+predicate: path from one location to another
+
+WALK:
+In order to walk from location to another a path between the 2 locations must exist
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

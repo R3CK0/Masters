@@ -1,0 +1,8 @@
+Modify the following PDDL domain
+Add driven and time-to-drive functions to track the total driven time
+
+This requires to add 2 functions and modify 1 action
+functions: driven and time-to-drive from location to location
+action: DRIVE-TRUCK
+
+modify the DRIVE-TRUCK action to increase the driven function by time-to-drive

@@ -1,0 +1,8 @@
+Modify the following PDDL domain
+add the path predicate that defines an existing path to walk between 2 locations
+
+This requires modifying WALK action
+
+WALK:
+path must exist between locations to executre path action
+

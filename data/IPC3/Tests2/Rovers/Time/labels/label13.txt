@@ -1,0 +1,8 @@
+Modify the following PDDL domain
+Remove the air data analysis predicates and actions
+
+This requires removing 4 predicates and 2 actions
+predicates: equipped_for_air_analysis, have_air_analysis, communicate_air_data, at_air_sample
+actions
+Remove sample_air
+Remove communicate_air_data

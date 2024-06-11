@@ -1,0 +1,5 @@
+Modify the following PDDL domain
+Remove the tires-ok predicate and the INFLATE-TIRES action
+
+Remove any need or effect that involves tires-ok
+Remove INFLATE-TIRES action

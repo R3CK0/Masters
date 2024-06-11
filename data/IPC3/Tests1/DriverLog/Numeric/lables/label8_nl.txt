@@ -1,0 +1,6 @@
+Modify the Following PDDL domain
+Remove INCREASE-SPEED and DECREASE-SPEED actions as well as the speed function
+
+context: Driving the truck should directly increase the driven time by time-to-drive
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

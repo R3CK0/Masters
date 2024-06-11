@@ -1,0 +1,14 @@
+Modify the following PDDL domain
+add sample-soil, sample-rock and calibrate actions and equipped_for_soil_analysis, equipped_for_rock_analysis, calibrated predicates
+
+the sample-soil action has a duration of 10
+the sample-rock action has a duration of 8
+the calibrate action has a duration of 5
+
+context: the at_*_sample predicate indicates if a sample is at a waypoint, the equipped_for_*_analysis indicates if a rover is equipped for a specific type of analysis, 
+store_of indicates if a rover is equipped with the specified storage, empty is to qualify a storage of empty, full qualifies a storage as full, a storage can either be full or empty,
+have_*_analysis indicates if a rover posseses a sample of a the * type, 
+the calibration_target predicate indicates the camera objective, visible_from predicate indicates if the objective is visible from a waypoint, 
+on_board predicate indicates if camera is on rover. The calibrated predicate indicates that the camera has been calibrated to objective and is ready to take_image. 
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

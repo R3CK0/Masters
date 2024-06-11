@@ -1,7 +1,7 @@
 Modify the following PDDL
 Add the ability to Lift and Drop crates using the hoist, and to Load and Unload the truck with crates using the hoist
 
-This will require adding 3 functions, 4 actions and 1 predicates
+This will require adding 3 functions, 5 actions and 1 predicates
 functions: load_limit per truck, current_load per truck and weight per crate
 predicate: lifting hoist lifts crate
 

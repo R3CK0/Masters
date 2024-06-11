@@ -1,0 +1,12 @@
+Modify the following PDDL domain
+Add WALK action and walked and time-to-walk functions to track the total walked time
+
+This requires to add 2 functions and add 1 action
+functions: walked and time-to-walk from location to location
+action: WALK
+
+actions:
+WALK:
+parameters: location, location, driver
+conditions: driver must be at the start location and there must be a path between the start location and the end location
+effect: driver is moved from the start location to the end location, the walked time is increased by the time-to-walk from start to end

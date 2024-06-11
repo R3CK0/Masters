@@ -1,0 +1,11 @@
+Modify the following PDDL domain
+Add lift and drop actions
+
+This will require adding the lifting predicate to indicate the hoist lifting the crate as well as a Lift and Drop action
+
+The Lift action can only lift a crate if it is at the same place as the hoist, that the hoist is available, the the crate is clear and the crate is on a surface
+Have the hoist lifting the crate and the surface will be clear
+
+The Drop action drops the crate at the same place as the surface, the surface and the hoist must be at the same place, 
+can only drop a crate on a clear surface and does not cost any fuel, the surface will no longer be clear after dropping on it, the hoist becomes available again, 
+and the crate will be clear in case other crates need to be stacked on top

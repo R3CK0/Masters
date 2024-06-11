@@ -1,0 +1,23 @@
+Modify the following PDDL domain
+Add the recharge action, the recharges and energy function and in_sun predicate
+
+This requires adding 1 action and 2 function and 1 predicate and modify most actions
+predicate: in_sun per waypoint
+function: recharges tracks the amount of recharges done 
+action: recharge
+
+recharge:
+parameters: rover waypoint
+conditions: rover is at waypoint, waypoint is in the sun, energy is less or equal to 80
+effect: increase energy of rover by 20, increases recharges by 1
+
+some actions need a minimum of energy to execute and their execution consumes that energy
+navigate: 8
+sample_soil: 3
+sample_rock: 5
+drop: none
+calibrate: 2
+take_image: 1
+communicate_soil_data: 4
+communicate_rock_data: 4
+communicate_image_data: 6

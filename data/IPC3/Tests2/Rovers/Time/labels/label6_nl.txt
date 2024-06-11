@@ -1,0 +1,8 @@
+Modify the following PDDL domain
+add recharge-rate function and recharge durative-action
+
+context: the recharge-rate function is specific per rover and is the amount of energy gained per unit of time when recharging in the sun, in_sun indicates if a waypoint is in the sun
+and thus a valid waypoint for the rover to recharge at, the rover can only recharge if it's energy supply is less or equal to 80, the duration of recharge of the rover depends on 
+it's current energy level and is given by (80-(energy of robot))/(robot's recharge-rate)
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

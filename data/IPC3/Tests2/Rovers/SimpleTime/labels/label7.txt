@@ -1,0 +1,13 @@
+Modify the following PDDL domain
+modify the durations of the following durative-actions to the following
+
+The modified actions should have the following durations
+navigate: 5
+sample_soil: 10
+sample_rock: 8
+drop: 1
+calibrate: 5
+take_image: 7
+communicate_soil_data: 10
+communicate_rock_data: 10
+communicate_image_data: 15

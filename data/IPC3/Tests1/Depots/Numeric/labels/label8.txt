@@ -3,10 +3,6 @@ Add the ability to Lift and Drop crates using the hoist, and to Load and Unload 
 
 This will require adding 5 actions
 
-Drive:
-Condition: The truck is at the starting place
-effect: the truck is no longer at the starting place but at the other place and the fuel-cost increases by 10
-
 actions:
 Drive:
 Condition: The truck is at the starting place

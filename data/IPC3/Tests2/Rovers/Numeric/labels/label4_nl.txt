@@ -1,0 +1,17 @@
+Modify the following PDDL domain
+add sample-soil, sample-rock, communicate_rock_data and calibrate actions and equipped_for_soil_analysis, equipped_for_rock_analysis, calibrated, have_soil_analysis, have_rock_analysis and communicated_rock_data predicates
+
+the sample-soil action costs 3 energy
+the sample-rock action costs 5 energy
+the calibrate action costs 2 energy
+the communicate_rock_data action costs 4 energy
+
+context: the at_*_sample predicate indicates if a sample is at a waypoint, the equipped_for_*_analysis indicates if a rover is equipped for a specific type of analysis, 
+store_of indicates if a rover is equipped with the specified storage, empty is to qualify a storage of empty, full qualifies a storage as full, a storage can either be full or empty,
+have_*_analysis indicates if a rover posseses a sample of a the * type, the rover need specific amounts of energy to perform various actions, 
+the calibration_target predicate indicates the camera objective, visible_from predicate indicates if the objective is visible from a waypoint, 
+on_board predicate indicates if camera is on rover. The calibrated predicate indicates that the camera has been calibrated to objective and is ready to take_image.
+at_lander predicate indicates that a lander is at a waypoint, available indicates that the rover is available to communicate data or navigate, channel_free indicates if the lander
+is available to communicate, communicated_*_data, indicates that the rover communicated data of * type
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

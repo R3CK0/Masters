@@ -1,0 +1,6 @@
+Modify the Following PDDL domain
+remove the speed concept 
+
+Remove any action directly linked to speed as well as any impact of speed on DRIVE-TRUCK function by setting the duration to time-to-drive alone.
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

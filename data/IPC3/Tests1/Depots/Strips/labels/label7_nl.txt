@@ -1,0 +1,9 @@
+Modify the following PDDL
+Add the ability to Lift and Drop crates using the hoist, and to Load and Unload the truck with crates using the hoist
+
+This will require adding 5 actions
+
+The drive action moves the truck from start to finnish and has a duration of 10
+The Load action loads the crate currently on the hoist into the truck, The unload does the opposite
+The Lift action uses the hoist to lift a crate that is clear of a surface, Drop liberates the Hoist and places the crate on a clear surface
+Using commonsense and the domain add the required elements think step by step

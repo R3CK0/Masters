@@ -1,0 +1,6 @@
+Modify the Following PDDL domain
+Add time-to-walk function that represents the duration to walk between one location and another
+
+change duration of walk to time-to-walk
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

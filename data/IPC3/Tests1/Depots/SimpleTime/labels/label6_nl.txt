@@ -1,0 +1,9 @@
+Modify the following PDDL domain
+add the ability to load and unload creates into the truck and for the truck to drive from one location to another
+
+This will require adding 3 actions
+actions: Load Unload Drive
+
+The Load action loads the crate currently on the hoist into the truck, The unload does the opposite and the drive action moves the truck from a to b. 
+The drive action has a duration of 10, the load a duration of 3 and Unload a duration of 4
+Using commonsense and the domain add the required elements think step by step

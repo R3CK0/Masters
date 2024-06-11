@@ -1,0 +1,8 @@
+Modify the following PDDL domain
+Add the recharge action and the recharges function and in_sun predicate
+
+recharge action increases energy of rover by 20 and recharges by 1 energy must be equal or less then 80
+
+context: rover uses energy to do actions. energy tracks the current energy levels of a rover, recharges tracks the amount of recharges done in total (not for specific rover)
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

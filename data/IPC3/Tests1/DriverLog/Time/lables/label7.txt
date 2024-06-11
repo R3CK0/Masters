@@ -1,0 +1,9 @@
+Modify the Following PDDL domain
+Add time-to-drive function that represents the duration to frive between one location and another
+
+This requires adding 1 function and modifying 1 action
+function: time-to-drive time to drive between one location and another
+action DRIVE-TRUCK
+
+DRIVE-TRUCK:
+change duration of DRIVE-TRUCK to time-to-drive

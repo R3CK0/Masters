@@ -1,3 +1,5 @@
+; Added air analysis
+
 (define (domain Rover)
 (:requirements :typing :durative-actions)
 (:types rover waypoint store camera mode lander objective)

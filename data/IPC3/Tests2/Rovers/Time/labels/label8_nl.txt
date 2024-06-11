@@ -1,0 +1,16 @@
+Modify the following PDDL domain
+Add durative-actions requirement and modify actions to make them durative-actions
+
+the actions should have the following durations
+navigate: 5
+recharge: (80-(robot current energy))/(robot recharge-rate)
+sample_soil: 10
+sample_rock: 8
+drop: 1
+calibrate: 5
+take_image: 7
+communicate_soil_data: 10
+communicate_rock_data: 10
+communicate_image_data: 15
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

@@ -1,0 +1,6 @@
+Modify the following PDDL domain
+Crates no longer require inspection to be loaded
+
+Using common sense
+Remove the concept of inspection
+Think step by step

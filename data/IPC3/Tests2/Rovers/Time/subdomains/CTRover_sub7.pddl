@@ -1,3 +1,5 @@
+; Removed all functions and recharge
+
 (define (domain Rover)
 (:requirements :typing :durative-actions :fluents :duration-inequalities)
 (:types rover waypoint store camera mode lander objective)

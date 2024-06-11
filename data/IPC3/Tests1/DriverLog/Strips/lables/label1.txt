@@ -1,0 +1,11 @@
+Modify the following PDDL domain
+Add WALK action
+
+This requires to add 1 action
+action: WALK
+
+actions:
+WALK:
+parameters: location, location, driver
+conditions: driver must be at the start location and there must be a path between the start location and the end location
+effect: driver is moved from the start location to the end location

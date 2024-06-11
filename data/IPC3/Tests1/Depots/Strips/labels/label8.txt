@@ -1,0 +1,12 @@
+Modify the following PDDL domain
+Remove the Inspected predicate and need of it
+
+This will require removing 1 predicate, 1 action and modifying 1 action
+predicate: inspected crate
+
+actions:
+Inspect
+Remove the Inspect action
+
+Load:
+Remove need for a crate to be inspected to perform load action

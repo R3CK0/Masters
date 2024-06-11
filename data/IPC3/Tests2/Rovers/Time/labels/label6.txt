@@ -1,0 +1,14 @@
+Modify the following PDDL domain
+add recharge-rate function and recharge action
+
+This will require to add one function and 1 action
+function: recharge-rate specifies the recharge rate of rover
+durative-action: recharge
+
+recharge:
+parameters: rover waypoint
+duration: (80-(rover current energy))/(rover recharge-rate)
+condition: rover must be at waypoint and stay there over all the recharge process, the waypoint must be in_sun, the rover must have a maximum of 80 energy to start recharging
+effect: increase the rover energy by recharge-rate * duration
+
+

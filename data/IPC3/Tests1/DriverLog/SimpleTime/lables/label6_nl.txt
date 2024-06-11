@@ -1,0 +1,6 @@
+Modify the Following PDDL domain
+add the durative actions to the requirements, and modify all the actions to be durative actions
+
+The duration of loading and unloading is 2, boarding and disembarking is 1, driving is 10 and walking is 20 
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

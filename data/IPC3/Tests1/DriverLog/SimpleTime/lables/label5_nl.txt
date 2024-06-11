@@ -1,0 +1,28 @@
+Modify the following PDDL domain
+Add BOARD-TRUCK, DISEMBARK-TRUCK, LOAD-TRUCK, UNLOAD-TRUCK and DRIVE-TRUCK actions 
+which allows the driver to get in and out of truck as well as load and unload object from truck and drive the truck
+
+This requires adding 4 actions
+actions: BOARD-TRUCK, DISEMBARK-TRUCK, LOAD-TRUCK, UNLOAD-TRUCK, DRIVE-TRUCK
+
+actions:
+BOARD-TRUCK:
+The driver boards the truck
+
+DISEMBARK-TRUCK:
+the driver gets out of the truck
+
+LOAD-TRUCK:
+Moves an obj into the truck
+
+UNLOAD-TRUCK:
+Moves an obj out of the truck
+
+DRIVE-TRUCK:
+Drives truck from one location to another
+
+context: the empty predicate indicates if truck has a driver in it, the driving predicate indicates if a driver is in a driving position in a truck, 
+the in predicate represents if an obj is in a truck 
+The board and disembark actions each take 1 duration, the load and unload actions each take 2 duration, driving takes 10
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

@@ -1,0 +1,4 @@
+Modify the following PDDL domain 
+Add the ability to drive from one location to another
+
+The drive action changes the location of the truck from one place to another

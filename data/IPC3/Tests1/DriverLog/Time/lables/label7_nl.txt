@@ -1,0 +1,6 @@
+Modify the Following PDDL domain
+Add time-to-drive function that represents the duration to drive between one location and another
+
+change duration of DRIVE-TRUCK to time-to-drive
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

@@ -1,0 +1,6 @@
+Modify the following PDDL domain
+Remove the sober predicate
+
+Remove any need or effect that involves sober
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

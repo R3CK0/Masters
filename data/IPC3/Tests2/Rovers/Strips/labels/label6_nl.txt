@@ -1,0 +1,9 @@
+Modify the following PDDL domain
+add the visible predicate
+
+add a condition to navigate to require the waypoint where the rover is going to be visible from it's current waypoint
+The communicate data actions to require the lander waypoint to be visible from the rover waypoint 
+
+context: The visible predicate indicates that a waypoint is visible from another waypoint
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

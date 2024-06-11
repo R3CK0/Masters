@@ -1,4 +1,4 @@
-;added bribe action
+;Added inspect action
 
 (define (domain Depot)
 (:requirements :typing :durative-actions)
@@ -13,7 +13,7 @@
              (lifting ?x - hoist ?y - crate)
              (available ?x - hoist)
              (clear ?x - surface)
-             (inspected ?x - crate))  ;; Predicate to indicate inspection status
+             (inspected ?x - crate))  ;; New predicate to indicate inspection status
 
 (:durative-action Drive
 :parameters (?x - truck ?y - place ?z - place) 
@@ -47,16 +47,10 @@
 :condition (and (over all (at ?x ?p)) (over all (at ?z ?p)) (at start (available ?x)) (at start (in ?y ?z)))
 :effect (and (at start (not (in ?y ?z))) (at start (not (available ?x))) (at start (lifting ?x ?y))))
 
-(:durative-action Inspect  ;; Modified action for inspecting crates
+(:durative-action Inspect  ;; New action for inspecting crates
 :parameters (?x - hoist ?y - crate ?p - place)
-:duration (= ?duration 3)
+:duration (= ?duration 1)
 :condition (and (over all (at ?x ?p)) (at start (available ?x)) (at start (at ?y ?p)) (at start (clear ?y)))
 :effect (and (at end (inspected ?y))))
-
-(:durative-action Bribe  ;; New action for bribing to get the inspected attribute
-:parameters (?x - crate ?p - place)
-:duration (= ?duration 1)
-:condition (at start (at ?x ?p))
-:effect (at end (inspected ?x)))
 
 )

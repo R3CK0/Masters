@@ -1,0 +1,7 @@
+Modify the following PDDL domain by 
+adding a distance and speed function 
+
+This will require adding 2 functions: 
+speed per truck and distance between a place and another place
+
+Modify the drive duration to be equal to distance/speed

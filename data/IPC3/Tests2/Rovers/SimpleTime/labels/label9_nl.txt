@@ -1,0 +1,9 @@
+Modify the following PDDL domain
+add the channel_free predicate
+
+modify the communicate_data actions to integrate the channel_free predicate
+
+context: channel_free predicate indicates that a lander is free to communicate, during the communication of data the channel is not free anymore, 
+once the data is communicated the channel is free once more
+
+Using commonsese reasoning modify the following domain by thinking step-by-step

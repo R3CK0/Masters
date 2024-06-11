@@ -1,0 +1,29 @@
+Modify the following PDDL domain
+add sample-soil, sample-rock, communicate_rock_data and calibrate actions and equipped_for_soil_analysis, equipped_for_rock_analysis, calibrated, have_soil_analysis, have_rock_analysis and communicated_rock_data predicates
+
+This requires adding 4 action and 6 predicate
+predicate: equipped_for_soil_analysis per rover, equipped_for_rock_analysis per rover, calibrated per camera per rover, have_soil_analysis per rover per waypoint, have_rock_analysis per rover per waypoint and communicated_rock_data per waypoint
+action: sample-soil, sample-rock, calibrate, communicate_rock_data
+
+sample-soil:
+parameters: rover store waypoint
+conditions: rover is at waypoint with greater or equal 3 energy, the soil sample is at waypoint, the rover is equipped for soil analysis and has a store that is empty
+effect: store is no longer empty, it's full. Energy reserves decrease by 3, the rover has the soil analysis and the soil sample is no longer at the waypoint
+
+sample-rock:
+parameters: rover store waypoint
+conditions: rover is at waypoint with greater or equal 5 energy, the rock sample is at waypoint, the rover is equipped for rock analysis and has a store that is empty
+effect: store is no longer empty, it's full. Energy reserves decrease by 5, the rover has the rock analysis and the rock sample is no longer at the waypoint
+
+calibrate:
+parameters: rover camera objective waypoint
+conditions: rover must be equipped for imaging, the objective must be a calibration target for the camera, the rover must be at the waypoint and the objective
+ must be visible from the waypoint, the camera must be on board the rover, energy must be greater or equal to 2
+effect: camera on the rover is calibrated, energy is decreased by 2
+
+communicate_rock_data:
+parameters: rover lander waypoint waypoint waypoint
+conditions: rover is at a waypoint, lander is at a waypoint, the rover waypoint and lander waypoint are in visible range, 
+the rover has the rock analysis from the waypoint where it took sample the rover is available and the communication channel is free, energy is greater or equal to 4
+effect: rover is temporarily unavailable, channel is temporarily not free, rover becomes available again, channel becomes free, 
+rover communicated_rock_data rover energy decreases by 4

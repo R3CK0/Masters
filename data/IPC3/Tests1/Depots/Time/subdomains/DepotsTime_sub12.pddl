@@ -1,48 +1,67 @@
-; removed durative actions
+; added bribe and inspect
 
 (define (domain Depot)
-(:requirements :typing :fluents)
+(:requirements :typing :durative-actions :fluents)
 (:types place locatable - object
-    depot distributor - place
-    truck hoist surface - locatable
-    pallet crate - surface)
+	depot distributor - place
+        truck hoist surface - locatable
+        pallet crate - surface)
 
 (:predicates (at ?x - locatable ?y - place) 
              (on ?x - crate ?y - surface)
              (in ?x - crate ?y - truck)
              (lifting ?x - hoist ?y - crate)
              (available ?x - hoist)
-             (clear ?x - surface))
+             (clear ?x - surface)
+             (inspected ?x - crate))
 
 (:functions (distance ?x - place ?y - place)
-            (speed ?t - truck)
-            (weight ?c - crate)
-            (power ?h - hoist))
+	    (speed ?t - truck)
+	    (weight ?c - crate)
+	    (power ?h - hoist))
+	
+(:durative-action Drive
+:parameters (?x - truck ?y - place ?z - place) 
+:duration (= ?duration (/ (distance ?y ?z) (speed ?x)))
+:condition (and (at start (at ?x ?y)))
+:effect (and (at start (not (at ?x ?y))) (at end (at ?x ?z))))
 
-(:action Drive
-:parameters (?x - truck ?y - place ?z - place)
-:precondition (at ?x ?y)
-:effect (and (not (at ?x ?y)) (at ?x ?z)))
-
-(:action Lift
+(:durative-action Lift
 :parameters (?x - hoist ?y - crate ?z - surface ?p - place)
-:precondition (and (at ?x ?p) (available ?x) (at ?y ?p) (on ?y ?z) (clear ?y))
-:effect (and (not (at ?y ?p)) (lifting ?x ?y) (not (clear ?y)) (not (available ?x)) 
-             (clear ?z) (not (on ?y ?z))))
+:duration (= ?duration 1)
+:condition (and (over all (at ?x ?p)) (at start (available ?x)) (at start (at ?y ?p)) (at start (on ?y ?z)) (at start (clear ?y)))
+:effect (and (at start (not (at ?y ?p))) (at start (lifting ?x ?y)) (at start (not (clear ?y))) (at start (not (available ?x))) 
+             (at start (clear ?z)) (at start (not (on ?y ?z)))))
 
-(:action Drop
+(:durative-action Drop 
 :parameters (?x - hoist ?y - crate ?z - surface ?p - place)
-:precondition (and (at ?x ?p) (at ?z ?p) (clear ?z) (lifting ?x ?y))
-:effect (and (available ?x) (not (lifting ?x ?y)) (at ?y ?p) (not (clear ?z)) (clear ?y)
-        (on ?y ?z)))
+:duration (= ?duration 1)
+:condition (and (over all (at ?x ?p)) (over all (at ?z ?p)) (over all (clear ?z)) (over all (lifting ?x ?y)))
+:effect (and (at end (available ?x)) (at end (not (lifting ?x ?y))) (at end (at ?y ?p)) (at end (not (clear ?z))) (at end (clear ?y))
+		(at end (on ?y ?z))))
 
-(:action Load
+(:durative-action Load
 :parameters (?x - hoist ?y - crate ?z - truck ?p - place)
-:precondition (and (at ?x ?p) (at ?z ?p) (lifting ?x ?y))
-:effect (and (not (lifting ?x ?y)) (in ?y ?z) (available ?x)))
+:duration (= ?duration (/ (weight ?y) (power ?x)))
+:condition (and (over all (at ?x ?p)) (over all (at ?z ?p)) (over all (lifting ?x ?y)) (at start (inspected ?y)))
+:effect (and (at end (not (lifting ?x ?y))) (at end (in ?y ?z)) (at end (available ?x))))
 
-(:action Unload
+(:durative-action Unload 
 :parameters (?x - hoist ?y - crate ?z - truck ?p - place)
-:precondition (and (at ?x ?p) (at ?z ?p) (available ?x) (in ?y ?z))
-:effect (and (not (in ?y ?z)) (not (available ?x)) (lifting ?x ?y)))
+:duration (= ?duration (/ (weight ?y) (power ?x)))
+:condition (and (over all (at ?x ?p)) (over all (at ?z ?p)) (at start (available ?x)) (at start (in ?y ?z)))
+:effect (and (at start (not (in ?y ?z))) (at start (not (available ?x))) (at start (lifting ?x ?y))))
+
+(:durative-action Inspect  ;; New action for inspecting crates
+:parameters (?x - hoist ?y - crate ?p - place)
+:duration (= ?duration 3)
+:condition (and (over all (at ?x ?p)) (at start (available ?x)) (at start (at ?y ?p)) (at start (clear ?y)))
+:effect (and (at end (inspected ?y))))
+
+(:durative-action Bribe  ;; New action for bribing to get the inspected attribute
+:parameters (?x - crate ?p - place)
+:duration (= ?duration 1)
+:condition (at start (at ?x ?p))
+:effect (at end (inspected ?x)))
+
 )

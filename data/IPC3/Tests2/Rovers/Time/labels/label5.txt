@@ -1,0 +1,39 @@
+Modify the following PDDL domain
+add sample-soil, sample-rock, communicate_rock_data, communicate_soil_data and calibrate actions and equipped_for_soil_analysis, equipped_for_rock_analysis, calibrated, have_soil_analysis, have_rock_analysis, communicated_rock_data, communicate_soil_data predicates
+
+This requires adding 5 action and 7 predicate
+predicate: equipped_for_soil_analysis per rover, equipped_for_rock_analysis per rover, calibrated per camera per rover, have_soil_analysis per rover per waypoint, have_rock_analysis per rover per waypoint and communicated_rock_data per waypoint
+action: sample-soil, sample-rock, calibrate, communicate_rock_data, communicate_soil_daata
+
+sample-soil:
+parameters: rover store waypoint
+duration: 10
+conditions: rover is at waypoint, the soil sample is at waypoint, the rover is equipped for soil analysis and has a store that is empty, the rover has a minimum of 3 energy
+effect: store is no longer empty, it's full, the rover has the soil analysis and the soil sample is no longer at the waypoint, the rover's energy decreases by 3
+
+sample-rock:
+parameters: rover store waypoint
+duration: 8
+conditions: rover is at waypoint, the rock sample is at waypoint, the rover is equipped for rock analysis and has a store that is empty, the rover has a minimum of 5 energy
+effect: store is no longer empty, it's full, the rover has the rock analysis and the rock sample is no longer at the waypoint, the rover's energy decreases by 5
+
+calibrate:
+parameters: rover camera objective waypoint
+duration: 5
+conditions: rover must be equipped for imaging, the objective must be a calibration target for the camera, the rover must be at the waypoint and the objective
+ must be visible from the waypoint, the camera must be on board the rover, the rover has a minimum of 2 energy
+effect: camera on the rover is calibrated, the rover's energy decreases by 2
+
+communicate_rock_data:
+parameters: rover lander waypoint waypoint waypoint
+duration: 10
+conditions: rover is at a waypoint, lander is at a waypoint, the rover waypoint and lander waypoint are in visible range, 
+the rover has the rock analysis from the waypoint where it took sample the rover is available and the communication channel is free, the rover has a minimum of 4 energy
+effect: rover is temporarily unavailable, channel is temporarily not free, rover becomes available again, channel becomes free, the rover's energy decreases by 4
+
+communicate_soil_data:
+parameters: rover lander waypoint waypoint waypoint
+duration: 10
+conditions: rover is at a waypoint, lander is at a waypoint, the rover waypoint and lander waypoint are in visible range, 
+the rover has the soil analysis from the waypoint where it took sample the rover is available and the communication channel is free, the rover has a minimum of 4 energy
+effect: rover is temporarily unavailable, channel is temporarily not free, rover becomes available again, channel becomes free, the rover's energy decreases by 4

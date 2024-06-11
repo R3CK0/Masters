@@ -1,0 +1,12 @@
+Modify the following PDDL domain
+add the visible predicate
+
+This requires adding 1 predicate and modifying 4 actions
+predicate: visible waypoint is visible from another waypoint
+
+actions:
+navigate action requires the waypoint the rover is navigating to be visible by the waypoint that the rover is currently at
+
+communicate_soil_data requires the lander waypoint to be visible from the rover waypoint
+communicate_rock_data requires the lander waypoint to be visible from the rover waypoint
+communicate_image_data requires the lander waypoint to be visible from the rover waypoint

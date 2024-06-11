@@ -1,0 +1,2 @@
+Modify the following PDDL domain 
+Remove the airplane type and change the parameters in load and unload to take truck instead of locatable

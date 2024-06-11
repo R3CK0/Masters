@@ -1,0 +1,32 @@
+Modify the following PDDL domain
+Add BOARD-TRUCK, DISEMBARK-TRUCK, LOAD-TRUCK, UNLOAD-TRUCK adn DRIVE-TRUCK actions
+which allows the driver to get in and out of truck as well as load and unload object from truck and drive
+
+This requires adding 5 actions
+actions: BOARD-TRUCK, DISEMBARK-TRUCK, LOAD-TRUCK, UNLOAD-TRUCK, DRIVE-TRUCK
+
+actions:
+BOARD-TRUCK:
+parameters: driver truck location
+conditions: truck and driver at the same location and the truck is empty
+effect: truck is no longer empty, the driver is no longer at location and the driver is driving
+
+DISEMBARK-TRUCK:
+parameters: driver truck location
+conditions: truck is at location and driver is driving the truck
+effect: driver is no longer driving the truck, the driver is at the location and the truck is empty
+
+LOAD-TRUCK:
+parameters: obj, truck, location
+conditions: truck and obj are at the same place
+effect: obj is no longer at location, obj is in truck
+
+UNLOAD-TRUCK:
+parameters: obj, truck, location
+conditions: truck is at location and obj is in truck
+effect: obj is no longer in truck and is at location
+
+DRIVE-TRUCK:
+parameters: driver, location, location, truck
+conditions: driving is driving truck, truck is at start location
+effect: truck is at end location and driven increases by time-to-drive from start location to end location

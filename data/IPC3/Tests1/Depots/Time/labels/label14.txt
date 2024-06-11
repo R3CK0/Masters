@@ -1,0 +1,4 @@
+Modify the following PDDL domain 
+remove fuel-cost
+
+Remove the fuel cost function from the functions and from all actions

@@ -1,4 +1,4 @@
-; Remove board/disembark truck
+; Remove board/disembark truck and drive
 
 
 (define (domain driverlog)

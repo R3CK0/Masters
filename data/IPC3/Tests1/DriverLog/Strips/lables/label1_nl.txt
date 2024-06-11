@@ -1,0 +1,7 @@
+Modify the following PDDL domain
+Add WALK action
+
+This requires to add 1 action
+action: WALK
+
+The WALK action allows a driver to move from one location to another

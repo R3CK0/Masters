@@ -1,4 +1,4 @@
-;Removed sample-soil/rock removed equiped-for-soil/rock-analysis, removed calibrate and calibrated, removed communicate_rock_data, communicate_soil_data and communicated rock/soil
+; removed calibrate, sample-soil/rock, communicate rock 
 
 (define (domain Rover)
 (:requirements :typing :fluents)
@@ -9,11 +9,12 @@
              (can_traverse ?r - rover ?x - waypoint ?y - waypoint)
              (equipped_for_imaging ?r - rover)
              (empty ?s - store)
-             (full ?s - store)
+             (full ?s - store) 
 	     (supports ?c - camera ?m - mode)
              (available ?r - rover)
              (visible ?w - waypoint ?p - waypoint)
              (have_image ?r - rover ?o - objective ?m - mode)
+             (communicated_soil_data ?w - waypoint)
              (communicated_image_data ?o - objective ?m - mode)
 	     (at_soil_sample ?w - waypoint)
 	     (at_rock_sample ?w - waypoint)
@@ -43,7 +44,6 @@
 :effect (and (increase (energy ?x) 20) (increase (recharges) 1)) 
 )
 
-
 (:action drop
 :parameters (?x - rover ?y - store)
 :precondition (and (store_of ?y ?x) (full ?y)
@@ -67,6 +67,16 @@
                )
  :effect (and (have_image ?r ?o ?m)(not (calibrated ?i ?r))(decrease (energy ?r) 1)
 		)
+)
+
+(:action communicate_soil_data
+ :parameters (?r - rover ?l - lander ?p - waypoint ?x - waypoint ?y - waypoint)
+ :precondition (and (at ?r ?x)(at_lander ?l ?y)(have_soil_analysis ?r ?p) 
+                   (visible ?x ?y)(available ?r)(channel_free ?l)(>= (energy ?r) 4)
+            )
+ :effect (and (not (available ?r))(not (channel_free ?l))
+(channel_free ?l) (communicated_soil_data ?p)(available ?r)(decrease (energy ?r) 4)
+	)
 )
 
 

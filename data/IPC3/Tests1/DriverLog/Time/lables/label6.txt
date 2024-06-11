@@ -1,0 +1,9 @@
+Modify the Following PDDL domain
+Add time-to-walk function that represents the duration to walk between one location and another
+
+This requires adding 1 function and modifying 1 action
+function: time-to-walk time to walk between one location and another
+action WALK
+
+WALK:
+change duration of walk to time-to-walk

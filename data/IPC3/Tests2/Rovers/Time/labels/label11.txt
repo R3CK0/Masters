@@ -1,0 +1,10 @@
+Modify the following PDDL domain
+add the channel_free predicate
+
+This requires adding 1 predicate and modifying 3 actions
+predicate: channel_free per lander
+
+actions
+communicate_soil_data: The lander channel must be free to start a communication. While the rover and lander are communicating the channel is not free and then becomes free again once the data is communicated
+communicate_rock_data: The lander channel must be free to start a communication. While the rover and lander are communicating the channel is not free and then becomes free again once the data is communicated
+communicate_image_data: The lander channel must be free to start a communication. While the rover and lander are communicating the channel is not free and then becomes free again once the data is communicated

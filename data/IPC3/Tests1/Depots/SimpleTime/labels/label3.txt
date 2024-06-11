@@ -1,0 +1,8 @@
+Modify the following PDDL domain 
+Modify the durations of the actions
+
+Drive duration 10
+Lift duration 1
+Drop duration 1
+Load duration 3
+Unload duration 4

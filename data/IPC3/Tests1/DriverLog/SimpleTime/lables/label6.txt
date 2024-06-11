@@ -1,0 +1,10 @@
+Modify the Following PDDL domain
+add the durative actions requirement and modify all actions to be durative actions
+
+The following actions have the following durations
+LOAD-TRUCK: 2
+UNLOAD-TRUCK: 2
+BOARD-TRUCK: 1
+DISEMBARK-TRUCK: 1
+DRIVE-TRUCK: 10
+WALK: 20

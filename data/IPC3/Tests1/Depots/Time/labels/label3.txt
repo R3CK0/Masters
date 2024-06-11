@@ -1,0 +1,7 @@
+Modify the following PDDL domain 
+Add power and weight functions to evaluate load and unload durations
+
+this will require adding 2 functions
+weight per crate and power per hoist
+
+The duration of the Load and Unload actions is equal to wight/power

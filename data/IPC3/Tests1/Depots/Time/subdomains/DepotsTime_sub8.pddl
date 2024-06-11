@@ -1,4 +1,4 @@
-;Removed all actions
+; Removed all actions except Drive
 
 (define (domain Depot)
 (:requirements :typing :durative-actions :fluents)
@@ -18,5 +18,11 @@
 	    (speed ?t - truck)
 	    (weight ?c - crate)
 	    (power ?h - hoist))
+	
+(:durative-action Drive
+:parameters (?x - truck ?y - place ?z - place) 
+:duration (= ?duration (/ (distance ?y ?z) (speed ?x)))
+:condition (and (at start (at ?x ?y)))
+:effect (and (at start (not (at ?x ?y))) (at end (at ?x ?z))))
 
 )

@@ -1,0 +1,18 @@
+Modify the following PDDL domain
+Add BOARD-TRUCK action and DISEMBARK-TRUCK action which allows the driver to get in and out of truck and be in driving position
+
+This requires adding 2 actions
+actions: BOARD-TRUCK, DISEMBARK-TRUCK
+
+actions:
+BOARD-TRUCK:
+parameters: driver truck location
+duration: 1
+conditions: truck and driver at the same location and the truck is empty
+effect: truck is no longer empty, the driver is no longer at location and the driver is driving
+
+DISEMBARK-TRUCK:
+parameters: driver truck location
+duration: 1
+conditions: truck is at location and driver is driving the truck
+effect: driver is no longer driving the truck, the driver is at the location and the truck is empty

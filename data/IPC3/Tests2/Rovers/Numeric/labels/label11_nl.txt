@@ -1,0 +1,8 @@
+Modify the following PDDL domain
+Remove the air data analysis predicates and actions
+
+context: equipped_for_air_analysis indicates if the rover is equipped with a module to analyse the air, 
+have_air_analysis indicates that the rover has an air sample from a specific waypoint, communicate_air_data indicates that the rover successfully communicated air data,
+at_air_sample indicates that an air sample is present at a waypoint
+
+Using commonsese reasoning modify the following domain by thinking step-by-step
