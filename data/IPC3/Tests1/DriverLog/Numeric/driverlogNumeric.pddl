@@ -11,7 +11,7 @@
 		(empty ?v - truck)
 )
   (:functions (time-to-walk ?l1 ?l2 - location)
-		(time-to-drive ?l1 ?l2 - location)
+		(time-to-drive ?l1 ?l2 - location) ; Remove L1
 		(driven)
 		(walked))
 

@@ -7,72 +7,92 @@ with open("OPENAI_KEY.json", 'r') as json_file:
         client = OpenAI(api_key=data['openai_key'])
         
 prompt_text = """
-Modify the following PDDL to include the following:
-states: 
-- lights
-tools:
-- light switch (not movable)
-effects:
-- using light switch toggles the state of the lights between true and false
+Modify the following PDDL domain
+Add BOARD-TRUCK action, DISEMBARK-TRUCK action and DRIVE-TRUCK which allows the driver to get in and out of the truck and be in driving position as well as to drive from one location to another
 
-(define (domain robotic-domain)
-  (:requirements :fluents :strips :typing)
+This requires adding 3 actions
+actions: BOARD-TRUCK, DISEMBARK-TRUCK, DRIVE-TRUCK
 
-  (:types
-    location
-    tool
-    robot
-  )
+actions:
+BOARD-TRUCK:
+parameters: driver truck location
+conditions: truck and driver at the same location and the truck is empty
+effect: truck is no longer empty, the driver is no longer at location and the driver is driving
 
-  (:predicates
-    (at ?r - robot ?l - location)
-    (has ?r - robot ?t - tool)
-    (movable ?t - tool)
-    (tool-at ?t - tool ?l - location)
-  )
+DISEMBARK-TRUCK:
+parameters: driver truck location
+conditions: truck is at location and driver is driving the truck
+effect: driver is no longer driving the truck, the driver is at the location and the truck is empty
 
-  (:action move_robot
-    :parameters (?r - robot ?from - location ?to - location)
-    :precondition (at ?r ?from)
-    :effect (and (at ?r ?to)
-                 (not (at ?r ?from)))
-  )
+DRIVE-TRUCK:
+parameters: location, location, driver, truck
+conditions: driver must be driving the truck, the truck must be at the start location and there must be a link between the start location and the end location
+effect: truck is moved from the start location to the end location, the driven time is increased by the time-to-drive from start to end
 
-  (:action move_robot_with_tool
-      :parameters (?r - robot ?from - location ?to - location ?t - tool)
-      :precondition (and (at ?r ?from) (has ?r ?t) (tool-at ?t ?from))
-      :effect (and (at ?r ?to)
-                  (not (at ?r ?from))
-                  (tool-at ?t ?to)
-                  (not (tool-at ?t ?from)))
-  )
+(define (domain driverlog)
+  (:requirements :typing :fluents) 
+  (:types           location locatable - object
+		driver truck obj - locatable)
 
-  (:action pickup_object
-    :parameters (?r - robot ?t - tool ?l - location)
-    :precondition (and (at ?r ?l) (tool-at ?t ?l) (movable ?t))
-    :effect (and (has ?r ?t) (not (tool-at ?t ?l)))
-  )
-
-  (:action drop_object
-    :parameters (?r - robot ?t - tool ?l - location)
-    :precondition (and (at ?r ?l) (has ?r ?t))
-    :effect (and (not (has ?r ?t)) (tool-at ?t ?l))
-  )
+  (:predicates 
+		(at ?obj - locatable ?loc - location)
+		(in ?obj1 - obj ?obj - truck)
+		(driving ?d - driver ?v - truck)
+		(link ?x ?y - location) (path ?x ?y - location)
+		(empty ?v - truck)
 )
+  (:functions (time-to-walk ?l1 ?l2 - location)
+		(time-to-drive ?l1 ?l2 - location)
+		(driven)
+		(walked))
 
-In order to be used tools must be at same location as robot. tools cannot be locations. States cannot be locations.
-For any new actions you define start them with the 'USE_' token which must be capitalized.
+
+(:action LOAD-TRUCK
+  :parameters
+   (?obj - obj
+    ?truck - truck
+    ?loc - location)
+  :precondition
+   (and (at ?truck ?loc) (at ?obj ?loc))
+  :effect
+   (and (not (at ?obj ?loc)) (in ?obj ?truck)))
+
+(:action UNLOAD-TRUCK
+  :parameters
+   (?obj - obj
+    ?truck - truck
+    ?loc - location)
+  :precondition
+   (and (at ?truck ?loc) (in ?obj ?truck))
+  :effect
+   (and (not (in ?obj ?truck)) (at ?obj ?loc)))
+
+(:action WALK
+  :parameters
+   (?driver - driver
+    ?loc-from - location
+    ?loc-to - location)
+  :precondition
+   (and (at ?driver ?loc-from) (path ?loc-from ?loc-to))
+  :effect
+   (and (not (at ?driver ?loc-from)) (at ?driver ?loc-to)
+	(increase (walked) (time-to-walk ?loc-from ?loc-to))))
+
+ 
+)
 """
 
-
-completion = client.chat.completions.create(model="gpt-4-turbo",
+print("sending promt to GPT-4o")
+completion = client.chat.completions.create(model="gpt-4o",
 messages=[{
     "role": "system",
-    "content": "You are a PDDL domain creation expert, you modify domains based on changes in the environment."
+    "content": "You are a PDDL domain creation expert, you modify domains based on requested changes."
 }, {
     "role": "user",
     "content": prompt_text}]
 )
 
 
-print(completion.choices[0].message.content)
+print(completion)
+
+
