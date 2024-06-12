@@ -1,0 +1,56 @@
+Number of literals: 1074
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Have identified that smaller values of (current_load truck0) are preferable
+Have identified that smaller values of (current_load truck1) are preferable
+Have identified that smaller values of (current_load truck2) are preferable
+Have identified that smaller values of (current_load truck3) are preferable
+Have identified that smaller values of (current_load truck4) are preferable
+Have identified that smaller values of (current_load truck5) are preferable
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+Initial heuristic = 36.000
+b (35.000 | 0.000)b (34.000 | 0.001)b (33.000 | 0.001)b (32.000 | 0.002)b (31.000 | 0.003)b (30.000 | 0.003)b (29.000 | 0.003)b (28.000 | 0.003)b (26.000 | 0.003)b (25.000 | 0.003)b (24.000 | 0.003)b (23.000 | 0.004)b (22.000 | 0.004)b (21.000 | 0.005)b (20.000 | 0.006)b (18.000 | 0.006)b (16.000 | 0.006)b (15.000 | 0.006)b (13.000 | 0.006)b (11.000 | 0.006)b (10.000 | 0.007)b (8.000 | 0.007)b (7.000 | 0.007)b (5.000 | 0.007)b (4.000 | 0.008)b (3.000 | 0.008)b (2.000 | 0.009)b (1.000 | 0.010);;;; Solution Found
+; States evaluated: 197
+; Cost: 0.010
+; Time 1.07
+0.000: (lift hoist11 crate0 distributor5 pallet11)  [0.001]
+0.000: (lift hoist13 crate8 depot5 crate7)  [0.001]
+0.000: (lift hoist10 crate14 distributor4 crate5)  [0.001]
+0.000: (lift hoist9 crate16 distributor3 crate11)  [0.001]
+0.000: (lift hoist8 crate13 distributor2 crate3)  [0.001]
+0.000: (lift hoist1 crate17 depot1 crate12)  [0.001]
+0.000: (lift hoist7 crate19 distributor1 crate4)  [0.001]
+0.001: (drop hoist11 crate0 distributor5 pallet14)  [0.001]
+0.001: (drop hoist13 crate8 depot5 crate10)  [0.001]
+0.001: (drop hoist9 crate16 distributor3 crate15)  [0.001]
+0.001: (drop hoist1 crate17 depot1 pallet2)  [0.001]
+0.002: (lift hoist13 crate8 depot5 crate10)  [0.001]
+0.002: (drop hoist10 crate14 distributor4 crate0)  [0.001]
+0.002: (lift hoist1 crate12 depot1 pallet1)  [0.001]
+0.002: (lift hoist9 crate11 distributor3 pallet9)  [0.001]
+0.002: (drop hoist8 crate13 distributor2 crate16)  [0.001]
+0.003: (lift hoist0 crate10 depot0 crate9)  [0.001]
+0.003: (drop hoist1 crate12 depot1 pallet16)  [0.001]
+0.003: (drop hoist9 crate11 distributor3 pallet1)  [0.001]
+0.003: (drop hoist7 crate19 distributor1 pallet9)  [0.001]
+0.003: (lift hoist10 crate18 distributor4 pallet12)  [0.001]
+0.003: (lift hoist8 crate6 distributor2 pallet17)  [0.001]
+0.004: (drop hoist0 crate10 depot0 crate17)  [0.001]
+0.004: (lift hoist12 crate9 depot0 crate1)  [0.001]
+0.004: (lift hoist7 crate4 distributor1 pallet7)  [0.001]
+0.004: (drop hoist10 crate18 distributor4 pallet4)  [0.001]
+0.004: (drop hoist8 crate6 distributor2 pallet6)  [0.001]
+0.005: (lift hoist0 crate1 depot0 pallet0)  [0.001]
+0.005: (lift hoist10 crate5 distributor4 crate2)  [0.001]
+0.005: (drop hoist12 crate9 depot0 pallet17)  [0.001]
+0.005: (lift hoist8 crate3 distributor2 pallet8)  [0.001]
+0.006: (drop hoist10 crate5 distributor4 pallet12)  [0.001]
+0.006: (drop hoist8 crate3 distributor2 pallet18)  [0.001]
+0.007: (drop hoist0 crate1 depot0 pallet15)  [0.001]
+0.007: (lift hoist10 crate2 distributor4 pallet10)  [0.001]
+0.007: (lift hoist8 crate13 distributor2 crate16)  [0.001]
+0.008: (drop hoist8 crate13 distributor2 crate1)  [0.001]
+0.008: (lift hoist9 crate16 distributor3 crate15)  [0.001]
+0.009: (lift hoist8 crate15 distributor2 pallet13)  [0.001]
+0.010: (drop hoist8 crate15 distributor2 pallet7)  [0.001]
+0.010: (drop hoist10 crate2 distributor4 pallet13)  [0.001]

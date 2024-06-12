@@ -1,0 +1,8 @@
+Number of literals: 549
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Have identified that smaller values of (current_load truck0) are preferable
+Have identified that smaller values of (current_load truck1) are preferable
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+Initial heuristic = 48.000
+b (47.000 | 0.000)b (45.000 | 0.001)b (44.000 | 0.002)b (43.000 | 0.002)b (42.000 | 0.003)b (41.000 | 0.006)b (40.000 | 0.007)b (39.000 | 0.008)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/AI_gen/Depots_Nu2.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/problems/pfile12
