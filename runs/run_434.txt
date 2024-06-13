@@ -1,0 +1,10 @@
+Number of literals: 613
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Have identified that smaller values of (current_load truck0) are preferable
+Have identified that smaller values of (current_load truck1) are preferable
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+Initial heuristic = 50.000
+b (49.000 | 0.000)b (48.000 | 0.000)b (46.000 | 0.001)b (45.000 | 0.002)b (44.000 | 0.003)b (43.000 | 0.003)b (42.000 | 0.004)b (40.000 | 0.006)b (39.000 | 0.007)b (38.000 | 0.007)b (37.000 | 0.008)b (36.000 | 0.013)b (35.000 | 0.014)b (34.000 | 0.016)b (33.000 | 0.019)b (32.000 | 0.020)b (31.000 | 0.022)b (30.000 | 0.027)
+Resorting to best-first search
+b (49.000 | 0.000)b (48.000 | 0.000)b (46.000 | 0.001)b (45.000 | 0.003)b (44.000 | 0.004)b (42.000 | 0.005)b (41.000 | 0.005)b (40.000 | 0.005)b (39.000 | 0.005)b (37.000 | 0.006)b (36.000 | 0.007)b (35.000 | 0.007)b (34.000 | 0.008)b (33.000 | 0.009)b (32.000 | 0.010)b (31.000 | 0.010)b (30.000 | 0.010)b (29.000 | 0.010)b (28.000 | 0.010)b (27.000 | 0.014)b (25.000 | 0.014)b (24.000 | 0.018)b (24.000 | 0.016)b (23.000 | 0.018)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/AI_gen/Depots_Nu9_nl.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/problems/pfile15
