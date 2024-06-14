@@ -42,11 +42,9 @@ class DriverLogWrapper(DriverLog):
         assert self.driver_log.link(location_from, location_to)
 
         truck.at = location_to
-        self.driver_log.driven += self.driver_log.time_to_drive(location_from, location_to)
 
     def walk(self, driver, location_from, location_to):
         assert driver.at == location_from
         assert self.driver_log.path(location_from, location_to)
 
         driver.at = location_to
-        self.driver_log.walked += self.driver_log.time_to_walk(location_from, location_to)
