@@ -1,0 +1,9 @@
+Number of literals: 118
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+79% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 34.000
+b (33.000 | 10.000)b (32.000 | 10.000)b (31.000 | 10.000)b (30.000 | 10.000)b (29.000 | 10.000)b (28.000 | 17.000)b (27.000 | 17.000)b (26.000 | 32.001)b (24.000 | 32.001)b (23.000 | 32.001)b (22.000 | 42.002)b (19.000 | 42.002)b (18.000 | 52.003)b (17.000 | 62.004)b (16.000 | 78.907)b (14.000 | 83.909)b (13.000 | 85.911)b (12.000 | 95.913)b (10.000 | 103.914)b (8.000 | 123.916)b (7.000 | 123.916)
+Resorting to best-first search
+b (33.000 | 10.000)b (33.000 | 5.000)b (32.000 | 10.000)b (31.000 | 10.000)b (30.000 | 10.000)b (29.000 | 10.000)b (28.000 | 10.000)b (27.000 | 17.000)b (26.000 | 17.000)b (25.000 | 17.000)b (24.000 | 25.005)b (24.000 | 23.004)b (23.000 | 25.005)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Time/AI_gen/Rovers_Ti1.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Time/problems/pfile11

@@ -1,0 +1,23 @@
+Number of literals: 372
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+Action 2890 - (drive truck0 depot0 depot0) is concurrent-redundant
+Action 2891 - (drive truck1 depot0 depot0) is concurrent-redundant
+Action 2892 - (drive truck2 depot0 depot0) is concurrent-redundant
+Action 2893 - (drive truck3 depot0 depot0) is concurrent-redundant
+Action 2910 - (drive truck0 depot1 depot1) is concurrent-redundant
+Action 2911 - (drive truck1 depot1 depot1) is concurrent-redundant
+Action 2912 - (drive truck2 depot1 depot1) is concurrent-redundant
+Action 2913 - (drive truck3 depot1 depot1) is concurrent-redundant
+Action 2930 - (drive truck0 distributor0 distributor0) is concurrent-redundant
+Action 2931 - (drive truck1 distributor0 distributor0) is concurrent-redundant
+Action 2932 - (drive truck2 distributor0 distributor0) is concurrent-redundant
+Action 2933 - (drive truck3 distributor0 distributor0) is concurrent-redundant
+Action 2950 - (drive truck0 distributor1 distributor1) is concurrent-redundant
+Action 2951 - (drive truck1 distributor1 distributor1) is concurrent-redundant
+Action 2952 - (drive truck2 distributor1 distributor1) is concurrent-redundant
+Action 2953 - (drive truck3 distributor1 distributor1) is concurrent-redundant
+All the ground actions in this problem are compression-safe
+Initial heuristic = 26.000
+Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/AI_gen/Depots_Si5.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile17

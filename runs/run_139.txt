@@ -1,50 +1,19 @@
-Number of literals: 135
-Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
-Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
-Have identified that smaller values of (current_load truck0) are preferable
-Have identified that smaller values of (current_load truck1) are preferable
-[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
-Initial heuristic = 20.000
-b (19.000 | 0.000)b (18.000 | 0.001)b (17.000 | 0.001)b (16.000 | 0.001)b (15.000 | 0.002)b (13.000 | 0.003)b (12.000 | 0.004)b (11.000 | 0.004)b (8.000 | 0.007)b (7.000 | 0.007)b (6.000 | 0.008)b (5.000 | 0.008)
-Resorting to best-first search
-b (19.000 | 0.000)b (18.000 | 0.001)b (18.000 | 0.000)b (17.000 | 0.001)b (16.000 | 0.001)b (15.000 | 0.002)b (13.000 | 0.003)b (11.000 | 0.004)b (8.000 | 0.008)b (7.000 | 0.008)b (6.000 | 0.008)b (5.000 | 0.008)b (4.000 | 0.014)b (3.000 | 0.014)b (2.000 | 0.014)b (1.000 | 0.015);;;; Solution Found
-; States evaluated: 123860
-; Cost: 0.000
-; Time 64.94
-0.000: (lift hoist2 crate3 crate2 distributor1)  [0.001]
-0.000: (lift hoist0 crate5 pallet0 depot0)  [0.001]
-0.001: (load hoist2 crate3 truck0 distributor1)  [0.001]
-0.001: (load hoist0 crate5 truck1 depot0)  [0.001]
-0.002: (drive truck1 depot0 distributor1)  [0.001]
-0.002: (drive truck0 distributor1 distributor0)  [0.001]
-0.003: (unload hoist2 crate5 truck1 distributor1)  [0.001]
-0.003: (unload hoist1 crate3 truck0 distributor0)  [0.001]
-0.004: (drop hoist2 crate5 crate1 distributor1)  [0.001]
-0.004: (drop hoist1 crate3 pallet1 distributor0)  [0.001]
-0.005: (lift hoist2 crate2 pallet2 distributor1)  [0.001]
-0.005: (lift hoist1 crate4 crate0 distributor0)  [0.001]
-0.006: (load hoist2 crate2 truck1 distributor1)  [0.001]
-0.006: (load hoist1 crate4 truck0 distributor0)  [0.001]
-0.007: (drive truck1 distributor1 depot0)  [0.001]
-0.007: (drive truck0 distributor0 distributor1)  [0.001]
-0.007: (lift hoist1 crate0 pallet4 distributor0)  [0.001]
-0.007: (lift hoist2 crate5 crate1 distributor1)  [0.001]
-0.008: (unload hoist0 crate2 truck1 depot0)  [0.001]
-0.008: (drop hoist1 crate0 pallet3 distributor0)  [0.001]
-0.008: (drive truck0 distributor1 depot0)  [0.001]
-0.008: (drop hoist2 crate5 pallet2 distributor1)  [0.001]
-0.009: (load hoist0 crate2 truck1 depot0)  [0.001]
-0.009: (lift hoist2 crate1 pallet5 distributor1)  [0.001]
-0.010: (drive truck1 depot0 distributor0)  [0.001]
-0.010: (drive truck0 depot0 distributor1)  [0.001]
-0.010: (drop hoist2 crate1 crate5 distributor1)  [0.001]
-0.011: (unload hoist1 crate2 truck1 distributor0)  [0.001]
-0.011: (unload hoist2 crate4 truck0 distributor1)  [0.001]
-0.012: (load hoist1 crate2 truck1 distributor0)  [0.001]
-0.012: (drop hoist2 crate4 pallet5 distributor1)  [0.001]
-0.013: (drive truck1 distributor0 depot0)  [0.001]
-0.013: (lift hoist2 crate1 crate5 distributor1)  [0.001]
-0.014: (unload hoist0 crate2 truck1 depot0)  [0.001]
-0.014: (drop hoist2 crate1 crate4 distributor1)  [0.001]
-0.015: (lift hoist2 crate5 pallet2 distributor1)  [0.001]
-0.016: (drop hoist2 crate5 crate1 distributor1)  [0.001]
+Warnings encountered when parsing Domain/Problem File
+-----------------------------------------------------
+
+The supplied domain/problem file appear to violate part of the PDDL
+language specification.  Specifically:
+
+Errors: 0, warnings: 3
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/problems/pfile10: line: 23: Warning: Undeclared symbol: current_load
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/problems/pfile10: line: 24: Warning: Undeclared symbol: load_limit
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/problems/pfile10: line: 42: Warning: Undeclared symbol: weight
+
+The planner will continue, but you may wish to fix your files accordingly
+Type Errors Encountered in Problem File
+---------------------------------------
+
+Due to type errors in the supplied problem file, the planner
+has to terminate.  The log of type checking is as follows:
+
+Type-checking initial state failed

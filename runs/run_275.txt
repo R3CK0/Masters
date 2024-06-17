@@ -1,11 +1,21 @@
-Type Errors Encountered in Domain File
---------------------------------------
-
-Due to type errors in the supplied domain file, the planner
-has to terminate.  The log of type checking is as follows:
-
-Type-checking drive
-...action passes type checking.
-Type-checking lift
-Type problem with proposition (on c p) - parameter 2 is incorrectly typed
-Conditions fail type-checking.
+Number of literals: 40
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+80% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 12.000
+b (11.000 | 1.000)b (10.000 | 4.001)b (9.000 | 11.002)b (7.000 | 13.001)b (6.000 | 20.002)b (5.000 | 20.002)b (4.000 | 20.002)b (3.000 | 24.003)b (2.000 | 25.004)b (1.000 | 25.004);;;; Solution Found
+; States evaluated: 25
+; Cost: 25.004
+; Time 0.05
+0.000: (lift hoist0 crate1 pallet0 depot0)  [1.000]
+0.000: (lift hoist1 crate0 pallet1 distributor0)  [1.000]
+0.000: (drive truck0 distributor1 distributor0)  [10.000]
+1.001: (load hoist0 crate1 truck1 depot0)  [3.000]
+1.002: (drive truck1 depot0 distributor0)  [10.000]
+10.001: (load hoist1 crate0 truck0 distributor0)  [3.000]
+10.002: (drive truck0 distributor0 distributor1)  [10.000]
+11.003: (unload hoist1 crate1 truck1 distributor0)  [4.000]
+15.004: (drop hoist1 crate1 pallet1 distributor0)  [1.000]
+20.003: (unload hoist2 crate0 truck0 distributor1)  [4.000]
+24.004: (drop hoist2 crate0 pallet2 distributor1)  [1.000]

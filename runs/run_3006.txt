@@ -1,0 +1,35 @@
+Critical Errors Encountered in Domain/Problem File
+--------------------------------------------------
+
+Due to critical errors in the supplied domain/problem file, the planner
+has to terminate.  The errors encountered are as follows:
+
+Errors: 1, warnings: 27
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 10: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 10: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 10: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 10: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 10: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 10: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 10: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 12: Warning: Undeclared symbol: visible
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 88: Warning: Undeclared symbol: at_soil_sample
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 90: Warning: Undeclared symbol: at_rock_sample
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 104: Warning: Undeclared symbol: at_lander
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 105: Warning: Undeclared symbol: channel_free
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 106: Warning: Undeclared symbol: at
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 107: Warning: Undeclared symbol: available
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 108: Warning: Undeclared symbol: store_of
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 109: Warning: Undeclared symbol: empty
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 110: Warning: Undeclared symbol: equipped_for_soil_analysis
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 111: Warning: Undeclared symbol: equipped_for_rock_analysis
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 112: Warning: Undeclared symbol: equipped_for_imaging
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 113: Warning: Undeclared symbol: can_traverse
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 218: Warning: Undeclared symbol: on_board
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 219: Warning: Undeclared symbol: calibration_target
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 220: Warning: Undeclared symbol: supports
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 232: Warning: Undeclared symbol: visible_from
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 274: Warning: Undeclared symbol: communicated_soil_data
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 278: Warning: Undeclared symbol: communicated_rock_data
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 282: Warning: Undeclared symbol: communicated_image_data
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Strips/problems/pfile16: line: 287: Error: Syntax error in problem file - types used, but no :types section in domain file.

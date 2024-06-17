@@ -1,0 +1,6 @@
+(:predicates 
+...
+(equipped_for_soil_analysis ?r - rover)
+(equipped_for_rock_analysis ?r - rover)
+...
+)

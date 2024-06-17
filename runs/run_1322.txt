@@ -1,0 +1,9 @@
+Number of literals: 173
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+87% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 34.000
+b (33.000 | 2.000)b (30.000 | 20.000)b (29.000 | 20.000)b (28.000 | 40.001)b (27.000 | 41.002)b (26.000 | 41.002)b (25.000 | 41.002)b (24.000 | 41.002)b (23.000 | 51.003)b (22.000 | 53.004)b (21.000 | 61.005)b (20.000 | 63.006)b (19.000 | 63.006)b (18.000 | 73.008)b (17.000 | 92.012)
+Resorting to best-first search
+b (31.000 | 20.000)b (29.000 | 20.000)b (28.000 | 40.001)b (27.000 | 41.002)b (26.000 | 41.002)b (25.000 | 41.002)b (24.000 | 41.002)b (23.000 | 51.003)b (22.000 | 53.004)b (21.000 | 61.005)b (20.000 | 63.006)b (19.000 | 63.006)b (18.000 | 73.008)b (17.000 | 73.008)b (16.000 | 83.010)b (15.000 | 83.010)b (14.000 | 93.012)b (13.000 | 101.013)b (12.000 | 121.016)b (11.000 | 121.016)b (10.000 | 131.017)b (9.000 | 133.018)b (7.000 | 182.022)b (6.000 | 200.009)b (5.000 | 201.010)b (4.000 | 201.010)b (3.000 | 224.015)b (2.000 | 234.015)b (2.000 | 206.015)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/SimpleTime/AI_gen_code/DriverLog_Si_code3_nl.pddl /home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/SimpleTime/problems/pfile12

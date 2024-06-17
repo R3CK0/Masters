@@ -1,12 +1,40 @@
-Number of literals: 1567
+Number of literals: 382
 Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
 Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
-Have identified that smaller values of (current_load truck0) are preferable
-Have identified that smaller values of (current_load truck1) are preferable
-Have identified that smaller values of (current_load truck2) are preferable
-Have identified that smaller values of (current_load truck3) are preferable
-Have identified that smaller values of (current_load truck4) are preferable
-Have identified that smaller values of (current_load truck5) are preferable
 [01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
-Initial heuristic = 79.000
-b (78.000 | 0.000)b (77.000 | 0.000)b (75.000 | 0.000)b (73.000 | 0.001)b (72.000 | 0.002)b (71.000 | 0.003)b (70.000 | 0.004)b (68.000 | 0.004)b (67.000 | 0.004)b (66.000 | 0.004)b (65.000 | 0.004)b (64.000 | 0.004)b (63.000 | 0.004)b (61.000 | 0.004)b (60.000 | 0.004)b (59.000 | 0.004)b (58.000 | 0.004)b (57.000 | 0.004)b (56.000 | 0.004)b (55.000 | 0.004)b (54.000 | 0.004)b (53.000 | 0.004)b (51.000 | 0.006)b (49.000 | 0.007)b (48.000 | 0.007)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/AI_gen/Depots_Nu10.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/problems/pfile22
+76% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 33.000
+b (32.000 | 1.000)b (31.000 | 1.000)b (30.000 | 1.000)b (29.000 | 1.000)b (28.000 | 1.000)b (27.000 | 10.000)b (26.000 | 10.000)b (25.000 | 10.000)b (23.000 | 10.000)b (22.000 | 14.001)b (21.000 | 18.001)b (20.000 | 18.001)b (18.000 | 18.001)b (17.000 | 18.001)b (16.000 | 18.001)b (15.000 | 18.001)b (14.000 | 18.001)b (13.000 | 23.001)b (11.000 | 23.001)b (10.000 | 23.001)b (9.000 | 27.001)b (8.000 | 27.001)b (6.000 | 27.001)b (2.000 | 27.001);;;; Solution Found
+; States evaluated: 311
+; Cost: 27.001
+; Time 0.28
+0.000: (bribe crate8 distributor1)  [1.000]
+0.000: (bribe crate7 distributor1)  [1.000]
+0.000: (bribe crate6 distributor1)  [1.000]
+0.000: (bribe crate4 depot1)  [1.000]
+0.000: (bribe crate3 depot0)  [1.000]
+0.000: (drive truck3 depot0 distributor1)  [10.000]
+0.000: (drive truck2 depot1 distributor1)  [10.000]
+0.001: (lift hoist3 crate7 crate5 distributor1)  [1.000]
+0.001: (lift hoist1 crate4 pallet1 depot1)  [1.000]
+0.001: (lift hoist7 crate8 crate6 distributor1)  [1.000]
+0.001: (lift hoist6 crate3 pallet6 depot0)  [1.000]
+1.001: (load hoist3 crate7 truck1 distributor1)  [3.000]
+1.001: (load hoist1 crate4 truck0 depot1)  [3.000]
+1.001: (load hoist7 crate8 truck1 distributor1)  [3.000]
+4.001: (drive truck0 depot1 depot0)  [10.000]
+4.001: (drive truck1 distributor1 depot0)  [10.000]
+4.002: (lift hoist3 crate6 pallet7 distributor1)  [1.000]
+4.002: (lift hoist7 crate1 pallet5 distributor1)  [1.000]
+4.002: (drop hoist7 crate1 pallet7 distributor1)  [1.000]
+10.001: (load hoist3 crate6 truck2 distributor1)  [3.000]
+13.001: (drive truck2 distributor1 depot1)  [10.000]
+14.001: (unload hoist0 crate4 truck0 depot0)  [4.000]
+14.001: (drop hoist0 crate4 pallet0 depot0)  [1.000]
+14.001: (unload hoist4 crate8 truck1 depot0)  [4.000]
+14.001: (unload hoist5 crate7 truck1 depot0)  [4.000]
+14.001: (drop hoist4 crate8 pallet6 depot0)  [1.000]
+15.001: (drop hoist6 crate3 crate8 depot0)  [1.000]
+16.001: (drop hoist5 crate7 crate3 depot0)  [1.000]
+23.001: (unload hoist1 crate6 truck2 depot1)  [4.000]
+23.001: (drop hoist1 crate6 pallet1 depot1)  [1.000]

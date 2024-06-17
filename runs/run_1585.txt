@@ -1,0 +1,28 @@
+Critical Errors Encountered in Domain/Problem File
+--------------------------------------------------
+
+Due to critical errors in the supplied domain/problem file, the planner
+has to terminate.  The errors encountered are as follows:
+
+Errors: 1, warnings: 20
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 20: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 22: Warning: Undeclared symbol: at
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 26: Warning: Undeclared symbol: empty
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 34: Warning: Undeclared symbol: path
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 46: Warning: Undeclared symbol: link
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile5: line: 65: Error: Syntax error in problem file - types used, but no :types section in domain file.

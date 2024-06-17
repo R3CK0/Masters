@@ -10,7 +10,7 @@ syntax = []
 path = "data/IPC3/Tests1"
 path = os.path.abspath(path)
 
-domains_path = "AI_gen"
+domains_path = "AI_gen_code"
 
 val_path = '~/.config/Code/User/globalStorage/jan-dolejsi.pddl/val/Val-20210401.1-Linux/bin'
 full_val_path = subprocess.os.path.expanduser(val_path)
@@ -57,7 +57,7 @@ for domain in ["Depots", "DriverLog", "Rovers"]:
             syntax.append({"domain": domain, "requirement": req, "file": file, "errors": errors, "warnings": warnings, "error_list": list_errors, "warning_list": list_warnings})
 
 subprocess.os.chdir("/home/god/Documents/Masters")
-with open(f"syntax-{domains_path}.jsonl", "w") as f:
+with open(f"results/syntax-{domains_path}.jsonl", "w") as f:
     for syn in syntax:
         json.dump(syn, f)
         f.write("\n")

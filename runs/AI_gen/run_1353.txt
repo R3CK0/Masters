@@ -1,0 +1,13 @@
+Type Errors Encountered in Domain File
+--------------------------------------
+
+Due to type errors in the supplied domain file, the planner
+has to terminate.  The log of type checking is as follows:
+
+Type-checking loading
+...action passes type checking.
+Type-checking unloading
+...action passes type checking.
+Type-checking boarding
+Problem with proposition (driving driver v) - too few parameters
+Effects fail type-checking.

@@ -1,0 +1,9 @@
+Critical Errors Encountered in Domain/Problem File
+--------------------------------------------------
+
+Due to critical errors in the supplied domain/problem file, the planner
+has to terminate.  The errors encountered are as follows:
+
+Errors: 2, warnings: 0
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Strips/AI_gen_code/Depots_St_code6_nl.pddl: line: 14: Error: Syntax error in domain
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Strips/problems/pfile7: line: 51: Error: Syntax error in problem file - types used, but no :types section in domain file.

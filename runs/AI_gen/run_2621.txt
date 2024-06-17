@@ -1,0 +1,38 @@
+Number of literals: 122
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+37% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 41.000
+b (40.000 | 5.000)b (39.000 | 8.000)b (36.000 | 8.000)b (35.000 | 8.000)b (34.000 | 8.000)b (33.000 | 8.000)b (32.000 | 8.000)b (31.000 | 8.000)b (30.000 | 8.000)b (28.000 | 10.003)b (27.000 | 12.001)b (24.000 | 15.001)b (23.000 | 15.001)b (22.000 | 18.001)b (21.000 | 28.002)b (20.000 | 28.002)b (19.000 | 38.003)b (17.000 | 38.003)b (15.000 | 38.003)b (14.000 | 48.004)b (13.000 | 48.004)b (12.000 | 48.004)b (9.000 | 48.004)b (8.000 | 48.004)b (7.000 | 63.005)b (6.000 | 78.006)b (4.000 | 78.006)b (3.000 | 88.007)b (1.000 | 88.007);;;; Solution Found
+; States evaluated: 630
+; Cost: 103.008
+; Time 0.18
+0.000: (calibrate rover0 camera4 objective3 waypoint1)  [5.000]
+0.000: (sample_rock rover1 rover1store waypoint4)  [8.000]
+0.000: (navigate rover1 waypoint4 waypoint6)  [5.000]
+0.001: (navigate rover1 waypoint4 waypoint5)  [5.000]
+0.002: (navigate rover1 waypoint4 waypoint2)  [5.000]
+2.003: (navigate rover0 waypoint1 waypoint2)  [5.000]
+5.001: (take_image rover0 waypoint1 objective2 camera4 low_res)  [7.000]
+5.001: (sample_soil rover1 rover1store waypoint6)  [10.000]
+7.002: (sample_rock rover1 rover1store waypoint5)  [8.000]
+7.002: (calibrate rover0 camera4 objective3 waypoint1)  [5.000]
+8.000: (navigate rover1 waypoint2 waypoint1)  [5.000]
+8.000: (navigate rover1 waypoint6 waypoint8)  [5.000]
+8.001: (communicate_rock_data rover1 general waypoint4 waypoint5 waypoint7)  [10.000]
+9.005: (navigate rover0 waypoint2 waypoint3)  [5.000]
+9.006: (navigate rover0 waypoint2 waypoint1)  [5.000]
+12.003: (take_image rover0 waypoint2 objective0 camera4 low_res)  [7.000]
+14.004: (calibrate rover0 camera4 objective3 waypoint2)  [5.000]
+18.002: (communicate_soil_data rover1 general waypoint6 waypoint1 waypoint7)  [10.000]
+28.003: (communicate_rock_data rover1 general waypoint5 waypoint1 waypoint7)  [10.000]
+29.002: (drop rover1 rover1store)  [1.000]
+30.003: (sample_rock rover1 rover1store waypoint8)  [8.000]
+38.004: (communicate_rock_data rover1 general waypoint8 waypoint1 waypoint7)  [10.000]
+48.005: (communicate_image_data rover0 general objective2 low_res waypoint1 waypoint7)  [15.000]
+63.006: (communicate_image_data rover0 general objective0 low_res waypoint1 waypoint7)  [15.000]
+68.006: (sample_soil rover0 rover0store waypoint3)  [10.000]
+78.007: (communicate_soil_data rover0 general waypoint3 waypoint1 waypoint7)  [10.000]
+81.007: (take_image rover0 waypoint1 objective0 camera4 colour)  [7.000]
+88.008: (communicate_image_data rover0 general objective0 colour waypoint1 waypoint7)  [15.000]

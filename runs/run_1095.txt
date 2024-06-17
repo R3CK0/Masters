@@ -1,0 +1,19 @@
+Warnings encountered when parsing Domain/Problem File
+-----------------------------------------------------
+
+The supplied domain/problem file appear to violate part of the PDDL
+language specification.  Specifically:
+
+Errors: 0, warnings: 2
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/AI_gen_code/DriverLog_Nu_code8.pddl: line: 39: Warning: Undeclared requirement :negative-preconditions 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/AI_gen_code/DriverLog_Nu_code8.pddl: line: 45: Warning: Undeclared requirement :negative-preconditions 
+
+The planner will continue, but you may wish to fix your files accordingly
+Number of literals: 105
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+Initial heuristic = 17.000
+b (16.000 | 0.000)b (15.000 | 0.001)b (14.000 | 0.001)b (13.000 | 0.001)b (12.000 | 0.001)b (11.000 | 0.001)
+Resorting to best-first search
+b (16.000 | 0.000)b (15.000 | 0.001)b (15.000 | 0.000)b (14.000 | 0.001)b (13.000 | 0.001)b (12.000 | 0.001)b (11.000 | 0.001)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/AI_gen_code/DriverLog_Nu_code8.pddl /home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile10

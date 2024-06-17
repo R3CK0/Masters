@@ -1,10 +1,21 @@
-Number of literals: 208
+Number of literals: 34
 Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
-A problem has been encountered, and the problem has been deemed unsolvable
---------------------------------------------------------------------------
-The goal fact:
-(on crate1 pallet8)
-
-...cannot be found either in the initial state, as an add effect of an
- action, or as a timed initial literal.  As such, the problem has been deemed
-unsolvable.
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+29% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 18.000
+b (17.000 | 3.000)b (16.000 | 3.000)b (15.000 | 3.000)b (13.000 | 6.001)b (12.000 | 16.001)b (11.000 | 20.001)b (10.000 | 20.001)b (8.000 | 20.001)b (7.000 | 20.001)b (5.000 | 23.002)b (4.000 | 33.002)b (3.000 | 37.002)b (1.000 | 37.002);;;; Solution Found
+; States evaluated: 44
+; Cost: 37.002
+; Time 0.04
+0.000: (lift hoist0 crate1 pallet0 depot0)  [3.000]
+0.000: (drive truck0 distributor1 distributor0)  [10.000]
+3.001: (load hoist0 crate1 truck1 depot0)  [3.000]
+6.001: (drive truck1 depot0 distributor0)  [10.000]
+13.002: (lift hoist1 crate0 pallet1 distributor0)  [3.000]
+16.001: (unload hoist1 crate1 truck1 distributor0)  [4.000]
+17.000: (drop hoist1 crate1 pallet1 distributor0)  [3.000]
+20.002: (load hoist1 crate0 truck0 distributor0)  [3.000]
+23.002: (drive truck0 distributor0 distributor1)  [10.000]
+33.002: (unload hoist2 crate0 truck0 distributor1)  [4.000]
+34.001: (drop hoist2 crate0 pallet2 distributor1)  [3.000]

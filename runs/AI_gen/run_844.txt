@@ -1,0 +1,30 @@
+Number of literals: 76
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+47% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 20.000
+b (19.000 | 1.000)b (18.000 | 1.000)b (16.000 | 4.557)b (15.000 | 15.224)b (14.000 | 15.224)b (10.000 | 45.116)b (9.000 | 45.116)b (8.000 | 45.116)b (7.000 | 46.117)b (6.000 | 46.117)b (5.000 | 46.117)b (4.000 | 46.117)b (3.000 | 46.117)b (1.000 | 46.117);;;; Solution Found
+; States evaluated: 366
+; Cost: 46.117
+; Time 0.12
+0.000: (lift hoist2 crate2 crate1 distributor1)  [1.000]
+0.000: (lift hoist0 crate0 pallet0 depot0)  [1.000]
+0.000: (drive truck1 depot0 distributor1)  [10.000]
+1.001: (load hoist0 crate0 truck0 depot0)  [3.556]
+1.001: (drop hoist2 crate2 crate1 distributor1)  [1.000]
+1.002: (drive truck0 depot0 distributor1)  [3.333]
+4.558: (unload hoist2 crate0 truck0 distributor1)  [10.667]
+4.559: (lift hoist2 crate2 crate1 distributor1)  [1.000]
+5.560: (load hoist2 crate2 truck0 distributor1)  [29.667]
+5.561: (drive truck0 distributor1 distributor0)  [0.667]
+6.228: (drive truck0 distributor0 depot0)  [0.667]
+35.227: (lift hoist2 crate1 pallet2 distributor1)  [1.000]
+35.227: (unload hoist0 crate2 truck0 depot0)  [9.889]
+35.228: (drive truck0 depot0 distributor1)  [3.333]
+36.228: (load hoist2 crate1 truck1 distributor1)  [1.333]
+36.229: (drive truck1 distributor1 distributor0)  [2.000]
+37.562: (drop hoist2 crate0 pallet2 distributor1)  [1.000]
+38.230: (unload hoist1 crate1 truck1 distributor0)  [1.000]
+39.231: (drop hoist1 crate1 crate3 distributor0)  [1.000]
+45.117: (drop hoist0 crate2 pallet0 depot0)  [1.000]

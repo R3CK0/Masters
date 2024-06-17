@@ -1,0 +1,15 @@
+Warnings encountered when parsing Domain/Problem File
+-----------------------------------------------------
+
+The supplied domain/problem file appear to violate part of the PDDL
+language specification.  Specifically:
+
+Errors: 0, warnings: 1
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/AI_gen_code/DriverLog_St_code8.pddl: line: 91: Warning: Undeclared requirement :negative-preconditions 
+
+The planner will continue, but you may wish to fix your files accordingly
+Number of literals: 78
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/AI_gen_code/DriverLog_St_code8.pddl /home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile7

@@ -1,0 +1,10 @@
+Critical Errors Encountered in Domain/Problem File
+--------------------------------------------------
+
+Due to critical errors in the supplied domain/problem file, the planner
+has to terminate.  The errors encountered are as follows:
+
+Errors: 3, warnings: 0
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Time/AI_gen/Depots_Ti13.pddl: line: 34: Error: Syntax error in durative-action declaration.
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Time/AI_gen/Depots_Ti13.pddl: line: 34: Error: Unreadable structure
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Time/AI_gen/Depots_Ti13.pddl: line: 35: Error: Syntax error in domain

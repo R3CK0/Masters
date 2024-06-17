@@ -1,0 +1,9 @@
+Number of literals: 63
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+92% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 35.000
+b (34.000 | 5.000)b (33.000 | 10.000)b (32.000 | 32.001)b (31.000 | 32.001)b (30.000 | 32.001)b (29.000 | 32.001)b (28.000 | 47.002)b (27.000 | 62.003)b (26.000 | 72.004)b (24.000 | 72.004)b (23.000 | 82.005)b (21.000 | 82.005)b (20.000 | 88.007)b (18.000 | 99.009)b (17.000 | 113.008)b (16.000 | 118.009)b (15.000 | 128.009)b (14.000 | 133.010)b (12.000 | 133.010)b (11.000 | 143.011)b (10.000 | 143.011)b (9.000 | 148.011)b (8.000 | 158.011)
+Resorting to best-first search
+b (34.000 | 5.000)b (33.000 | 10.000)b (32.000 | 17.001)b (32.000 | 17.000)b (31.000 | 32.001)b (30.000 | 32.001)b (29.000 | 32.001)b (28.000 | 47.002)b (27.000 | 62.003)b (26.000 | 72.004)b (24.000 | 72.004)b (22.000 | 72.004)b (21.000 | 97.007)b (19.000 | 97.007)b (17.000 | 113.010)b (16.000 | 133.088)b (16.000 | 128.088)b (15.000 | 138.089)b (12.000 | 143.090)b (11.000 | 153.091)b (10.000 | 153.091)b (9.000 | 163.092)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Time/CTRover.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Time/problems/pfile6

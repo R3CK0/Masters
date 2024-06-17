@@ -1,0 +1,8 @@
+Type Errors Encountered in Problem File
+---------------------------------------
+
+Due to type errors in the supplied problem file, the planner
+has to terminate.  The log of type checking is as follows:
+
+Type problem with proposition (can_traverse rover0 waypoint1 waypoint2) - parameter 1 is incorrectly typed
+Type-checking initial state failed

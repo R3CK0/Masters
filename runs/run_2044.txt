@@ -1,0 +1,11 @@
+Critical Errors Encountered in Domain/Problem File
+--------------------------------------------------
+
+Due to critical errors in the supplied domain/problem file, the planner
+has to terminate.  The errors encountered are as follows:
+
+Errors: 3, warnings: 1
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/AI_gen_code/DriverLog_Ti_code6_nl.pddl: line: 57: Error: Syntax error in durative-action declaration.
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/AI_gen_code/DriverLog_Ti_code6_nl.pddl: line: 57: Error: Unreadable structure
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/AI_gen_code/DriverLog_Ti_code6_nl.pddl: line: 58: Error: Syntax error in domain
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile14: line: 172: Warning: Undeclared symbol: time-to-drive

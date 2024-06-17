@@ -1,0 +1,22 @@
+Warnings encountered when parsing Domain/Problem File
+-----------------------------------------------------
+
+The supplied domain/problem file appear to violate part of the PDDL
+language specification.  Specifically:
+
+Errors: 0, warnings: 3
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Strips/AI_gen/Depots_St5_nl.pddl: line: 23: Warning: Undeclared variable symbol: ?p
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Strips/AI_gen/Depots_St5_nl.pddl: line: 33: Warning: Undeclared variable symbol: ?p
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Strips/AI_gen/Depots_St5_nl.pddl: line: 38: Warning: Undeclared variable symbol: ?p
+
+The planner will continue, but you may wish to fix your files accordingly
+Type Errors Encountered in Domain File
+--------------------------------------
+
+Due to type errors in the supplied domain file, the planner
+has to terminate.  The log of type checking is as follows:
+
+Type-checking drive
+...action passes type checking.
+Type-checking lift
+Object with unknown type: p

@@ -1,0 +1,10 @@
+Number of literals: 122
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+A problem has been encountered, and the problem has been deemed unsolvable
+--------------------------------------------------------------------------
+The goal fact:
+(communicated_rock_data waypoint3)
+
+...cannot be found either in the initial state, as an add effect of an
+ action, or as a timed initial literal.  As such, the problem has been deemed
+unsolvable.

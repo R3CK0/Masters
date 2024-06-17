@@ -1,0 +1,11 @@
+Critical Errors Encountered in Domain/Problem File
+--------------------------------------------------
+
+Due to critical errors in the supplied domain/problem file, the planner
+has to terminate.  The errors encountered are as follows:
+
+Errors: 3, warnings: 1
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Time/AI_gen_code/Rovers_Ti_code5.pddl: line: 213: Error: Syntax error in durative-action declaration.
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Time/AI_gen_code/Rovers_Ti_code5.pddl: line: 213: Error: Unreadable structure
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Time/AI_gen_code/Rovers_Ti_code5.pddl: line: 214: Error: Syntax error in domain
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Time/problems/pfile3: line: 33: Warning: Undeclared symbol: recharge-rate

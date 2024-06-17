@@ -1,0 +1,25 @@
+Number of literals: 31
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%] [110%] [120%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%] [110%] [120%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+Pruning (load-truck package1 truck1 s1) - never appeared in initial RPG
+Pruning (load-truck package2 truck1 s1) - never appeared in initial RPG
+Pruning (load-truck package1 truck2 s2) - never appeared in initial RPG
+Pruning (load-truck package2 truck2 s2) - never appeared in initial RPG
+Pruning (load-truck package3 truck2 s2) - never appeared in initial RPG
+Pruning (load-truck package4 truck2 s2) - never appeared in initial RPG
+Pruning (unload-truck package1 truck1 s1) - never appeared in initial RPG
+Pruning (unload-truck package2 truck1 s1) - never appeared in initial RPG
+Pruning (unload-truck package1 truck2 s2) - never appeared in initial RPG
+Pruning (unload-truck package2 truck2 s2) - never appeared in initial RPG
+Pruning (unload-truck package3 truck2 s2) - never appeared in initial RPG
+Pruning (unload-truck package4 truck2 s2) - never appeared in initial RPG
+Pruning (board-truck driver2 truck1 s1) - never appeared in initial RPG
+Pruning (board-truck driver1 truck2 s2) - never appeared in initial RPG
+Pruning (board-truck driver2 truck2 s2) - never appeared in initial RPG
+Pruning (disembark-truck driver2 truck1 s1) - never appeared in initial RPG
+Pruning (disembark-truck driver1 truck2 s2) - never appeared in initial RPG
+Pruning (disembark-truck driver2 truck2 s2) - never appeared in initial RPG
+Initial heuristic = -1.000
+;; Problem unsolvable!
+; Time 0.03

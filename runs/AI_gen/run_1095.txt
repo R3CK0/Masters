@@ -1,0 +1,10 @@
+Critical Errors Encountered in Domain/Problem File
+--------------------------------------------------
+
+Due to critical errors in the supplied domain/problem file, the planner
+has to terminate.  The errors encountered are as follows:
+
+Errors: 3, warnings: 0
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/AI_gen/DriverLog_Nu7.pddl: line: 96: Error: Syntax error in action declaration.
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/AI_gen/DriverLog_Nu7.pddl: line: 96: Error: Unreadable structure
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/AI_gen/DriverLog_Nu7.pddl: line: 96: Error: Syntax error in domain

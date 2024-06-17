@@ -1,12 +1,17 @@
-Number of literals: 1567
-Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
-Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
-Have identified that smaller values of (current_load truck0) are preferable
-Have identified that smaller values of (current_load truck1) are preferable
-Have identified that smaller values of (current_load truck2) are preferable
-Have identified that smaller values of (current_load truck3) are preferable
-Have identified that smaller values of (current_load truck4) are preferable
-Have identified that smaller values of (current_load truck5) are preferable
-[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
-Initial heuristic = 79.000
-b (78.000 | 0.000)b (77.000 | 0.000)b (75.000 | 0.000)b (73.000 | 0.001)b (72.000 | 0.002)b (71.000 | 0.003)b (70.000 | 0.004)b (68.000 | 0.004)b (67.000 | 0.004)b (66.000 | 0.004)b (65.000 | 0.004)b (64.000 | 0.004)b (63.000 | 0.004)b (61.000 | 0.004)b (60.000 | 0.004)b (59.000 | 0.004)b (58.000 | 0.004)b (57.000 | 0.004)b (56.000 | 0.004)b (55.000 | 0.004)b (54.000 | 0.004)b (53.000 | 0.004)b (51.000 | 0.006)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/AI_gen/Depots_Nu0_nl.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/problems/pfile22
+Warnings encountered when parsing Domain/Problem File
+-----------------------------------------------------
+
+The supplied domain/problem file appear to violate part of the PDDL
+language specification.  Specifically:
+
+Errors: 0, warnings: 1
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/problems/pfile21: line: 128: Warning: Undeclared symbol: fuel-cost
+
+The planner will continue, but you may wish to fix your files accordingly
+Type Errors Encountered in Problem File
+---------------------------------------
+
+Due to type errors in the supplied problem file, the planner
+has to terminate.  The log of type checking is as follows:
+
+Type-checking initial state failed

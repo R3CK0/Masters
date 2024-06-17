@@ -13,7 +13,7 @@ if [ ! -f "$1" ]; then
 fi
 
 # Define the output directory
-output_dir="/home/god/Documents/Masters/runs"
+output_dir="/home/god/Documents/Masters/runs/original/runs"
 
 # Create the output directory if it doesn't exist
 mkdir -p "$output_dir"
@@ -30,7 +30,7 @@ while IFS= read -r command; do
   output_file="$output_dir/run_$run_number.txt"
 
   # Execute the command with a timeout of 5 minutes (300 seconds)
-  timeout 150 bash -c "$full_command" 2>&1 | tee "$output_file"
+  timeout 450 bash -c "$full_command" 2>&1 | tee "$output_file"
 
   # Check the exit status of the command
   status=$?

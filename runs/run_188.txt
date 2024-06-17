@@ -1,79 +1,18 @@
-Number of literals: 399
-Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
-Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
-Have identified that smaller values of (current_load truck0) are preferable
-Have identified that smaller values of (current_load truck1) are preferable
-[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
-Initial heuristic = 26.000
-b (25.000 | 0.001)b (24.000 | 0.002)b (23.000 | 0.002)b (21.000 | 0.003)b (20.000 | 0.006)b (19.000 | 0.011)b (18.000 | 0.013)b (17.000 | 0.016)b (16.000 | 0.017)b (14.000 | 0.020)b (13.000 | 0.026)b (11.000 | 0.028)b (10.000 | 0.030)b (8.000 | 0.031)b (7.000 | 0.033)b (6.000 | 0.035)b (5.000 | 0.037)b (4.000 | 0.038)b (3.000 | 0.039)b (2.000 | 0.040)b (1.000 | 0.040);;;; Solution Found
-; States evaluated: 653
-; Cost: 0.000
-; Time 0.46
-0.000: (lift hoist4 crate14 distributor1 crate11)  [0.001]
-0.000: (lift hoist1 crate12 depot1 crate10)  [0.001]
-0.000: (lift hoist5 crate13 distributor2 crate9)  [0.001]
-0.001: (drop hoist4 crate14 distributor1 crate10)  [0.001]
-0.001: (drop hoist5 crate13 distributor2 crate4)  [0.001]
-0.002: (lift hoist4 crate11 distributor1 pallet4)  [0.001]
-0.002: (drop hoist1 crate12 depot1 crate14)  [0.001]
-0.002: (lift hoist5 crate9 distributor2 crate8)  [0.001]
-0.003: (drop hoist5 crate9 distributor2 pallet2)  [0.001]
-0.003: (lift hoist1 crate12 depot1 crate10)  [0.001]
-0.003: (drop hoist4 crate11 distributor1 crate13)  [0.001]
-0.004: (lift hoist5 crate8 distributor2 crate7)  [0.001]
-0.004: (drop hoist1 crate12 depot1 crate11)  [0.001]
-0.005: (drop hoist5 crate8 distributor2 crate10)  [0.001]
-0.005: (lift hoist1 crate12 depot1 crate11)  [0.001]
-0.006: (lift hoist5 crate7 distributor2 crate6)  [0.001]
-0.006: (lift hoist4 crate11 distributor1 crate13)  [0.001]
-0.006: (drop hoist1 crate12 depot1 crate8)  [0.001]
-0.007: (drop hoist5 crate7 distributor2 crate12)  [0.001]
-0.007: (drop hoist4 crate11 distributor1 crate13)  [0.001]
-0.008: (lift hoist5 crate6 distributor2 crate3)  [0.001]
-0.009: (drop hoist5 crate6 distributor2 crate11)  [0.001]
-0.010: (lift hoist5 crate3 distributor2 crate0)  [0.001]
-0.011: (drop hoist5 crate3 distributor2 crate9)  [0.001]
-0.012: (lift hoist5 crate6 distributor2 crate11)  [0.001]
-0.013: (lift hoist4 crate11 distributor1 crate13)  [0.001]
-0.013: (drop hoist5 crate6 distributor2 crate0)  [0.001]
-0.014: (lift hoist5 crate13 distributor2 crate4)  [0.001]
-0.015: (drop hoist4 crate11 distributor1 crate3)  [0.001]
-0.015: (lift hoist3 crate4 distributor0 crate2)  [0.001]
-0.015: (drop hoist5 crate13 distributor2 crate6)  [0.001]
-0.016: (drop hoist3 crate4 distributor0 crate11)  [0.001]
-0.016: (lift hoist5 crate13 distributor2 crate6)  [0.001]
-0.017: (drop hoist5 crate13 distributor2 crate4)  [0.001]
-0.018: (lift hoist3 crate2 distributor0 pallet3)  [0.001]
-0.018: (lift hoist5 crate6 distributor2 crate0)  [0.001]
-0.019: (drop hoist3 crate2 distributor0 crate0)  [0.001]
-0.020: (drop hoist5 crate6 distributor2 crate2)  [0.001]
-0.021: (lift hoist5 crate13 distributor2 crate4)  [0.001]
-0.022: (lift hoist3 crate4 distributor0 crate2)  [0.001]
-0.022: (drop hoist5 crate13 distributor2 crate6)  [0.001]
-0.023: (lift hoist5 crate13 distributor2 crate4)  [0.001]
-0.024: (drop hoist5 crate13 distributor2 crate2)  [0.001]
-0.024: (drop hoist3 crate4 distributor0 crate4)  [0.001]
-0.025: (lift hoist5 crate13 distributor2 crate2)  [0.001]
-0.026: (lift hoist3 crate2 distributor0 crate0)  [0.001]
-0.026: (drop hoist5 crate13 distributor2 crate4)  [0.001]
-0.027: (lift hoist5 crate0 distributor2 pallet5)  [0.001]
-0.028: (drop hoist5 crate0 distributor2 pallet4)  [0.001]
-0.029: (lift hoist5 crate7 distributor2 crate12)  [0.001]
-0.030: (drop hoist5 crate7 distributor2 crate0)  [0.001]
-0.030: (lift hoist1 crate12 depot1 crate10)  [0.001]
-0.031: (drop hoist1 crate12 depot1 pallet5)  [0.001]
-0.032: (lift hoist1 crate10 depot1 crate5)  [0.001]
-0.033: (drop hoist1 crate10 depot1 crate13)  [0.001]
-0.034: (lift hoist1 crate10 depot1 crate13)  [0.001]
-0.035: (lift hoist5 crate13 distributor2 crate2)  [0.001]
-0.035: (drop hoist1 crate10 depot1 crate12)  [0.001]
-0.036: (lift hoist1 crate5 depot1 crate1)  [0.001]
-0.036: (drop hoist3 crate2 distributor0 crate10)  [0.001]
-0.037: (drop hoist1 crate5 depot1 pallet0)  [0.001]
-0.037: (lift hoist3 crate2 distributor0 crate10)  [0.001]
-0.038: (lift hoist1 crate1 depot1 pallet1)  [0.001]
-0.039: (drop hoist5 crate13 distributor2 pallet1)  [0.001]
-0.039: (drop hoist1 crate1 depot1 crate10)  [0.001]
-0.040: (lift hoist1 crate1 depot1 crate10)  [0.001]
-0.040: (lift hoist5 crate7 distributor2 crate12)  [0.001]
-0.041: (drop hoist1 crate1 depot1 crate12)  [0.001]
+Warnings encountered when parsing Domain/Problem File
+-----------------------------------------------------
+
+The supplied domain/problem file appear to violate part of the PDDL
+language specification.  Specifically:
+
+Errors: 0, warnings: 1
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/problems/pfile1: line: 11: Warning: Undeclared symbol: clear
+
+The planner will continue, but you may wish to fix your files accordingly
+Type Errors Encountered in Problem File
+---------------------------------------
+
+Due to type errors in the supplied problem file, the planner
+has to terminate.  The log of type checking is as follows:
+
+Predicate clear not found
+Type-checking initial state failed

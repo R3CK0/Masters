@@ -1,0 +1,29 @@
+Number of literals: 68
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+Initial heuristic = 17.000
+b (16.000 | 0.000)b (15.000 | 0.001)b (14.000 | 0.002)b (13.000 | 0.002)b (12.000 | 0.002)b (11.000 | 0.002)b (10.000 | 0.003)b (9.000 | 0.004)b (8.000 | 0.004)b (7.000 | 0.004)b (6.000 | 0.005)b (5.000 | 0.006)b (4.000 | 0.007)b (3.000 | 0.008)b (2.000 | 0.008)b (1.000 | 0.008);;;; Solution Found
+; States evaluated: 47
+; Cost: 0.000
+; Time 0.05
+0.000: (calibrate rover0 camera0 objective0 waypoint2)  [0.001]
+0.000: (sample_rock rover2 rover2store waypoint4)  [0.001]
+0.000: (navigate rover1 waypoint3 waypoint0)  [0.001]
+0.001: (take_image rover0 waypoint2 objective0 camera0 high_res)  [0.001]
+0.001: (drop rover2 rover2store)  [0.001]
+0.001: (navigate rover1 waypoint0 waypoint3)  [0.001]
+0.002: (communicate_image_data rover0 general objective0 high_res waypoint2 waypoint3)  [0.001]
+0.002: (sample_soil rover2 rover2store waypoint4)  [0.001]
+0.002: (sample_rock rover1 rover1store waypoint3)  [0.001]
+0.003: (communicate_rock_data rover2 general waypoint4 waypoint4 waypoint3)  [0.001]
+0.003: (sample_rock rover0 rover0store waypoint2)  [0.001]
+0.004: (communicate_soil_data rover2 general waypoint4 waypoint4 waypoint3)  [0.001]
+0.004: (navigate rover0 waypoint2 waypoint1)  [0.001]
+0.004: (drop rover0 rover0store)  [0.001]
+0.005: (sample_soil rover0 rover0store waypoint1)  [0.001]
+0.006: (navigate rover0 waypoint1 waypoint2)  [0.001]
+0.007: (communicate_rock_data rover0 general waypoint2 waypoint2 waypoint3)  [0.001]
+0.008: (communicate_soil_data rover0 general waypoint1 waypoint2 waypoint3)  [0.001]
+0.008: (navigate rover1 waypoint3 waypoint0)  [0.001]
+0.009: (communicate_rock_data rover1 general waypoint3 waypoint0 waypoint3)  [0.001]

@@ -1,0 +1,7 @@
+Number of literals: 59
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+None of the ground temporal actions in this problem have been recognised as compression-safe
+Initial heuristic = 38.000
+b (35.000 | 5.000)b (34.000 | 8.000)b (33.000 | 8.000)b (32.000 | 8.000)b (31.000 | 8.000)b (30.000 | 8.001)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Time/AI_gen_code/Rovers_Ti_code7_nl.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Time/problems/pfile5

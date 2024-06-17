@@ -1,0 +1,13 @@
+Number of literals: 81
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+A problem has been encountered, and the planner has to terminate.
+-----------------------------------------------------------------
+Unfortunately, the planner does not supported non-linear numeric conditions,
+effects, or duration constraints, but one or more of these is present in
+the problem you have provided.  Specifically, the sub-expression:
+
+	(83) / ((speed truck1))
+
+... was encountered.  To use this planner with your problem, you will have
+to reformulate it to avoid these.

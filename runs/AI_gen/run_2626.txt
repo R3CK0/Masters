@@ -1,0 +1,7 @@
+Number of literals: 362
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+39% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 90.000
+b (86.000 | 5.000)b (85.000 | 5.000)b (84.000 | 5.000)b (83.000 | 5.000)b (82.000 | 5.000)b (81.000 | 5.000)b (76.000 | 5.000)b (75.000 | 5.000)b (74.000 | 5.000)b (73.000 | 5.000)b (72.000 | 5.000)b (71.000 | 5.000)b (70.000 | 5.000)b (69.000 | 5.001)b (68.000 | 5.001)b (67.000 | 5.001)b (66.000 | 5.001)b (65.000 | 5.002)b (64.000 | 5.002)b (63.000 | 5.002)b (61.000 | 10.001)b (59.000 | 12.001)b (57.000 | 20.002)b (54.000 | 20.002)b (52.000 | 20.002)b (51.000 | 20.002)b (50.000 | 20.002)b (48.000 | 20.002)b (47.000 | 20.002)b (46.000 | 20.002)b (45.000 | 20.002)b (42.000 | 20.002)b (39.000 | 20.002)b (38.000 | 20.002)b (37.000 | 20.002)b (35.000 | 20.002)b (33.000 | 22.003)b (32.000 | 22.003)b (31.000 | 22.003)b (29.000 | 22.003)b (28.000 | 22.003)b (27.000 | 22.003)b (26.000 | 22.003)b (25.000 | 22.003)b (24.000 | 22.003)b (23.000 | 22.003)b (22.000 | 22.003)b (21.000 | 22.003)b (20.000 | 22.003)b (19.000 | 22.004)b (17.000 | 24.006)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Rovers/SimpleTime/AI_gen/Rovers_Si5.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Rovers/SimpleTime/problems/pfile19

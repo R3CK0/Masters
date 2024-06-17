@@ -1,0 +1,9 @@
+Number of literals: 63
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+86% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 35.000
+b (34.000 | 5.000)b (33.000 | 10.000)b (32.000 | 10.000)b (31.000 | 10.000)b (30.000 | 12.001)b (29.000 | 12.002)b (28.000 | 17.002)b (27.000 | 32.001)b (26.000 | 47.002)b (25.000 | 62.003)b (24.000 | 72.004)b (22.000 | 72.004)b (21.000 | 72.004)b (20.000 | 72.004)b (16.000 | 72.004)b (15.000 | 82.005)b (14.000 | 92.006)b (12.000 | 92.006)b (10.000 | 92.006)b (9.000 | 102.007)b (7.000 | 102.007)b (5.000 | 102.007)b (4.000 | 112.008)
+Resorting to best-first search
+b (34.000 | 5.000)b (33.000 | 10.000)b (33.000 | 5.001)b (32.000 | 10.000)b (31.000 | 10.000)b (30.000 | 12.001)b (29.000 | 19.002)b (28.000 | 37.003)b (27.000 | 47.004)b (25.000 | 47.004)b (24.000 | 62.005)b (23.000 | 62.005)b (22.000 | 62.005)b (21.000 | 77.006)b (20.000 | 77.006)b (18.000 | 77.006)b (17.000 | 77.006)b (16.000 | 77.006)b (15.000 | 87.007)b (14.000 | 82.012)b (12.000 | 90.008)b (11.000 | 107.010)b (11.000 | 102.010)b (10.000 | 100.011)b (9.000 | 100.011)b (8.000 | 102.013)b (8.000 | 100.011)b (7.000 | 102.013)b (6.000 | 112.014)b (5.000 | 142.019)b (5.000 | 137.018)b (4.000 | 162.021)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Rovers/SimpleTime/AI_gen/Rovers_Si2.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Rovers/SimpleTime/problems/pfile6

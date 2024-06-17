@@ -1,0 +1,27 @@
+Warnings encountered when parsing Domain/Problem File
+-----------------------------------------------------
+
+The supplied domain/problem file appear to violate part of the PDDL
+language specification.  Specifically:
+
+Errors: 0, warnings: 3
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Numeric/AI_gen_code/Rovers_Nu_code3_nl.pddl: line: 56: Warning: Undeclared symbol: calibrated
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Numeric/problems/pfile2: line: 37: Warning: Undeclared symbol: equipped_for_rock_analysis
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Numeric/problems/pfile2: line: 61: Warning: Undeclared symbol: communicated_rock_data
+
+The planner will continue, but you may wish to fix your files accordingly
+Type Errors Encountered in Domain File
+--------------------------------------
+
+Due to type errors in the supplied domain file, the planner
+has to terminate.  The log of type checking is as follows:
+
+Type-checking navigate
+...action passes type checking.
+Type-checking recharge
+...action passes type checking.
+Type-checking drop
+...action passes type checking.
+Type-checking take_image
+Predicate calibrated not found
+Conditions fail type-checking.

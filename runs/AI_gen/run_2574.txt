@@ -1,0 +1,33 @@
+Number of literals: 58
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+90% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 22.000
+b (21.000 | 8.000)b (20.000 | 8.000)b (19.000 | 8.000)b (18.000 | 27.002)b (17.000 | 27.002)b (16.000 | 27.002)b (15.000 | 27.002)b (14.000 | 27.002)b (13.000 | 37.003)b (12.000 | 42.004)b (11.000 | 42.004)b (10.000 | 52.004)b (9.000 | 52.004)b (8.000 | 52.004)b (7.000 | 67.005)b (6.000 | 82.006)b (5.000 | 82.006)b (4.000 | 92.007)b (3.000 | 97.008)b (1.000 | 105.009);;;; Solution Found
+; States evaluated: 92
+; Cost: 115.010
+; Time 0.06
+0.000: (sample-rock rover0 rover0store waypoint0)  [8.000]
+0.000: (calibrate rover0 camera2 objective1 waypoint0)  [5.000]
+0.000: (navigate rover1 waypoint0 waypoint1)  [5.000]
+5.001: (take_image rover0 waypoint0 objective2 camera2 high_res)  [7.000]
+5.001: (sample-soil rover1 rover1store waypoint1)  [10.000]
+5.002: (navigate rover1 waypoint1 waypoint2)  [5.000]
+7.002: (calibrate rover0 camera2 objective1 waypoint0)  [5.000]
+8.001: (drop rover0 rover0store)  [1.000]
+10.003: (sample-soil rover1 rover1store waypoint2)  [10.000]
+12.002: (take_image rover0 waypoint0 objective0 camera2 high_res)  [7.000]
+12.002: (communicate_image_data rover0 general objective2 high_res waypoint0 waypoint3)  [15.000]
+14.003: (calibrate rover0 camera2 objective1 waypoint0)  [5.000]
+19.003: (take_image rover0 waypoint0 objective0 camera2 colour)  [7.000]
+22.003: (navigate rover1 waypoint2 waypoint1)  [5.000]
+27.003: (communicate_soil_data rover1 general waypoint1 waypoint3)  [10.000]
+37.004: (navigate rover1 waypoint1 waypoint2)  [5.000]
+42.004: (communicate_soil_data rover1 general waypoint2 waypoint3)  [10.000]
+52.005: (communicate_image_data rover0 general objective0 high_res waypoint0 waypoint3)  [15.000]
+67.006: (communicate_image_data rover0 general objective0 colour waypoint0 waypoint3)  [15.000]
+82.007: (communicate_rock_data rover0 general waypoint0 waypoint3)  [10.000]
+92.008: (navigate rover0 waypoint0 waypoint1)  [5.000]
+97.009: (sample-rock rover0 rover0store waypoint1)  [8.000]
+105.010: (communicate_rock_data rover0 general waypoint1 waypoint3)  [10.000]

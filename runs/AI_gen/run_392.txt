@@ -1,0 +1,14 @@
+Warnings encountered when parsing Domain/Problem File
+-----------------------------------------------------
+
+The supplied domain/problem file appear to violate part of the PDDL
+language specification.  Specifically:
+
+Errors: 0, warnings: 4
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/AI_gen/Depots_Si6.pddl: line: 31: Warning: Undeclared symbol: current_load
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/AI_gen/Depots_Si6.pddl: line: 31: Warning: Undeclared symbol: weight
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/AI_gen/Depots_Si6.pddl: line: 31: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/AI_gen/Depots_Si6.pddl: line: 31: Warning: Undeclared requirement :number-fluents 
+
+The planner will continue, but you may wish to fix your files accordingly
+Segmentation fault (core dumped)

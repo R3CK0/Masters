@@ -1,0 +1,26 @@
+Warnings encountered when parsing Domain/Problem File
+-----------------------------------------------------
+
+The supplied domain/problem file appear to violate part of the PDDL
+language specification.  Specifically:
+
+Errors: 0, warnings: 1
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/AI_gen/DriverLog_St4_nl.pddl: line: 27: Warning: Undeclared requirement :negative-preconditions 
+
+The planner will continue, but you may wish to fix your files accordingly
+Number of literals: 45
+Constructing lookup tables:A problem has been encountered, and the planner has to terminate.
+-----------------------------------------------------------------
+Unfortunately, at present, the planner does not fully support ADL
+unless in the rules for derived predicates.  Only two aspects of
+ADL can be used in action definitions:
+- forall conditions, containing a simple conjunct of propositional and
+  numeric facts;
+- Conditional (when... ) effects, and then only with numeric conditions
+  and numeric consequences on values which do not appear in the
+  preconditions of actions.
+
+To use this planner with your problem, you will have to reformulate it to
+avoid ADL.  Alternatively, if you have a particularly compelling case
+for them, please contact the authors to discuss it with them, who may be able to
+extend the planner to meet your needs.

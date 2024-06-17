@@ -1,0 +1,18 @@
+Number of literals: 28
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%] [110%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%] [110%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+61% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 10.000
+b (9.000 | 5.000)b (7.000 | 12.001)b (6.000 | 27.002)b (5.000 | 27.002)b (4.000 | 27.002)b (3.000 | 27.002)b (2.000 | 37.003)b (1.000 | 37.003);;;; Solution Found
+; States evaluated: 29
+; Cost: 47.004
+; Time 0.04
+0.000: (calibrate rover0 camera0 objective0 waypoint0)  [5.000]
+5.001: (take_image rover0 waypoint0 objective1 camera0 low_res)  [7.000]
+12.002: (communicate_image_data rover0 general objective1 low_res waypoint0 waypoint1)  [15.000]
+12.003: (sample_rock rover0 rover0store waypoint0)  [8.000]
+12.004: (drop rover0 rover0store)  [1.000]
+13.005: (sample_soil rover0 rover0store waypoint0)  [10.000]
+27.003: (communicate_rock_data rover0 general waypoint0 waypoint0 waypoint1)  [10.000]
+37.004: (communicate_soil_data rover0 general waypoint0 waypoint0 waypoint1)  [10.000]

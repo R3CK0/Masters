@@ -1,0 +1,18 @@
+Warnings encountered when parsing Domain/Problem File
+-----------------------------------------------------
+
+The supplied domain/problem file appear to violate part of the PDDL
+language specification.  Specifically:
+
+Errors: 0, warnings: 1
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Time/problems/pfile16: line: 12: Warning: Undeclared symbol: visible
+
+The planner will continue, but you may wish to fix your files accordingly
+Type Errors Encountered in Problem File
+---------------------------------------
+
+Due to type errors in the supplied problem file, the planner
+has to terminate.  The log of type checking is as follows:
+
+Predicate visible not found
+Type-checking initial state failed

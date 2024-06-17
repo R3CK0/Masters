@@ -1,0 +1,33 @@
+Number of literals: 94
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+None of the ground temporal actions in this problem have been recognised as compression-safe
+Initial heuristic = 48.000
+b (45.000 | 20.000)b (36.000 | 20.000)b (35.000 | 20.000)b (34.000 | 20.000)b (33.000 | 20.000)b (32.000 | 20.000)b (31.000 | 20.000)b (30.000 | 20.001)b (28.000 | 40.001)b (26.000 | 40.002)b (24.000 | 41.002)b (22.000 | 41.002)b (20.000 | 41.002)b (18.000 | 51.003)b (17.000 | 51.004)b (16.000 | 51.004)b (14.000 | 52.004)b (11.000 | 61.004)b (10.000 | 61.004)b (8.000 | 63.005)b (6.000 | 63.006)b (4.000 | 63.006)b (2.000 | 71.006);;;; Solution Found
+; States evaluated: 4374
+; Cost: 73.007
+; Time 1.07
+0.000: (walk driver1 s4 p4-0)  [20.000]
+0.000: (walk driver2 s1 p1-2)  [20.000]
+0.000: (load-truck package1 truck1 s2)  [2.000]
+0.000: (load-truck package3 truck3 s3)  [2.000]
+0.001: (walk driver1 s4 p3-4)  [20.000]
+20.001: (walk driver2 p1-2 s2)  [20.000]
+20.001: (walk driver1 p4-0 s0)  [20.000]
+20.002: (walk driver1 p3-4 s3)  [20.000]
+40.002: (board-truck driver2 truck1 s2)  [1.000]
+40.002: (board-truck driver1 truck2 s0)  [1.000]
+40.003: (board-truck driver1 truck3 s3)  [1.000]
+41.003: (drive-truck truck2 s0 s3 driver1)  [10.000]
+41.003: (drive-truck truck1 s2 s4 driver2)  [10.000]
+41.004: (drive-truck truck3 s3 s2 driver1)  [10.000]
+51.004: (drive-truck truck1 s4 s3 driver2)  [10.000]
+51.004: (disembark-truck driver1 truck2 s3)  [1.000]
+51.005: (drive-truck truck3 s2 s1 driver1)  [10.000]
+61.003: (disembark-truck driver2 truck1 s4)  [1.000]
+61.005: (unload-truck package1 truck1 s3)  [2.000]
+61.006: (load-truck package2 truck3 s1)  [2.000]
+61.006: (drive-truck truck3 s1 s2 driver1)  [10.000]
+71.005: (unload-truck package3 truck3 s1)  [2.000]
+71.007: (unload-truck package2 truck3 s2)  [2.000]

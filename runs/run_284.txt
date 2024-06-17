@@ -1,11 +1,58 @@
-Type Errors Encountered in Domain File
---------------------------------------
-
-Due to type errors in the supplied domain file, the planner
-has to terminate.  The log of type checking is as follows:
-
-Type-checking drive
-...action passes type checking.
-Type-checking lift
-Type problem with proposition (on c p) - parameter 2 is incorrectly typed
-Conditions fail type-checking.
+Number of literals: 747
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+80% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 40.000
+b (39.000 | 1.000)b (38.000 | 1.000)b (37.000 | 1.000)b (36.000 | 10.000)b (35.000 | 10.000)b (34.000 | 11.002)b (33.000 | 11.002)b (32.000 | 11.002)b (31.000 | 11.002)b (30.000 | 16.004)b (29.000 | 18.005)b (28.000 | 18.005)b (27.000 | 18.005)b (26.000 | 20.005)b (25.000 | 21.006)b (24.000 | 21.006)b (23.000 | 24.006)b (22.000 | 31.007)b (21.000 | 35.008)b (20.000 | 35.008)b (19.000 | 36.009)b (18.000 | 36.009)b (16.000 | 36.009)b (15.000 | 36.009)b (14.000 | 36.009)b (13.000 | 36.009)b (12.000 | 36.009)b (10.000 | 36.009)b (9.000 | 36.009)b (8.000 | 36.009)b (6.000 | 46.012)b (5.000 | 52.013)b (4.000 | 52.013)b (3.000 | 56.014)b (2.000 | 57.015)b (1.000 | 57.015);;;; Solution Found
+; States evaluated: 6069
+; Cost: 57.015
+; Time 16.35
+0.000: (lift hoist11 crate2 pallet13 distributor5)  [1.000]
+0.000: (lift hoist14 crate6 pallet4 depot4)  [1.000]
+0.000: (lift hoist0 crate1 pallet0 depot0)  [1.000]
+0.000: (drive truck0 distributor2 distributor1)  [10.000]
+0.000: (drive truck2 distributor3 depot5)  [10.000]
+0.000: (drive truck3 distributor0 depot5)  [10.000]
+0.000: (drive truck4 depot0 depot5)  [10.000]
+0.000: (lift hoist13 crate3 pallet15 depot1)  [1.000]
+1.001: (load hoist14 crate6 truck5 depot4)  [3.000]
+1.001: (load hoist0 crate1 truck1 depot0)  [3.000]
+1.001: (drop hoist11 crate2 pallet11 distributor5)  [1.000]
+1.001: (drop hoist13 crate3 crate0 depot1)  [1.000]
+1.002: (drive truck5 depot4 distributor1)  [10.000]
+1.002: (drive truck1 depot0 distributor1)  [10.000]
+2.002: (lift hoist13 crate5 pallet1 depot1)  [1.000]
+10.001: (drive truck2 depot5 depot3)  [10.000]
+10.001: (drive truck3 depot5 depot3)  [10.000]
+10.001: (drive truck4 depot5 depot3)  [10.000]
+11.003: (unload hoist7 crate6 truck5 distributor1)  [4.000]
+11.004: (drive truck5 distributor1 depot1)  [10.000]
+15.004: (drop hoist7 crate6 pallet12 distributor1)  [1.000]
+15.005: (load hoist7 crate6 truck0 distributor1)  [3.000]
+15.006: (lift hoist7 crate8 pallet7 distributor1)  [1.000]
+16.005: (unload hoist7 crate1 truck1 distributor1)  [4.000]
+16.006: (drive truck1 distributor1 depot5)  [10.000]
+20.002: (drive truck2 depot3 depot2)  [10.000]
+20.002: (drive truck3 depot3 depot2)  [10.000]
+20.002: (drive truck4 depot3 depot2)  [10.000]
+20.006: (drop hoist7 crate1 pallet7 distributor1)  [1.000]
+21.005: (load hoist13 crate5 truck5 depot1)  [3.000]
+21.006: (load hoist7 crate8 truck0 distributor1)  [3.000]
+21.006: (drive truck5 depot1 depot5)  [10.000]
+21.006: (lift hoist13 crate3 crate0 depot1)  [1.000]
+21.007: (drive truck0 distributor1 depot1)  [10.000]
+26.007: (drive truck1 depot5 depot3)  [10.000]
+31.007: (unload hoist12 crate5 truck5 depot5)  [4.000]
+31.008: (load hoist13 crate3 truck0 depot1)  [3.000]
+31.009: (lift hoist13 crate0 pallet16 depot1)  [1.000]
+32.010: (unload hoist1 crate8 truck0 depot1)  [4.000]
+32.010: (load hoist13 crate0 truck0 depot1)  [3.000]
+32.011: (drive truck0 depot1 depot3)  [10.000]
+35.008: (drop hoist12 crate5 pallet5 depot5)  [1.000]
+36.011: (drop hoist1 crate8 pallet15 depot1)  [1.000]
+42.012: (unload hoist3 crate3 truck0 depot3)  [4.000]
+42.013: (drive truck0 depot3 depot2)  [10.000]
+46.013: (drop hoist3 crate3 pallet3 depot3)  [1.000]
+52.014: (unload hoist2 crate0 truck0 depot2)  [4.000]
+56.015: (drop hoist2 crate0 pallet2 depot2)  [1.000]

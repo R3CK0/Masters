@@ -1,0 +1,6 @@
+Number of literals: 660
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+Initial heuristic = 72.000
+b (70.000 | 0.000)b (69.000 | 0.000)b (67.000 | 0.000)b (64.000 | 0.001)b (63.000 | 0.001)b (62.000 | 0.001)b (60.000 | 0.002)b (59.000 | 0.003)b (57.000 | 0.003)b (56.000 | 0.003)b (54.000 | 0.003)b (53.000 | 0.004)b (52.000 | 0.005)b (51.000 | 0.006)b (50.000 | 0.007)b (49.000 | 0.008)b (48.000 | 0.009)b (47.000 | 0.009)b (46.000 | 0.009)b (45.000 | 0.009)b (44.000 | 0.009)b (43.000 | 0.009)b (42.000 | 0.009)b (41.000 | 0.009)b (40.000 | 0.009)b (37.000 | 0.009)b (36.000 | 0.009)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/driverlogNumeric.pddl /home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile17

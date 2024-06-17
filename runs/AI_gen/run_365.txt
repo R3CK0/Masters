@@ -1,0 +1,13 @@
+Number of literals: 38
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%] [110%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%] [110%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+Action 60 - (drive truck0 depot0 depot0) is concurrent-redundant
+Action 61 - (drive truck1 depot0 depot0) is concurrent-redundant
+Action 68 - (drive truck0 distributor0 distributor0) is concurrent-redundant
+Action 69 - (drive truck1 distributor0 distributor0) is concurrent-redundant
+Action 76 - (drive truck0 distributor1 distributor1) is concurrent-redundant
+Action 77 - (drive truck1 distributor1 distributor1) is concurrent-redundant
+All the ground actions in this problem are compression-safe
+Initial heuristic = 10.000
+Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/AI_gen/Depots_Si5.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile1

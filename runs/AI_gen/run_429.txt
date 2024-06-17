@@ -1,0 +1,18 @@
+Critical Errors Encountered in Domain/Problem File
+--------------------------------------------------
+
+Due to critical errors in the supplied domain/problem file, the planner
+has to terminate.  The errors encountered are as follows:
+
+Errors: 1, warnings: 10
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile5: line: 8: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile5: line: 8: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile5: line: 8: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile5: line: 8: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile5: line: 8: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile5: line: 8: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile5: line: 10: Warning: Undeclared symbol: at
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile5: line: 11: Warning: Undeclared symbol: clear
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile5: line: 19: Warning: Undeclared symbol: available
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile5: line: 25: Warning: Undeclared symbol: on
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile5: line: 60: Error: Syntax error in problem file - types used, but no :types section in domain file.

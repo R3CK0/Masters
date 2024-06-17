@@ -1,0 +1,87 @@
+(define (domain Rover)
+  (:requirements :typing :durative-actions :fluents :duration-inequalities)
+  (:types rover waypoint store camera mode lander objective)
+
+  (:predicates 
+    (at ?x - rover ?y - waypoint) 
+    (at_lander ?x - lander ?y - waypoint)
+    (can_traverse ?r - rover ?x - waypoint ?y - waypoint)
+    (equipped_for_soil_analysis ?r - rover)
+    (equipped_for_rock_analysis ?r - rover)
+    (equipped_for_imaging ?r - rover)
+    (empty ?s - store)
+    (have_rock_analysis ?r - rover ?w - waypoint)
+    (have_soil_analysis ?r - rover ?w - waypoint)
+    (full ?s - store)
+    (calibrated ?c - camera ?r - rover)
+    (supports ?c - camera ?m - mode)
+    (available ?r - rover)
+    (visible ?w - waypoint ?p - waypoint)
+    (have_image ?r - rover ?o - objective ?m - mode)
+    (communicated_soil_data ?w - waypoint)
+    (communicated_rock_data ?w - waypoint)
+    (communicated_image_data ?o - objective ?m - mode)
+    (at_soil_sample ?w - waypoint)
+    (at_rock_sample ?w - waypoint)
+    (visible_from ?o - objective ?w - waypoint)
+    (store_of ?s - store ?r - rover)
+    (calibration_target ?i - camera ?o - objective)
+    (on_board ?i - camera ?r - rover)
+    (in_sun ?w - waypoint)
+  )
+
+  (:functions (energy ?r - rover) (recharge-rate ?x - rover))
+
+  (:durative-action navigate
+    :parameters (?x - rover ?y - waypoint ?z - waypoint)
+    :duration (= ?duration 5)
+    :condition (and 
+      (over all (can_traverse ?x ?y ?z)) 
+      (at start (available ?x)) 
+      (at start (at ?x ?y))  
+      (at start (>= (energy ?x) 8))
+      (over all (visible ?y ?z))
+    )
+    :effect (and 
+      (at start (decrease (energy ?x) 8)) 
+      (at start (not (at ?x ?y))) 
+      (at end (at ?x ?z))
+    )
+  )
+
+  (:durative-action recharge
+    :parameters (?x - rover ?w - waypoint)
+    :duration (= ?duration (/ (- 80 (energy ?x)) (recharge-rate ?x)))
+    :condition (and 
+      (at start (at ?x ?w)) 
+      (over all (at ?x ?w)) 
+      (at start (in_sun ?w)) 
+      (at start (<= (energy ?x) 80))
+    )
+    :effect (at end (increase (energy ?x) (* ?duration (recharge-rate ?x))))
+  )
+
+  (:durative-action sample_soil
+    :parameters (?x - rover ?s - store ?p - waypoint)
+    :duration (= ?duration 10)
+    :condition (and 
+      (over all (at ?x ?p)) 
+      (at start (at ?x ?p)) 
+      (at start (at_soil_sample ?p)) 
+      (at start (equipped_for_soil_analysis ?x)) 
+      (at start (>= (energy ?x) 3)) 
+      (at start (store_of ?s ?x)) 
+      (at start (empty ?s))
+    )
+    :effect (and 
+      (at start (not (empty ?s))) 
+      (at end (full ?s)) 
+      (at start (decrease (energy ?x) 3)) 
+      (at end (have_soil_analysis ?x ?p)) 
+      (at end (not (at_soil_sample ?p)))
+    )
+  )
+
+  ; (Remaining domain definitions and durative actions continue here)
+
+)

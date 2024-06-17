@@ -1,0 +1,274 @@
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code8.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code2.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code9.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code3_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code3.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code9_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code7_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code4.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code8_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code2_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code1.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code0_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code7.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code4_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code5_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code5.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code11.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code0.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code6.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code10_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code10.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code11_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code1_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Numeric", "file": "Depots_Nu_code6_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code5_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code3.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code0_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code8.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code1_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code7.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code0.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code10.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code3_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code9_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code5.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code6_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code2.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code8_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code9.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code2_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code4.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code7_nl.pddl", "errors": 0, "warnings": 4, "error_list": [], "warning_list": ["Undeclared variable symbol: ?y", "Undeclared variable symbol: ?y", "Undeclared variable symbol: ?y", "Undeclared variable symbol: ?y"]}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code4_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code6.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code1.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "SimpleTime", "file": "Depots_Si_code10_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code4.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code6_nl.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code3_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code3.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code7_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code1_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code2.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code4_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code6.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code5_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code2_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code0.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code1.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code0_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code7.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Strips", "file": "Depots_St_code5.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code0_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code9_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code7.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code12.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code6_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code1.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code9.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code4.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code13_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code6.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code10_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code8_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code13.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code10.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code4_nl.pddl", "errors": 2, "warnings": 0, "error_list": ["Syntax error in timed effect", "Syntax error in timed effect"], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code1_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code2_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code7_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code3.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code5.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code11.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code3_nl.pddl", "errors": 2, "warnings": 0, "error_list": ["Syntax error in durative-action declaration.", "Unreadable structure"], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code0.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code2.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code11_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code12_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code5_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Depots", "requirement": "Time", "file": "Depots_Ti_code8.pddl", "errors": 1, "warnings": 0, "error_list": ["Syntax error in timed effect"], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code10.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code0.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code9.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code11_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code3.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code9_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code11.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code0_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code3_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code2_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code1.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code4_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code8_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code7_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code8.pddl", "errors": 0, "warnings": 2, "error_list": [], "warning_list": ["Undeclared requirement :negative-preconditions ", "Undeclared requirement :negative-preconditions "]}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code5.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code5_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code2.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code6_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code10_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code1_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code7.pddl", "errors": 1, "warnings": 1, "error_list": ["Syntax error in (and ...)"], "warning_list": ["Undeclared symbol: at"]}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code6.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Numeric", "file": "DriverLog_Nu_code4.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code3.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code10.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code1_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code0_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code7.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code3_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code4_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code5.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code0.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code1.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code9_nl.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code11_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code7_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code4.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code9.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code6_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code11.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code5_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code8_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code10_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code2.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code8.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code6.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "SimpleTime", "file": "DriverLog_Si_code2_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code4.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code6_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code2_nl.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code3.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code8_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code5_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code8.pddl", "errors": 0, "warnings": 1, "error_list": [], "warning_list": ["Undeclared requirement :negative-preconditions "]}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code1.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code5.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code7_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code6.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code1_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code2.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code3_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code0.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code4_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code0_nl.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "DriverLog", "requirement": "Strips", "file": "DriverLog_St_code7.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code1.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code6.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code3.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code13_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code7_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code8_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code11.pddl", "errors": 2, "warnings": 0, "error_list": ["Syntax error in durative-action declaration.", "Unreadable structure"], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code8.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code10.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code5_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code4.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code0_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code6_nl.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code10_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code3_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code12.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code14_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code12_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code5.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code9.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code7.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code1_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code14.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code9_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code0.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code2_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code2.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code11_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code4_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "DriverLog", "requirement": "Time", "file": "DriverLog_Ti_code13.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code4.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code9_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code7_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code5_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code3_nl.pddl", "errors": 0, "warnings": 1, "error_list": [], "warning_list": ["Undeclared symbol: calibrated"]}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code10.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code1.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code6.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code5.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code10_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code0.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code2_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code8.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code3.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code4_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code9.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code2.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code0_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code7.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code8_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code1_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Numeric", "file": "Rovers_Nu_code6_nl.pddl", "errors": 0, "warnings": 1, "error_list": [], "warning_list": ["Undeclared symbol: energy"]}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code1_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code6_nl.pddl", "errors": 0, "warnings": 1, "error_list": [], "warning_list": ["Undeclared symbol: equipped_for_soil_analysis"]}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code7.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code2_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code9_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code8_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code5.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code2.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code8.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code4.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code6.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code3_nl.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code3.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code10.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code4_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code7_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code9.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code5_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code1.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code0.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code0_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "SimpleTime", "file": "Rovers_Si_code10_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code2.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code7.pddl", "errors": 0, "warnings": 1, "error_list": [], "warning_list": ["Undeclared symbol: nil"]}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code4.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code7_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code0_nl.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code1.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code2_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code5.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code6_nl.pddl", "errors": 0, "warnings": 1, "error_list": [], "warning_list": ["Undeclared requirement :negative-preconditions "]}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code0.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code6.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code1_nl.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code4_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code8_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code8.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code3.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code3_nl.pddl", "errors": 1, "warnings": 0, "error_list": ["Re-declaration of symbol in same scope: equipped_for_soil_analysis"], "warning_list": []}
+{"domain": "Rovers", "requirement": "Strips", "file": "Rovers_St_code5_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code6.pddl", "errors": 0, "warnings": 1, "error_list": [], "warning_list": ["Undeclared symbol: recharge_rate"]}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code8_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code10.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code12.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code8.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code4.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code2.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code0_nl.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code9.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code1.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code9_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code4_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code3.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code7.pddl", "errors": 2, "warnings": 0, "error_list": ["Syntax error in action declaration.", "Unreadable structure"], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code0.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code2_nl.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code11_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code6_nl.pddl", "errors": 4, "warnings": 1, "error_list": ["Syntax error in predicate declaration.", "Syntax error in predicate declaration.", "Syntax error in durative-action declaration.", "Unreadable structure"], "warning_list": ["Undeclared symbol: energy"]}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code11.pddl", "errors": 2, "warnings": 0, "error_list": ["Syntax error in durative-action declaration.", "Unreadable structure"], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code10_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code12_nl.pddl", "errors": 1, "warnings": 2, "error_list": ["Re-declaration of symbol in same scope: equipped_for_soil_analysis"], "warning_list": ["Undeclared symbol: energy", "Undeclared symbol: store_of"]}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code5.pddl", "errors": -1, "warnings": -1, "error_list": ["Unknown error"]}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code5_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code7_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code3_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}
+{"domain": "Rovers", "requirement": "Time", "file": "Rovers_Ti_code1_nl.pddl", "errors": 0, "warnings": 0, "error_list": [], "warning_list": []}

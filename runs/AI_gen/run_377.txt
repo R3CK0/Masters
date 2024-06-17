@@ -1,0 +1,9 @@
+Number of literals: 114
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+47% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 41.000
+b (40.000 | 10.000)b (39.000 | 10.000)b (38.000 | 10.000)b (37.000 | 20.004)b (34.000 | 20.004)b (33.000 | 30.004)b (32.000 | 30.006)b (31.000 | 40.006)b (30.000 | 40.006)b (29.000 | 40.006)b (27.000 | 40.006)b (25.000 | 44.007)b (24.000 | 45.007)b (23.000 | 45.007)b (22.000 | 55.010)b (21.000 | 59.011)b (19.000 | 59.011)b (17.000 | 59.011)b (14.000 | 60.011)b (13.000 | 61.013)
+Resorting to best-first search
+b (40.000 | 10.000)b (37.000 | 13.001)b (36.000 | 30.004)b (36.000 | 24.003)b (35.000 | 24.004)b (32.000 | 30.004)b (31.000 | 34.006)b (30.000 | 44.008)b (30.000 | 38.007)b (29.000 | 44.010)b (26.000 | 44.010)b (25.000 | 44.010)b (23.000 | 44.010)b (21.000 | 48.011)b (19.000 | 49.011)b (18.000 | 57.011)b (17.000 | 57.011)b (16.000 | 57.011)b (14.000 | 68.015)b (12.000 | 69.015)b (11.000 | 84.018)b (10.000 | 94.020)b (10.000 | 88.020)b (9.000 | 89.021)b (9.000 | 89.020)b (8.000 | 91.020)b (8.000 | 89.019)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/AI_gen/Depots_Si5_nl.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile3

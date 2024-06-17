@@ -1,0 +1,51 @@
+Critical Errors Encountered in Domain/Problem File
+--------------------------------------------------
+
+Due to critical errors in the supplied domain/problem file, the planner
+has to terminate.  The errors encountered are as follows:
+
+Errors: 1, warnings: 43
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 43: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 45: Warning: Undeclared symbol: at
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 48: Warning: Undeclared symbol: empty
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 59: Warning: Undeclared symbol: path
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 131: Warning: Undeclared symbol: link
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Strips/problems/pfile12: line: 200: Error: Syntax error in problem file - types used, but no :types section in domain file.

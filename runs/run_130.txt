@@ -1,4 +1,4 @@
-Number of literals: 725
+Number of literals: 212
 Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
 Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
 Have identified that smaller values of (current_load truck0) are preferable
@@ -6,5 +6,47 @@ Have identified that smaller values of (current_load truck1) are preferable
 Have identified that smaller values of (current_load truck2) are preferable
 Have identified that smaller values of (current_load truck3) are preferable
 [01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
-Initial heuristic = 62.000
-b (59.000 | 0.000)b (58.000 | 0.000)b (57.000 | 0.001)b (56.000 | 0.002)b (55.000 | 0.002)b (54.000 | 0.002)b (53.000 | 0.003)b (52.000 | 0.003)b (49.000 | 0.003)b (48.000 | 0.003)b (47.000 | 0.003)b (46.000 | 0.004)b (45.000 | 0.005)b (44.000 | 0.005)b (43.000 | 0.005)b (42.000 | 0.005)b (41.000 | 0.006)b (40.000 | 0.007)b (39.000 | 0.008)b (38.000 | 0.011)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/AI_gen/Depots_Nu2_nl.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/problems/pfile20
+Initial heuristic = 24.000
+b (22.000 | 0.001)b (21.000 | 0.002)b (20.000 | 0.003)b (19.000 | 0.004)b (18.000 | 0.004)b (17.000 | 0.004)b (16.000 | 0.004)b (15.000 | 0.004)b (14.000 | 0.004)b (13.000 | 0.004)b (12.000 | 0.004)b (11.000 | 0.004)b (9.000 | 0.004)b (8.000 | 0.004)b (7.000 | 0.006)b (6.000 | 0.006)b (5.000 | 0.009)b (4.000 | 0.009)b (3.000 | 0.009)b (2.000 | 0.010)b (1.000 | 0.011);;;; Solution Found
+; States evaluated: 277
+; Cost: 0.012
+; Time 0.23
+0.000: (lift hoist1 crate0 pallet4 depot1)  [0.001]
+0.000: (lift hoist0 crate5 crate2 depot0)  [0.001]
+0.000: (drive truck1 depot1 distributor0)  [0.001]
+0.000: (lift hoist2 crate4 pallet2 distributor0)  [0.001]
+0.000: (drive truck3 distributor1 depot0)  [0.001]
+0.001: (load hoist1 crate0 truck0 depot1)  [0.001]
+0.001: (load hoist0 crate5 truck2 depot0)  [0.001]
+0.001: (load hoist2 crate4 truck1 distributor0)  [0.001]
+0.002: (drive truck0 depot1 distributor1)  [0.001]
+0.002: (lift hoist1 crate3 crate1 depot1)  [0.001]
+0.002: (drive truck2 depot0 distributor0)  [0.001]
+0.002: (lift hoist0 crate2 pallet0 depot0)  [0.001]
+0.002: (drive truck1 distributor0 depot1)  [0.001]
+0.003: (unload hoist3 crate0 truck0 distributor1)  [0.001]
+0.003: (lift hoist5 crate1 pallet1 depot1)  [0.001]
+0.003: (unload hoist2 crate5 truck2 distributor0)  [0.001]
+0.003: (unload hoist6 crate4 truck1 depot1)  [0.001]
+0.003: (load hoist0 crate2 truck3 depot0)  [0.001]
+0.003: (drop hoist1 crate3 pallet4 depot1)  [0.001]
+0.004: (drop hoist3 crate0 pallet3 distributor1)  [0.001]
+0.004: (drop hoist2 crate5 pallet2 distributor0)  [0.001]
+0.004: (drive truck3 depot0 depot1)  [0.001]
+0.004: (drive truck0 distributor1 depot0)  [0.001]
+0.004: (drop hoist6 crate4 crate3 depot1)  [0.001]
+0.004: (drop hoist5 crate1 pallet6 depot1)  [0.001]
+0.005: (unload hoist1 crate2 truck3 depot1)  [0.001]
+0.005: (drive truck0 depot0 depot1)  [0.001]
+0.005: (lift hoist5 crate4 crate3 depot1)  [0.001]
+0.006: (drop hoist1 crate2 pallet1 depot1)  [0.001]
+0.006: (lift hoist6 crate3 pallet4 depot1)  [0.001]
+0.006: (load hoist5 crate4 truck1 depot1)  [0.001]
+0.007: (load hoist6 crate3 truck0 depot1)  [0.001]
+0.008: (drive truck0 depot1 depot0)  [0.001]
+0.009: (unload hoist0 crate3 truck0 depot0)  [0.001]
+0.010: (drive truck1 depot1 depot0)  [0.001]
+0.010: (drop hoist0 crate3 pallet0 depot0)  [0.001]
+0.010: (drive truck0 depot0 depot1)  [0.001]
+0.011: (unload hoist0 crate4 truck1 depot0)  [0.001]
+0.012: (drop hoist0 crate4 crate3 depot0)  [0.001]

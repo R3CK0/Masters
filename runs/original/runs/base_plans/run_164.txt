@@ -1,0 +1,7 @@
+Number of literals: 515
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+All the ground actions in this problem are compression-safe
+Initial heuristic = 65.000
+b (64.000 | 1.000)b (63.000 | 32.001)b (60.000 | 32.001)b (59.000 | 65.001)b (58.000 | 87.006)b (57.000 | 89.006)b (56.000 | 117.006)b (55.000 | 118.006)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/driverlogTimed.pddl /home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile16

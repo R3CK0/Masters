@@ -1,0 +1,9 @@
+Number of literals: 173
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+None of the ground temporal actions in this problem have been recognised as compression-safe
+Initial heuristic = 58.000
+b (57.000 | 20.000)b (56.000 | 20.000)b (55.000 | 20.000)b (54.000 | 20.000)b (53.000 | 20.001)b (51.000 | 40.001)b (50.000 | 40.001)b (48.000 | 40.001)b (46.000 | 40.002)b (44.000 | 41.002)b (42.000 | 41.003)b (38.000 | 51.003)b (36.000 | 51.004)b (34.000 | 53.004)b (32.000 | 53.004)b (30.000 | 53.005)b (28.000 | 53.005)b (27.000 | 61.004)b (24.000 | 61.005)b (23.000 | 61.006)b (21.000 | 62.007)b (19.000 | 63.006)b (17.000 | 63.007)b (15.000 | 63.008)b (13.000 | 65.007)b (11.000 | 73.009)b (9.000 | 73.009)b (8.000 | 73.009)b (7.000 | 81.006)b (5.000 | 81.006)
+Resorting to best-first search
+b (57.000 | 20.000)b (57.000 | 2.000)b (56.000 | 20.000)b (52.000 | 20.000)b (51.000 | 20.000)b (50.000 | 20.000)b (49.000 | 20.000)b (48.000 | 20.000)b (46.000 | 40.001)b (44.000 | 40.001)b (42.000 | 41.002)b (39.000 | 51.003)b (38.000 | 51.004)b (36.000 | 53.004)b (34.000 | 53.004)b (32.000 | 55.005)b (31.000 | 55.005)b (28.000 | 61.004)b (26.000 | 61.005)b (24.000 | 63.005)b (22.000 | 63.005)b (20.000 | 65.006)b (19.000 | 65.006)b (17.000 | 65.008)b (16.000 | 65.008)b (14.000 | 65.008)b (13.000 | 65.008)b (11.000 | 65.008)b (9.000 | 65.008)b (6.000 | 65.008)b (5.000 | 65.008)b (3.000 | 65.008)b (1.000 | 65.008)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/SimpleTime/AI_gen/DriverLog_Si5_nl.pddl /home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/SimpleTime/problems/pfile12

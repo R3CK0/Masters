@@ -1,0 +1,8 @@
+A problem has been encountered with your domain/problem file.
+-------------------------------------------------------------
+Unfortunately, a bug has been encountered in your domain and problem file,
+and the planner has to terminate.  In the initial state the invalid functional value:
+
+	(recharges)
+
+is defined. 'recharges' cannot take 0 arguments, it can only take 1.

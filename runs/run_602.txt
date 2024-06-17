@@ -1,0 +1,8 @@
+Number of literals: 208
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+Initial heuristic = 24.000
+b (23.000 | 0.000)b (22.000 | 0.001)b (20.000 | 0.001)
+Resorting to best-first search
+b (23.000 | 0.000)b (22.000 | 0.001)b (20.000 | 0.001)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Strips/AI_gen_code/Depots_St_code5.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Strips/problems/pfile13

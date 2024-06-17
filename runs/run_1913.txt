@@ -1,0 +1,22 @@
+Number of literals: 44
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+All the ground actions in this problem are compression-safe
+Initial heuristic = 11.000
+b (10.000 | 1.000)b (9.000 | 2.000)b (8.000 | 45.001)b (7.000 | 46.000)b (6.000 | 46.000)b (5.000 | 69.000)b (4.000 | 71.000)b (3.000 | 71.000)b (2.000 | 126.000)b (1.000 | 128.000);;;; Solution Found
+; States evaluated: 15
+; Cost: 128.000
+; Time 0.05
+0.000: (board-truck driver1 truck1 s1)  [1.000]
+0.000: (load-truck package3 truck1 s1)  [2.000]
+2.000: (drive-truck driver1 truck1 s1 s0)  [42.000]
+44.000: (load-truck package2 truck1 s0)  [2.000]
+44.000: (load-truck package1 truck1 s0)  [2.000]
+44.001: (board-truck driver2 truck1 s0)  [1.000]
+46.000: (drive-truck driver1 truck1 s0 s2)  [23.000]
+69.000: (unload-truck package3 truck1 s2)  [2.000]
+69.001: (disembark-truck driver2 truck1 s2)  [1.000]
+71.000: (drive-truck driver1 truck1 s2 s1)  [55.000]
+126.000: (unload-truck package2 truck1 s1)  [2.000]
+126.000: (unload-truck package1 truck1 s1)  [2.000]

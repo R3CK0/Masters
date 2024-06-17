@@ -1,0 +1,46 @@
+Critical Errors Encountered in Domain/Problem File
+--------------------------------------------------
+
+Due to critical errors in the supplied domain/problem file, the planner
+has to terminate.  The errors encountered are as follows:
+
+Errors: 1, warnings: 38
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 20: Warning: Undeclared symbol: at
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 23: Warning: Undeclared symbol: empty
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 30: Warning: Undeclared symbol: path
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 34: Warning: Undeclared symbol: time-to-walk
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 34: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 35: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 36: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 37: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 42: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 43: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 44: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 45: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 50: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 51: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 52: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 53: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 54: Warning: Undeclared symbol: link
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 56: Warning: Undeclared symbol: time-to-drive
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 56: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 57: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 60: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 61: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 64: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 65: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/problems/pfile3: line: 78: Error: Syntax error in problem file - types used, but no :types section in domain file.

@@ -1,62 +1,19 @@
-Number of literals: 255
-Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
-Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
-Have identified that smaller values of (current_load truck0) are preferable
-Have identified that smaller values of (current_load truck1) are preferable
-[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
-Initial heuristic = 27.000
-b (25.000 | 0.001)b (23.000 | 0.002)b (22.000 | 0.002)b (20.000 | 0.003)b (18.000 | 0.005)b (17.000 | 0.007)b (16.000 | 0.007)
-Resorting to best-first search
-b (25.000 | 0.001)b (24.000 | 0.003)b (23.000 | 0.004)b (21.000 | 0.004)b (20.000 | 0.005)b (19.000 | 0.005)b (18.000 | 0.005)b (17.000 | 0.006)b (16.000 | 0.007)b (15.000 | 0.008)b (14.000 | 0.009)b (13.000 | 0.010)b (12.000 | 0.011)b (10.000 | 0.012)b (9.000 | 0.016)b (8.000 | 0.020)b (6.000 | 0.022)b (5.000 | 0.029)b (4.000 | 0.030)b (2.000 | 0.031)b (1.000 | 0.032);;;; Solution Found
-; States evaluated: 262892
-; Cost: 0.033
-; Time 277.51
-0.000: (lift hoist1 crate6 crate5 distributor0)  [0.001]
-0.000: (lift hoist2 crate9 pallet2 distributor1)  [0.001]
-0.000: (lift hoist0 crate2 pallet0 depot0)  [0.001]
-0.001: (load hoist1 crate6 truck0 distributor0)  [0.001]
-0.002: (lift hoist1 crate5 crate1 distributor0)  [0.001]
-0.002: (drive truck0 distributor0 distributor1)  [0.001]
-0.003: (load hoist1 crate5 truck1 distributor0)  [0.001]
-0.003: (load hoist2 crate9 truck0 distributor1)  [0.001]
-0.004: (lift hoist1 crate1 pallet1 distributor0)  [0.001]
-0.004: (unload hoist2 crate6 truck0 distributor1)  [0.001]
-0.005: (drop hoist2 crate6 pallet2 distributor1)  [0.001]
-0.005: (drive truck0 distributor1 depot0)  [0.001]
-0.005: (drop hoist1 crate1 crate0 distributor0)  [0.001]
-0.006: (load hoist0 crate2 truck0 depot0)  [0.001]
-0.006: (lift hoist2 crate7 crate4 distributor1)  [0.001]
-0.007: (unload hoist0 crate9 truck0 depot0)  [0.001]
-0.008: (drop hoist0 crate9 pallet0 depot0)  [0.001]
-0.008: (drive truck0 depot0 distributor1)  [0.001]
-0.009: (load hoist2 crate7 truck0 distributor1)  [0.001]
-0.010: (drive truck0 distributor1 distributor0)  [0.001]
-0.010: (lift hoist2 crate4 pallet3 distributor1)  [0.001]
-0.011: (unload hoist1 crate7 truck0 distributor0)  [0.001]
-0.012: (drop hoist1 crate7 pallet1 distributor0)  [0.001]
-0.013: (lift hoist1 crate1 crate0 distributor0)  [0.001]
-0.014: (drop hoist1 crate1 crate8 distributor0)  [0.001]
-0.015: (lift hoist1 crate0 pallet4 distributor0)  [0.001]
-0.016: (drop hoist1 crate0 crate7 distributor0)  [0.001]
-0.017: (lift hoist1 crate1 crate8 distributor0)  [0.001]
-0.018: (drop hoist1 crate1 crate0 distributor0)  [0.001]
-0.019: (lift hoist1 crate8 crate3 distributor0)  [0.001]
-0.020: (drop hoist1 crate8 pallet4 distributor0)  [0.001]
-0.021: (lift hoist1 crate3 pallet5 distributor0)  [0.001]
-0.022: (drop hoist1 crate3 crate8 distributor0)  [0.001]
-0.023: (unload hoist1 crate2 truck0 distributor0)  [0.001]
-0.024: (load hoist1 crate2 truck1 distributor0)  [0.001]
-0.025: (lift hoist1 crate1 crate0 distributor0)  [0.001]
-0.025: (drive truck1 distributor0 depot0)  [0.001]
-0.026: (unload hoist0 crate2 truck1 depot0)  [0.001]
-0.026: (load hoist1 crate1 truck0 distributor0)  [0.001]
-0.027: (drop hoist0 crate2 crate9 depot0)  [0.001]
-0.027: (lift hoist1 crate0 crate7 distributor0)  [0.001]
-0.028: (unload hoist0 crate5 truck1 depot0)  [0.001]
-0.028: (load hoist1 crate0 truck0 distributor0)  [0.001]
-0.029: (drop hoist2 crate4 crate6 distributor1)  [0.001]
-0.029: (drive truck0 distributor0 distributor1)  [0.001]
-0.030: (unload hoist2 crate0 truck0 distributor1)  [0.001]
-0.031: (drop hoist2 crate0 pallet3 distributor1)  [0.001]
-0.032: (unload hoist2 crate1 truck0 distributor1)  [0.001]
-0.033: (drop hoist2 crate1 crate0 distributor1)  [0.001]
+Warnings encountered when parsing Domain/Problem File
+-----------------------------------------------------
+
+The supplied domain/problem file appear to violate part of the PDDL
+language specification.  Specifically:
+
+Errors: 0, warnings: 3
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/problems/pfile13: line: 31: Warning: Undeclared symbol: current_load
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/problems/pfile13: line: 32: Warning: Undeclared symbol: load_limit
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Numeric/problems/pfile13: line: 50: Warning: Undeclared symbol: weight
+
+The planner will continue, but you may wish to fix your files accordingly
+Type Errors Encountered in Problem File
+---------------------------------------
+
+Due to type errors in the supplied problem file, the planner
+has to terminate.  The log of type checking is as follows:
+
+Type-checking initial state failed

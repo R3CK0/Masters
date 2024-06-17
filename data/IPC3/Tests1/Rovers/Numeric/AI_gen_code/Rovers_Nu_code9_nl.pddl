@@ -1,0 +1,60 @@
+(define (domain Rover)
+  (:requirements :typing :fluents)
+  (:types rover waypoint store camera mode lander objective)
+
+  (:predicates 
+    (at ?x - rover ?y - waypoint) 
+    (at_lander ?x - lander ?y - waypoint)
+    (can_traverse ?r - rover ?x - waypoint ?y - waypoint)
+    (equipped_for_soil_analysis ?r - rover)
+    (equipped_for_rock_analysis ?r - rover)
+    (equipped_for_imaging ?r - rover)
+    (empty ?s - store)
+    (have_rock_analysis ?r - rover ?w - waypoint)
+    (have_soil_analysis ?r - rover ?w - waypoint)
+    (full ?s - store)
+    (calibrated ?c - camera ?r - rover) 
+    (supports ?c - camera ?m - mode)
+    (available ?r - rover)
+    (visible ?w - waypoint ?p - waypoint)
+    (have_image ?r - rover ?o - objective ?m - mode)
+    (communicated_soil_data ?w - waypoint)
+    (communicated_rock_data ?w - waypoint)
+    (communicated_image_data ?o - objective ?m - mode)
+    (at_soil_sample ?w - waypoint)
+    (at_rock_sample ?w - waypoint)
+    (visible_from ?o - objective ?w - waypoint)
+    (store_of ?s - store ?r - rover)
+    (calibration_target ?i - camera ?o - objective)
+    (on_board ?i - camera ?r - rover)
+    (channel_free ?l - lander)
+    (in_sun ?w - waypoint)
+    (orbital_satellite_channel)
+  )
+
+  (:functions (energy ?r - rover) (recharges))
+
+  (:action navigate
+    :parameters (?x - rover ?y - waypoint ?z - waypoint) 
+    :precondition (and (can_traverse ?x ?y ?z) (available ?x) (at ?x ?y) 
+      (visible ?y ?z) (>= (energy ?x) 8)
+    )
+    :effect (and (decrease (energy ?x) 8) (not (at ?x ?y)) (at ?x ?z))
+  )
+
+  (:action recharge
+    :parameters (?x - rover ?w - waypoint)
+    :precondition (and (at ?x ?w) (in_sun ?w) (<= (energy ?x) 80))
+    :effect (and (increase (energy ?x) 20) (increase (recharges) 1))
+  )
+
+  (:action sample_soil
+    :parameters (?x - rover ?s - store ?p - waypoint)
+    :precondition (and (at ?x ?p) (>= (energy ?x) 3) 
+      (at_soil_sample ?p) (equipped_for_soil_analysis ?x) (store_of ?s ?x) (empty ?s))
+    :effect (and (not (empty ?s)) (full ?s) 
+      (decrease (energy ?x) 3) (have_soil_analysis ?x ?p) (not (at_soil_sample ?p)))
+  )
+
+  ;; Existing actions such as sample_rock, drop, calibrate, take_image, etc., remain unchanged.
+)

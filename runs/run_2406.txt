@@ -1,0 +1,12 @@
+Critical Errors Encountered in Domain/Problem File
+--------------------------------------------------
+
+Due to critical errors in the supplied domain/problem file, the planner
+has to terminate.  The errors encountered are as follows:
+
+Errors: 4, warnings: 1
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Numeric/AI_gen_code/Rovers_Nu_code6.pddl: line: 34: Error: Syntax error in predicate declaration.
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Numeric/AI_gen_code/Rovers_Nu_code6.pddl: line: 65: Error: Syntax error in action declaration.
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Numeric/AI_gen_code/Rovers_Nu_code6.pddl: line: 65: Error: Unreadable structure
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Numeric/AI_gen_code/Rovers_Nu_code6.pddl: line: 65: Error: Syntax error in domain
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Numeric/problems/pfile4: line: 20: Warning: Undeclared symbol: recharges

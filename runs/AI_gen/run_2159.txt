@@ -1,0 +1,8 @@
+Critical Errors Encountered in Domain/Problem File
+--------------------------------------------------
+
+Due to critical errors in the supplied domain/problem file, the planner
+has to terminate.  The errors encountered are as follows:
+
+Errors: 1, warnings: 0
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Time/AI_gen/DriverLog_Ti13.pddl: line: 77: Error: Syntax error in domain

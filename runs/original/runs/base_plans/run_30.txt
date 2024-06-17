@@ -1,0 +1,9 @@
+Number of literals: 255
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+All the ground actions in this problem are compression-safe
+Initial heuristic = 27.000
+b (25.000 | 3.001)b (23.000 | 5.003)b (21.000 | 6.004)b (19.000 | 13.001)b (18.000 | 23.001)b (16.000 | 23.001)b (14.000 | 23.001)b (13.000 | 23.001)b (12.000 | 48.004)b (11.000 | 58.004)
+Resorting to best-first search
+b (25.000 | 3.001)b (24.000 | 6.002)b (23.000 | 7.003)b (22.000 | 13.001)b (20.000 | 23.001)b (19.000 | 33.003)b (18.000 | 23.003)b (17.000 | 33.003)b (16.000 | 37.003)b (15.000 | 37.003)b (13.000 | 37.003)b (12.000 | 37.003)b (11.000 | 37.003)b (9.000 | 40.001)b (8.000 | 47.003)b (6.000 | 47.003)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/DepotsSimpleTime.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile8

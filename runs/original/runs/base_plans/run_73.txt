@@ -1,0 +1,7 @@
+Number of literals: 135
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+All the ground actions in this problem are compression-safe
+Initial heuristic = 24.000
+b (22.000 | 0.333)b (20.000 | 3.840)b (18.000 | 4.555)b (16.000 | 4.555)b (14.000 | 4.555)b (12.000 | 5.069)b (9.000 | 9.028)b (8.000 | 11.928)b (7.000 | 11.928)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Time/DepotsTime.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Time/problems/pfile7

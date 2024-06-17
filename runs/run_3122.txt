@@ -1,0 +1,32 @@
+Number of literals: 108
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+Initial heuristic = 23.000
+b (21.000 | 0.000)b (20.000 | 0.001)b (17.000 | 0.001)b (16.000 | 0.001)b (15.000 | 0.001)b (14.000 | 0.002)b (13.000 | 0.002)b (12.000 | 0.002)b (11.000 | 0.002)b (10.000 | 0.003)b (9.000 | 0.003)b (8.000 | 0.003)b (7.000 | 0.003)b (6.000 | 0.003)b (5.000 | 0.004)b (4.000 | 0.004)b (3.000 | 0.004)b (2.000 | 0.005)b (1.000 | 0.006);;;; Solution Found
+; States evaluated: 50
+; Cost: 0.007
+; Time 0.04
+0.000: (navigate rover1 waypoint4 waypoint6)  [0.001]
+0.000: (navigate rover0 waypoint4 waypoint5)  [0.001]
+0.000: (navigate rover2 waypoint7 waypoint0)  [0.001]
+0.000: (navigate rover3 waypoint7 waypoint3)  [0.001]
+0.001: (sample_rock rover1 rover1store waypoint6)  [0.001]
+0.001: (calibrate rover2 camera1 objective1 waypoint0)  [0.001]
+0.001: (sample_soil rover2 rover2store waypoint0)  [0.001]
+0.001: (calibrate rover3 camera3 objective3 waypoint3)  [0.001]
+0.001: (sample_rock rover3 rover3store waypoint3)  [0.001]
+0.001: (navigate rover0 waypoint5 waypoint0)  [0.001]
+0.002: (take_image rover2 waypoint0 objective1 camera1 high_res)  [0.001]
+0.002: (communicate_soil_data rover2 general waypoint0 waypoint0 waypoint2)  [0.001]
+0.002: (navigate rover3 waypoint3 waypoint7)  [0.001]
+0.002: (calibrate rover0 camera2 objective0 waypoint0)  [0.001]
+0.003: (navigate rover1 waypoint6 waypoint4)  [0.001]
+0.003: (communicate_image_data rover2 general objective1 high_res waypoint0 waypoint2)  [0.001]
+0.003: (navigate rover3 waypoint7 waypoint0)  [0.001]
+0.003: (take_image rover0 waypoint0 objective3 camera2 low_res)  [0.001]
+0.004: (communicate_rock_data rover1 general waypoint6 waypoint4 waypoint2)  [0.001]
+0.004: (take_image rover3 waypoint0 objective2 camera3 low_res)  [0.001]
+0.005: (communicate_image_data rover3 general objective2 low_res waypoint0 waypoint2)  [0.001]
+0.006: (communicate_image_data rover0 general objective3 low_res waypoint0 waypoint2)  [0.001]
+0.007: (communicate_rock_data rover3 general waypoint3 waypoint0 waypoint2)  [0.001]

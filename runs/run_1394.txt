@@ -1,0 +1,44 @@
+Number of literals: 94
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+All the ground actions in this problem are compression-safe
+Initial heuristic = 25.000
+b (22.000 | 1.000)b (19.000 | 1.000)b (18.000 | 1.000)b (17.000 | 2.001)b (16.000 | 2.001)b (15.000 | 3.002)b (14.000 | 3.002)b (13.000 | 4.003)b (12.000 | 5.004)b (11.000 | 5.004)b (10.000 | 8.005)b (9.000 | 8.005)b (8.000 | 9.005)b (7.000 | 10.005)b (6.000 | 10.006)b (5.000 | 14.008)b (3.000 | 17.009)b (2.000 | 18.009)b (1.000 | 19.009);;;; Solution Found
+; States evaluated: 166
+; Cost: 20.009
+; Time 0.08
+0.000: (walk driver1 s4 p4-0)  [1.000]
+0.000: (walk driver2 s1 p1-2)  [1.000]
+0.000: (load-truck package1 truck1 s2)  [1.000]
+1.001: (walk driver2 p1-2 s2)  [1.000]
+1.001: (walk driver1 p4-0 s4)  [1.000]
+2.002: (walk driver1 s4 p3-4)  [1.000]
+2.002: (board-truck driver2 truck1 s2)  [1.000]
+3.003: (walk driver1 p3-4 s3)  [1.000]
+3.003: (drive-truck driver2 truck1 s2 s3)  [1.000]
+4.004: (unload-truck package1 truck1 s3)  [1.000]
+4.004: (load-truck package3 truck1 s3)  [1.000]
+4.004: (board-truck driver1 truck3 s3)  [1.000]
+5.004: (drive-truck driver2 truck1 s3 s4)  [1.000]
+5.004: (drive-truck driver1 truck3 s3 s0)  [1.000]
+6.004: (disembark-truck driver1 truck3 s0)  [1.000]
+6.005: (drive-truck driver2 truck1 s4 s2)  [1.000]
+7.005: (board-truck driver1 truck2 s0)  [1.000]
+7.006: (drive-truck driver2 truck1 s2 s1)  [1.000]
+8.005: (drive-truck driver1 truck2 s0 s3)  [1.000]
+8.006: (unload-truck package3 truck1 s1)  [1.000]
+9.005: (disembark-truck driver1 truck2 s3)  [1.000]
+9.006: (drive-truck driver2 truck1 s1 s2)  [1.000]
+10.006: (walk driver1 s3 p3-4)  [1.000]
+10.007: (drive-truck driver2 truck1 s2 s4)  [1.000]
+11.007: (disembark-truck driver2 truck1 s4)  [1.000]
+11.007: (walk driver1 p3-4 s4)  [1.000]
+12.008: (board-truck driver1 truck1 s4)  [1.000]
+13.008: (drive-truck driver1 truck1 s4 s2)  [1.000]
+14.009: (drive-truck driver1 truck1 s2 s1)  [1.000]
+15.009: (load-truck package2 truck1 s1)  [1.000]
+16.009: (drive-truck driver1 truck1 s1 s2)  [1.000]
+17.009: (unload-truck package2 truck1 s2)  [1.000]
+18.009: (drive-truck driver1 truck1 s2 s3)  [1.000]
+19.009: (disembark-truck driver1 truck1 s3)  [1.000]

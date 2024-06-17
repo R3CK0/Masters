@@ -1,0 +1,33 @@
+Number of literals: 66
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+87% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 15.000
+b (14.000 | 2.000)b (13.000 | 5.000)b (9.000 | 20.001)b (8.000 | 20.001)b (7.000 | 20.001)b (6.000 | 40.001)b (5.000 | 40.001)b (4.000 | 40.001)b (3.000 | 40.001)b (2.000 | 45.002)b (1.000 | 85.006);;;; Solution Found
+; States evaluated: 8285
+; Cost: 100.006
+; Time 2.57
+0.000: (load-truck package1 truck2 s1)  [2.000]
+0.000: (board-truck driver3 truck2 s1)  [5.000]
+0.000: (walk driver2 s2 p2-0)  [20.000]
+0.000: (walk driver1 s2 p1-2)  [20.000]
+5.001: (drive-truck driver3 truck2 s1 s2)  [15.000]
+20.001: (walk driver1 p1-2 s1)  [20.000]
+20.001: (walk driver2 p2-0 s0)  [20.000]
+20.002: (unload-truck package1 truck2 s2)  [2.000]
+22.002: (drive-truck driver3 truck2 s2 s0)  [15.000]
+37.003: (drive-truck driver3 truck2 s0 s2)  [15.000]
+40.002: (board-truck driver1 truck3 s1)  [5.000]
+40.002: (board-truck driver2 truck1 s0)  [5.000]
+45.003: (drive-truck driver1 truck3 s1 s2)  [15.000]
+45.003: (drive-truck driver2 truck1 s0 s1)  [15.000]
+52.003: (disembark-truck driver3 truck2 s2)  [5.000]
+60.003: (disembark-truck driver1 truck3 s2)  [5.000]
+60.004: (drive-truck driver2 truck1 s1 s0)  [15.000]
+60.005: (board-truck driver3 truck2 s2)  [5.000]
+65.004: (board-truck driver1 truck2 s2)  [5.000]
+65.006: (drive-truck driver3 truck2 s2 s1)  [15.000]
+75.004: (disembark-truck driver2 truck1 s0)  [5.000]
+80.006: (disembark-truck driver1 truck2 s1)  [5.000]
+85.006: (drive-truck driver3 truck2 s1 s0)  [15.000]

@@ -1,0 +1,13 @@
+Warnings encountered when parsing Domain/Problem File
+-----------------------------------------------------
+
+The supplied domain/problem file appear to violate part of the PDDL
+language specification.  Specifically:
+
+Errors: 0, warnings: 3
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Numeric/AI_gen_code/Rovers_Nu_code6_nl.pddl: line: 42: Warning: Undeclared symbol: energy
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Numeric/problems/pfile2: line: 24: Warning: Undeclared symbol: recharges
+/home/god/Documents/Masters/data/IPC3/Tests1/Rovers/Numeric/problems/pfile2: line: 27: Warning: Undeclared symbol: in_sun
+
+The planner will continue, but you may wish to fix your files accordingly
+Segmentation fault (core dumped)

@@ -1,0 +1,51 @@
+Critical Errors Encountered in Domain/Problem File
+--------------------------------------------------
+
+Due to critical errors in the supplied domain/problem file, the planner
+has to terminate.  The errors encountered are as follows:
+
+Errors: 2, warnings: 42
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/AI_gen/DriverLog_Nu10_nl.pddl: line: 2: Error: Syntax error in domain
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 18: Warning: Undeclared requirement :typing 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 20: Warning: Undeclared symbol: at
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 23: Warning: Undeclared symbol: empty
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 29: Warning: Undeclared symbol: path
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 33: Warning: Undeclared symbol: time-to-walk
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 33: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 34: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 35: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 36: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 41: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 42: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 43: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 44: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 49: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 50: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 51: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 52: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 53: Warning: Undeclared symbol: link
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 55: Warning: Undeclared symbol: time-to-drive
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 55: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 56: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 59: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 60: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 63: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 64: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 65: Warning: Undeclared symbol: driven
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 65: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 66: Warning: Undeclared symbol: walked
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 66: Warning: Undeclared requirement :number-fluents 
+/home/god/Documents/Masters/data/IPC3/Tests1/DriverLog/Numeric/problems/pfile2: line: 80: Error: Syntax error in problem file - types used, but no :types section in domain file.

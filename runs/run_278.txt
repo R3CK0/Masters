@@ -1,11 +1,9 @@
-Type Errors Encountered in Domain File
---------------------------------------
-
-Due to type errors in the supplied domain file, the planner
-has to terminate.  The log of type checking is as follows:
-
-Type-checking drive
-...action passes type checking.
-Type-checking lift
-Type problem with proposition (on c p) - parameter 2 is incorrectly typed
-Conditions fail type-checking.
+Number of literals: 172
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+63% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 25.000
+b (22.000 | 11.002)b (21.000 | 18.005)b (20.000 | 18.005)b (19.000 | 18.005)b (18.000 | 18.005)b (17.000 | 18.005)b (16.000 | 18.005)b (15.000 | 30.008)b (14.000 | 30.008)b (13.000 | 34.009)b (12.000 | 35.010)b (11.000 | 35.010)b (10.000 | 35.010)
+Resorting to best-first search
+b (23.000 | 13.001)b (22.000 | 27.005)b (21.000 | 25.004)b (21.000 | 13.001)b (20.000 | 16.005)b (19.000 | 18.006)b (18.000 | 16.005)b (17.000 | 20.006)b (16.000 | 21.007)b (16.000 | 20.008)b (15.000 | 24.012)b (15.000 | 24.011)b (14.000 | 25.012)b (13.000 | 29.016)b (12.000 | 32.015)b (11.000 | 33.016)b (10.000 | 33.016)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/AI_gen_code/Depots_Si_code0_nl.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Depots/SimpleTime/problems/pfile4

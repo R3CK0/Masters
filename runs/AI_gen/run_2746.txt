@@ -1,0 +1,8 @@
+Type Errors Encountered in Problem File
+---------------------------------------
+
+Due to type errors in the supplied problem file, the planner
+has to terminate.  The log of type checking is as follows:
+
+Problem with proposition (channel_free general) - too many parameters
+Type-checking initial state failed
