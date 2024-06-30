@@ -1,61 +1,70 @@
-(define (domain robotic-domain)
-  (:requirements :adl :universal-preconditions)
+(define (domain agent-domain)
+  (:requirements :fluents :strips :typing :negative-preconditions)
 
   (:types
     location
     tool
-    robot
-    style
-    dancing-teacher - tool
+    agent
+    store banana bank - tool  ; Treat banana as a type of tool for interaction purposes
   )
 
   (:predicates
-    (at ?r - robot ?l - location)
-    (has ?r - robot ?t - tool)
+    (at ?a - agent ?l - location)
+    (has ?a - agent ?t - tool)
     (movable ?t - tool)
-    (tool-at ?t - tool ?l - location)
-    (style-set ?s - style)
-    (style-unset ?s - style)
+    (tool-at ?t - tool ?l - location)  ; Predicate to track the hunger state of the agent
+    (empty ?a - agent)  ; Predicate to track if the agent is carrying anything
   )
 
-  (:action move_robot
-    :parameters (?r - robot ?from - location ?to - location)
-    :precondition (at ?r ?from)
-    :effect (and (at ?r ?to)
-                 (not (at ?r ?from)))
+  (:functions  ; Define hunger as a fluent (0 for false, 1 for true)
+    (credits)
+    (hunger)  ; Define credits as a fluent (range 0-100)
   )
 
-  (:action move_robot_with_tool
-    :parameters (?r - robot ?from - location ?to - location ?t - tool)
-    :precondition (and (at ?r ?from) (has ?r ?t) (tool-at ?t ?from))
-    :effect (and (at ?r ?to)
-                 (not (at ?r ?from))
+  (:action move_agent
+    :parameters (?a - agent ?from ?to - location)
+    :precondition (and (at ?a ?from) (empty ?a))
+    :effect (and (at ?a ?to)
+                 (not (at ?a ?from)))
+  )
+
+  (:action move_agent_with_tool
+    :parameters (?a - agent ?from ?to - location ?t - tool)
+    :precondition (and (at ?a ?from) (has ?a ?t) (tool-at ?t ?from))
+    :effect (and (at ?a ?to)
+                 (not (at ?a ?from))
                  (tool-at ?t ?to)
                  (not (tool-at ?t ?from)))
   )
 
   (:action pickup_object
-    :parameters (?r - robot ?t - tool ?l - location)
-    :precondition (and (at ?r ?l) (tool-at ?t ?l) (movable ?t))
-    :effect (and (has ?r ?t) (not (tool-at ?t ?l)))
+    :parameters (?a - agent ?t - tool ?l - location)
+    :precondition (and (at ?a ?l) (tool-at ?t ?l) (movable ?t) (empty ?a))
+    :effect (and (has ?a ?t) (not (tool-at ?t ?l)) (not (empty ?a)))
   )
 
   (:action drop_object
-    :parameters (?r - robot ?t - tool ?l - location)
-    :precondition (and (at ?r ?l) (has ?r ?t))
-    :effect (and (not (has ?r ?t)) (tool-at ?t ?l))
+    :parameters (?a - agent ?t - tool ?l - location)
+    :precondition (and (at ?a ?l) (has ?a ?t))
+    :effect (and (not (has ?a ?t)) (tool-at ?t ?l) (empty ?a))
   )
 
-  (:action USE_set_dancing_style
-    :parameters (?r - robot ?s - style ?dt - dancing-teacher ?l - location)
-    :precondition (and (at ?r ?l) (tool-at ?dt ?l)
-                       (forall (?so - style) (style-unset ?so)))
-    :effect (and (style-set ?s) (not (style-unset ?s)))
+  (:action use_banana
+    :parameters (?a - agent ?b - banana ?l - location)
+    :precondition (and (at ?a ?l) (has ?a ?b))
+    :effect (and (assign (hunger) 0) (not (has ?a ?b)))
   )
 
-  (:action USE_unset_dancing_style
-    :parameters (?r - robot ?s - style ?dt - dancing-teacher ?l - location)
-    :precondition (and (at ?r ?l) (tool-at ?dt ?l))
-    :effect (and (not (style-set ?s)) (style-unset ?s))
+  (:action USE_store
+    :parameters (?a - agent ?s - store ?l - location ?b - banana)
+    :precondition (and (at ?a ?l) (tool-at ?s ?l) (>= (credits) 5))
+    :effect (and (decrease (credits) 5)
+                 (tool-at ?b ?l))
+  )
+
+  (:action USE_bank
+    :parameters (?a - agent ?b - bank ?l - location)
+    :precondition (and (at ?a ?l) (tool-at ?b ?l))
+    :effect (and (increase (credits) 3))
   )
 )

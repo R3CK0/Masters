@@ -1,6 +1,7 @@
 import Rovers
 
-
+# TODO Rover execution Monitoring
+# TODO Add a check to see if actions produce the desired/expected effects (i.e. Checking if action has executed successfully)
 class RoverWrapper(Rovers):
 
     def __init__(self, client):
