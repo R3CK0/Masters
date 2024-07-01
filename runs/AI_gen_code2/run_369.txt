@@ -1,0 +1,38 @@
+Number of literals: 172
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+59% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 35.000
+b (34.000 | 5.000)b (33.000 | 5.000)b (32.000 | 5.001)b (31.000 | 5.001)b (30.000 | 10.000)b (29.000 | 10.000)b (28.000 | 10.000)b (27.000 | 10.000)b (25.000 | 10.000)b (24.000 | 10.004)b (23.000 | 15.005)b (22.000 | 15.005)b (21.000 | 15.005)b (20.000 | 20.006)b (18.000 | 25.002)b (17.000 | 30.003)b (16.000 | 35.004)b (15.000 | 35.004)b (14.000 | 40.005)b (13.000 | 40.005)b (11.000 | 40.005)b (10.000 | 40.009)b (9.000 | 40.010)b (8.000 | 45.011)b (7.000 | 50.012)b (6.000 | 55.013)b (5.000 | 60.014)b (4.000 | 60.014)b (3.000 | 60.014)b (2.000 | 60.014)b (1.000 | 60.014);;;; Solution Found
+; States evaluated: 148
+; Cost: 65.015
+; Time 0.08
+0.000: (lift hoist3 crate4 pallet3 distributor0)  [5.000]
+0.000: (lift hoist0 crate3 pallet8 depot0)  [5.000]
+0.000: (drive truck0 distributor1 distributor2)  [10.000]
+0.000: (lift hoist2 crate5 crate1 depot2)  [5.000]
+0.001: (drop hoist3 crate4 pallet9 distributor0)  [5.000]
+0.001: (drop hoist0 crate3 pallet7 depot0)  [5.000]
+0.002: (lift hoist0 crate2 pallet0 depot0)  [5.000]
+0.003: (load hoist0 crate2 truck1 depot0)  [5.000]
+0.004: (drive truck1 depot0 distributor1)  [10.000]
+10.001: (drive truck0 distributor2 depot2)  [10.000]
+10.005: (unload hoist4 crate2 truck1 distributor1)  [5.000]
+10.006: (drive truck1 distributor1 distributor2)  [10.000]
+15.006: (drop hoist4 crate2 pallet4 distributor1)  [5.000]
+20.002: (load hoist2 crate5 truck0 depot2)  [5.000]
+20.003: (drive truck0 depot2 depot1)  [10.000]
+20.007: (drive truck1 distributor2 depot2)  [10.000]
+25.003: (lift hoist2 crate1 crate0 depot2)  [5.000]
+30.004: (unload hoist1 crate5 truck0 depot1)  [5.000]
+30.008: (load hoist2 crate1 truck1 depot2)  [5.000]
+35.005: (drop hoist1 crate5 pallet1 depot1)  [5.000]
+35.009: (lift hoist2 crate0 pallet2 depot2)  [5.000]
+35.010: (load hoist2 crate0 truck1 depot2)  [5.000]
+35.011: (drive truck1 depot2 distributor2)  [10.000]
+45.012: (unload hoist5 crate1 truck1 distributor2)  [5.000]
+45.013: (drive truck1 distributor2 depot0)  [10.000]
+50.013: (drop hoist5 crate1 pallet5 distributor2)  [5.000]
+55.014: (unload hoist0 crate0 truck1 depot0)  [5.000]
+60.015: (drop hoist0 crate0 pallet0 depot0)  [5.000]

@@ -1,0 +1,73 @@
+Number of literals: 40
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Have identified that smaller values of (current_load truck0) are preferable
+Have identified that smaller values of (current_load truck1) are preferable
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+Pruning (lift hoist0 crate1 crate0 depot0) - never appeared in initial RPG
+Pruning (lift hoist0 crate0 crate1 depot0) - never appeared in initial RPG
+Pruning (lift hoist0 crate0 pallet0 depot0) - never appeared in initial RPG
+Pruning (lift hoist0 crate1 pallet0 depot0) - never appeared in initial RPG
+Pruning (lift hoist0 crate0 pallet1 depot0) - never appeared in initial RPG
+Pruning (lift hoist0 crate1 pallet1 depot0) - never appeared in initial RPG
+Pruning (lift hoist0 crate0 pallet2 depot0) - never appeared in initial RPG
+Pruning (lift hoist0 crate1 pallet2 depot0) - never appeared in initial RPG
+Pruning (lift hoist1 crate1 crate0 distributor0) - never appeared in initial RPG
+Pruning (lift hoist1 crate0 crate1 distributor0) - never appeared in initial RPG
+Pruning (lift hoist1 crate0 pallet0 distributor0) - never appeared in initial RPG
+Pruning (lift hoist1 crate1 pallet0 distributor0) - never appeared in initial RPG
+Pruning (lift hoist1 crate0 pallet1 distributor0) - never appeared in initial RPG
+Pruning (lift hoist1 crate1 pallet1 distributor0) - never appeared in initial RPG
+Pruning (lift hoist1 crate0 pallet2 distributor0) - never appeared in initial RPG
+Pruning (lift hoist1 crate1 pallet2 distributor0) - never appeared in initial RPG
+Pruning (lift hoist2 crate1 crate0 distributor1) - never appeared in initial RPG
+Pruning (lift hoist2 crate0 crate1 distributor1) - never appeared in initial RPG
+Pruning (lift hoist2 crate0 pallet0 distributor1) - never appeared in initial RPG
+Pruning (lift hoist2 crate1 pallet0 distributor1) - never appeared in initial RPG
+Pruning (lift hoist2 crate0 pallet1 distributor1) - never appeared in initial RPG
+Pruning (lift hoist2 crate1 pallet1 distributor1) - never appeared in initial RPG
+Pruning (lift hoist2 crate0 pallet2 distributor1) - never appeared in initial RPG
+Pruning (lift hoist2 crate1 pallet2 distributor1) - never appeared in initial RPG
+Pruning (drop hoist0 crate1 crate0 depot0) - never appeared in initial RPG
+Pruning (drop hoist0 crate0 crate1 depot0) - never appeared in initial RPG
+Pruning (drop hoist0 crate0 pallet0 depot0) - never appeared in initial RPG
+Pruning (drop hoist0 crate1 pallet0 depot0) - never appeared in initial RPG
+Pruning (drop hoist1 crate1 crate0 distributor0) - never appeared in initial RPG
+Pruning (drop hoist1 crate0 crate1 distributor0) - never appeared in initial RPG
+Pruning (drop hoist1 crate0 pallet1 distributor0) - never appeared in initial RPG
+Pruning (drop hoist1 crate1 pallet1 distributor0) - never appeared in initial RPG
+Pruning (drop hoist2 crate1 crate0 distributor1) - never appeared in initial RPG
+Pruning (drop hoist2 crate0 crate1 distributor1) - never appeared in initial RPG
+Pruning (drop hoist2 crate0 pallet2 distributor1) - never appeared in initial RPG
+Pruning (drop hoist2 crate1 pallet2 distributor1) - never appeared in initial RPG
+Pruning (load hoist0 crate0 truck0 depot0) - never appeared in initial RPG
+Pruning (load hoist0 crate1 truck0 depot0) - never appeared in initial RPG
+Pruning (load hoist0 crate0 truck1 depot0) - never appeared in initial RPG
+Pruning (load hoist0 crate1 truck1 depot0) - never appeared in initial RPG
+Pruning (load hoist1 crate0 truck0 distributor0) - never appeared in initial RPG
+Pruning (load hoist1 crate1 truck0 distributor0) - never appeared in initial RPG
+Pruning (load hoist1 crate0 truck1 distributor0) - never appeared in initial RPG
+Pruning (load hoist1 crate1 truck1 distributor0) - never appeared in initial RPG
+Pruning (load hoist2 crate0 truck0 distributor1) - never appeared in initial RPG
+Pruning (load hoist2 crate1 truck0 distributor1) - never appeared in initial RPG
+Pruning (load hoist2 crate0 truck1 distributor1) - never appeared in initial RPG
+Pruning (load hoist2 crate1 truck1 distributor1) - never appeared in initial RPG
+Pruning (unload hoist0 crate0 truck0 depot0) - never appeared in initial RPG
+Pruning (unload hoist0 crate1 truck0 depot0) - never appeared in initial RPG
+Pruning (unload hoist0 crate0 truck1 depot0) - never appeared in initial RPG
+Pruning (unload hoist0 crate1 truck1 depot0) - never appeared in initial RPG
+Pruning (unload hoist1 crate0 truck0 distributor0) - never appeared in initial RPG
+Pruning (unload hoist1 crate1 truck0 distributor0) - never appeared in initial RPG
+Pruning (unload hoist1 crate0 truck1 distributor0) - never appeared in initial RPG
+Pruning (unload hoist1 crate1 truck1 distributor0) - never appeared in initial RPG
+Pruning (unload hoist2 crate0 truck0 distributor1) - never appeared in initial RPG
+Pruning (unload hoist2 crate1 truck0 distributor1) - never appeared in initial RPG
+Pruning (unload hoist2 crate0 truck1 distributor1) - never appeared in initial RPG
+Pruning (unload hoist2 crate1 truck1 distributor1) - never appeared in initial RPG
+Pruning (inspect hoist0 crate0 depot0) - never appeared in initial RPG
+Pruning (inspect hoist1 crate1 distributor0) - never appeared in initial RPG
+Pruning (inspect hoist2 crate0 distributor1) - never appeared in initial RPG
+Pruning (inspect hoist2 crate1 distributor1) - never appeared in initial RPG
+Initial heuristic = -1.000
+;; Problem unsolvable!
+; Time 0.03

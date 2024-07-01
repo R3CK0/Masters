@@ -1,0 +1,24 @@
+Number of literals: 180
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+== Warning ==
+
+The action (drive truck0 depot0 depot0) has a fixed duration of zero,
+but also has:
+
+* Propositional over all conditions
+
+In this case, correct handling of the action is unclear (e.g. at what point
+must the over all/at end conditions hold if there is no gap between the start
+and end of the action).  If the intention is for the action to be truly
+instantaneous, use a PDDL (:action rather than a (:durative-action.  For now,
+however, the action has been discarded.
+
+Other actions to have been discarded due to zero-durations include
+(drive truck1 depot0 depot0)
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+83% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 32.000
+b (31.000 | 2.000)b (30.000 | 2.000)b (29.000 | 2.000)b (28.000 | 5.168)b (26.000 | 5.168)b (25.000 | 9.002)b (24.000 | 18.586)b (22.000 | 34.586)b (21.000 | 34.586)b (20.000 | 35.586)b (18.000 | 35.586)
+Resorting to best-first search
+b (31.000 | 1.000)b (31.000 | 0.333)b (30.000 | 2.000)b (30.000 | 1.500)b (30.000 | 1.000)b (29.000 | 2.000)b (27.000 | 3.834)b (26.000 | 4.334)b (25.000 | 7.669)b (24.000 | 8.670)Execution error: ./run /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Time/AI_gen_code/Depots_Ti_code6_nl.pddl /home/god/Documents/Masters/data/IPC3/Tests1/Depots/Time/problems/pfile10

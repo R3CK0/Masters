@@ -1,0 +1,8 @@
+Number of literals: 111
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+A maths error has been encountered in your domain/problem file.
+---------------------------------------------------------------
+Unfortunately, a maths error has been encountered in domain/problem,
+and the planner has to terminate.   At some point a
+division by zero error occurred.

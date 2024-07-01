@@ -1,0 +1,32 @@
+Number of literals: 67
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+83% of the ground temporal actions in this problem are compression-safe
+Initial heuristic = 22.000
+b (21.000 | 5.000)b (20.000 | 8.000)b (19.000 | 12.001)b (18.000 | 12.001)b (17.000 | 13.000)b (16.000 | 23.000)b (15.000 | 23.000)b (14.000 | 23.000)b (13.000 | 25.000)b (11.000 | 32.001)b (10.000 | 42.002)b (8.000 | 42.002)b (7.000 | 43.002)b (5.000 | 43.002)b (4.000 | 58.004)b (3.000 | 58.004)b (2.000 | 63.004)b (1.000 | 73.004);;;; Solution Found
+; States evaluated: 134
+; Cost: 83.005
+; Time 0.06
+0.000: (calibrate rover0 camera0 objective0 waypoint2)  [5.000]
+0.000: (sample_rock rover1 rover1store waypoint3)  [8.000]
+0.000: (sample_soil rover2 rover2store waypoint4)  [10.000]
+0.000: (sample_rock rover0 rover0store waypoint2)  [8.000]
+5.001: (take_image rover0 waypoint2 objective0 camera0 high_res)  [7.000]
+8.000: (navigate rover1 waypoint3 waypoint0)  [5.000]
+10.000: (navigate rover2 waypoint4 waypoint0)  [5.000]
+10.001: (drop rover2 rover2store)  [1.000]
+12.001: (navigate rover0 waypoint2 waypoint0)  [5.000]
+13.000: (communicate_rock_data rover1 general waypoint0 waypoint3 waypoint3)  [10.000]
+15.000: (communicate_soil_data rover2 general waypoint0 waypoint3 waypoint4)  [10.000]
+17.001: (communicate_image_data rover0 general waypoint0 waypoint3 objective0 high_res)  [15.000]
+25.001: (navigate rover2 waypoint0 waypoint4)  [5.000]
+30.002: (sample_rock rover2 rover2store waypoint4)  [8.000]
+32.002: (communicate_rock_data rover0 general waypoint0 waypoint3 waypoint2)  [10.000]
+38.002: (navigate rover2 waypoint4 waypoint0)  [5.000]
+38.003: (drop rover2 rover2store)  [1.000]
+43.003: (navigate rover2 waypoint0 waypoint1)  [5.000]
+48.004: (sample_soil rover2 rover2store waypoint1)  [10.000]
+58.004: (navigate rover2 waypoint1 waypoint0)  [5.000]
+63.004: (communicate_rock_data rover2 general waypoint0 waypoint3 waypoint4)  [10.000]
+73.005: (communicate_soil_data rover2 general waypoint0 waypoint3 waypoint1)  [10.000]

@@ -1,0 +1,14 @@
+Warnings encountered when parsing Domain/Problem File
+-----------------------------------------------------
+
+The supplied domain/problem file appear to violate part of the PDDL
+language specification.  Specifically:
+
+Errors: 0, warnings: 4
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Time/problems/pfile16: line: 27: Warning: Undeclared symbol: speed
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Time/problems/pfile16: line: 36: Warning: Undeclared symbol: power
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Time/problems/pfile16: line: 60: Warning: Undeclared symbol: weight
+/home/god/Documents/Masters/data/IPC3/Tests1/Depots/Time/problems/pfile16: line: 76: Warning: Undeclared symbol: distance
+
+The planner will continue, but you may wish to fix your files accordingly
+Segmentation fault (core dumped)

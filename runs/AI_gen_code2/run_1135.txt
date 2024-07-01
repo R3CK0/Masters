@@ -1,0 +1,42 @@
+Number of literals: 94
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+[01;34mNo analytic limits found, not considering limit effects of goal-only operators[00m
+All the ground actions in this problem are compression-safe
+Initial heuristic = 22.000
+b (19.000 | 5.000)b (18.000 | 5.000)b (17.000 | 5.000)b (16.000 | 10.001)b (14.000 | 10.001)b (13.000 | 11.002)b (12.000 | 23.004)b (11.000 | 31.004)b (10.000 | 32.006)b (9.000 | 33.004)b (8.000 | 33.005)b (7.000 | 35.005)b (6.000 | 54.009)b (1.000 | 79.006);;;; Solution Found
+; States evaluated: 651
+; Cost: 80.006
+; Time 0.20
+0.000: (walk driver1 s4 p3-4)  [5.000]
+0.000: (walk driver2 s1 p1-2)  [5.000]
+0.000: (load-truck package1 truck1 s2)  [2.000]
+0.000: (load-truck package3 truck3 s3)  [2.000]
+5.001: (walk driver1 p3-4 s3)  [5.000]
+5.001: (walk driver2 p1-2 s2)  [5.000]
+10.002: (board-truck driver2 truck1 s2)  [1.000]
+10.002: (board-truck driver1 truck3 s3)  [1.000]
+11.003: (drive-truck truck1 s2 s3 driver2)  [10.000]
+11.003: (drive-truck truck3 s3 s2 driver1)  [10.000]
+21.004: (unload-truck package1 truck1 s3)  [2.000]
+21.004: (drive-truck truck3 s2 s0 driver1)  [10.000]
+21.004: (disembark-truck driver2 truck1 s3)  [1.000]
+22.005: (walk driver2 s3 p3-4)  [5.000]
+27.006: (walk driver2 p3-4 s4)  [5.000]
+31.004: (disembark-truck driver1 truck3 s0)  [1.000]
+31.004: (unload-truck package3 truck3 s0)  [2.000]
+32.005: (board-truck driver1 truck2 s0)  [1.000]
+32.007: (walk driver2 s4 p4-0)  [5.000]
+33.005: (load-truck package3 truck2 s0)  [2.000]
+35.005: (drive-truck truck2 s0 s2 driver1)  [10.000]
+37.008: (walk driver2 p4-0 s0)  [5.000]
+42.009: (board-truck driver2 truck3 s0)  [1.000]
+43.009: (drive-truck truck3 s0 s4 driver2)  [10.000]
+45.006: (drive-truck truck2 s2 s1 driver1)  [10.000]
+53.009: (disembark-truck driver2 truck3 s4)  [1.000]
+55.006: (unload-truck package3 truck2 s1)  [2.000]
+55.006: (load-truck package2 truck2 s1)  [2.000]
+57.006: (drive-truck truck2 s1 s2 driver1)  [10.000]
+67.006: (unload-truck package2 truck2 s2)  [2.000]
+69.006: (drive-truck truck2 s2 s3 driver1)  [10.000]
+79.006: (disembark-truck driver1 truck2 s3)  [1.000]
